@@ -1,0 +1,425 @@
+/* =========================================================
+   LATEST NEWS SECTION
+========================================================= */
+
+.latest-news-section {
+  width: 100%;
+
+  margin: 0;
+  padding: 62px 0 74px;
+
+  background: #f4f8fc;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.latest-news-container {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.latest-news-header {
+  width: 100%;
+
+  margin: 0 0 42px;
+
+  text-align: center;
+}
+
+.latest-news-title {
+  margin: 0 0 14px;
+
+  color: #292f40;
+
+  font-size: 39px;
+  line-height: 1.25;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.latest-news-description {
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  color: #71819f;
+
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.latest-news-slider-wrapper {
+  width: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SWIPER
+========================================================= */
+
+.latest-news-swiper {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SWIPER WRAPPER
+========================================================= */
+
+.latest-news-swiper .swiper-wrapper {
+  align-items: stretch;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.latest-news-slide {
+  height: auto;
+
+  display: flex;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   NEWS CARD
+========================================================= */
+
+.latest-news-card {
+  position: relative;
+
+  width: 100%;
+  height: 332px;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  background: #dddddd;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(38, 48, 64, 0.08);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.latest-news-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.65s ease;
+}
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.latest-news-card:hover .latest-news-image {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   BOTTOM GRADIENT
+========================================================= */
+
+.latest-news-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 65%;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.04) 12%,
+    rgba(0, 0, 0, 0.30) 45%,
+    rgba(0, 0, 0, 0.86) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.latest-news-card-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  z-index: 2;
+
+  padding: 0 20px 20px;
+
+  box-sizing: border-box;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.latest-news-card-title {
+  max-width: 310px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  text-align: left;
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.30);
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .latest-news-container {
+    max-width: 1100px;
+  }
+
+  .latest-news-card {
+    height: 320px;
+  }
+
+  .latest-news-card-content {
+    padding: 0 18px 19px;
+  }
+
+  .latest-news-card-title {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .latest-news-section {
+    padding: 55px 0 65px;
+  }
+
+  .latest-news-container {
+    padding: 0 18px;
+  }
+
+  .latest-news-header {
+    margin-bottom: 35px;
+  }
+
+  .latest-news-title {
+    font-size: 27px;
+  }
+
+  .latest-news-card {
+    height: 310px;
+
+    border-radius: 12px;
+  }
+
+  .latest-news-card-title {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .latest-news-section {
+    padding: 50px 0 60px;
+  }
+
+  .latest-news-container {
+    padding: 0 15px;
+  }
+
+  .latest-news-header {
+    margin-bottom: 30px;
+  }
+
+  .latest-news-title {
+    font-size: 25px;
+
+    margin-bottom: 11px;
+  }
+
+  .latest-news-description {
+    max-width: 440px;
+
+    font-size: 12px;
+  }
+
+  .latest-news-card {
+    height: 300px;
+
+    border-radius: 12px;
+  }
+
+  .latest-news-card-content {
+    padding: 0 17px 18px;
+  }
+
+  .latest-news-card-title {
+    max-width: 280px;
+
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .latest-news-section {
+    padding: 45px 0 55px;
+  }
+
+  .latest-news-container {
+    padding: 0 13px;
+  }
+
+  .latest-news-header {
+    margin-bottom: 27px;
+  }
+
+  .latest-news-title {
+    font-size: 23px;
+  }
+
+  .latest-news-description {
+    max-width: 340px;
+
+    font-size: 11px;
+  }
+
+  .latest-news-card {
+    height: 285px;
+
+    border-radius: 11px;
+  }
+
+  .latest-news-overlay {
+    height: 68%;
+  }
+
+  .latest-news-card-content {
+    padding: 0 16px 17px;
+  }
+
+  .latest-news-card-title {
+    max-width: 270px;
+
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .latest-news-section {
+    padding: 40px 0 50px;
+  }
+
+  .latest-news-title {
+    font-size: 21px;
+  }
+
+  .latest-news-description {
+    font-size: 10px;
+  }
+
+  .latest-news-card {
+    height: 265px;
+  }
+
+  .latest-news-card-content {
+    padding: 0 14px 15px;
+  }
+
+  .latest-news-card-title {
+    font-size: 13px;
+  }
+}

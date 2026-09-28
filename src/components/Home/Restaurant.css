@@ -1,0 +1,2142 @@
+/* =========================================================
+   RESTAURANT SECTION
+========================================================= */
+
+.restaurant-section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 92px 0 110px;
+
+  overflow: hidden;
+
+  background-color: #ffffff;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   SOFT BACKGROUND OVERLAY
+========================================================= */
+
+.restaurant-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.97),
+    rgba(255, 255, 255, 0.92)
+  );
+}
+
+/* =========================================================
+   DECORATIVE SHAPES
+========================================================= */
+
+.restaurant-background-shape {
+  position: absolute;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 87, 87, 0.08);
+}
+
+.restaurant-background-shape-one {
+  right: -250px;
+
+  bottom: -300px;
+
+  width: 720px;
+  height: 720px;
+
+  transform: rotate(-20deg);
+}
+
+.restaurant-background-shape-two {
+  right: -330px;
+
+  bottom: -390px;
+
+  width: 900px;
+  height: 900px;
+
+  transform: rotate(-20deg);
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.restaurant-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1220px;
+
+  margin: 0 auto;
+
+  padding: 0 22px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.restaurant-header {
+  width: 100%;
+
+  max-width: 820px;
+
+  margin: 0 auto 46px;
+
+  text-align: center;
+}
+
+.restaurant-subtitle {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #ff5757;
+
+  font-size: 11px;
+  line-height: 1.3;
+
+  font-weight: 800;
+
+  letter-spacing: 2.4px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HEADING DECORATION
+========================================================= */
+
+.restaurant-heading-line {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  margin-bottom: 13px;
+}
+
+.restaurant-heading-line span {
+  display: block;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #ff5757;
+}
+
+.restaurant-heading-line span:nth-child(2) {
+  width: 8px;
+  height: 8px;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.restaurant-title {
+  margin: 0;
+
+  color: #202331;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+.restaurant-title span {
+  display: inline-block;
+
+  margin-left: 8px;
+
+  color: #ff5757;
+}
+
+/* =========================================================
+   HEADER DESCRIPTION
+========================================================= */
+
+.restaurant-header-description {
+  max-width: 620px;
+
+  margin: 15px auto 0;
+
+  color: #777d88;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+
+  font-weight: 400;
+}
+
+/* =========================================================
+   MENU SWITCH WRAPPER
+========================================================= */
+
+.restaurant-menu-switch-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  width: 100%;
+
+  margin-bottom: 48px;
+}
+
+/* =========================================================
+   MENU SWITCH
+========================================================= */
+
+.restaurant-menu-switch {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 5px;
+
+  border: 1px solid rgba(32, 35, 49, 0.08);
+
+  border-radius: 60px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow: 0 12px 35px rgba(25, 32, 44, 0.07);
+
+  backdrop-filter: blur(12px);
+}
+
+/* =========================================================
+   SWITCH BUTTON
+========================================================= */
+
+.restaurant-switch-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 112px;
+
+  padding: 10px 17px;
+
+  border: 0;
+
+  outline: none;
+
+  border-radius: 50px;
+
+  background: transparent;
+
+  color: #777d88;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.restaurant-switch-button:hover {
+  color: #ff5757;
+
+  transform: translateY(-1px);
+}
+
+.restaurant-switch-active {
+  color: #ffffff !important;
+
+  background: #ff5757;
+
+  box-shadow: 0 8px 22px rgba(255, 87, 87, 0.25);
+}
+
+/* =========================================================
+   SWITCH DOT
+========================================================= */
+
+.restaurant-switch-dot {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.restaurant-switch-dot-veg {
+  color: #299b55;
+
+  border: 1px solid #299b55;
+}
+
+.restaurant-switch-dot-nonveg {
+  color: #d84b4b;
+
+  border: 1px solid #d84b4b;
+}
+
+.restaurant-switch-dot-beverage {
+  color: #d39b24;
+
+  border: 1px solid #d39b24;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.restaurant-content {
+  position: relative;
+
+  width: 100%;
+}
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.restaurant-menu {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+}
+
+/* =========================================================
+   CATEGORY HEADER
+========================================================= */
+
+.restaurant-category-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  width: 100%;
+
+  margin: 15px 0 22px;
+
+  padding: 0 2px;
+}
+
+.restaurant-category-header:first-child {
+  margin-top: 0;
+}
+
+/* =========================================================
+   CATEGORY ICON
+========================================================= */
+
+.restaurant-category-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 87, 87, 0.24);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #ff5757;
+
+  font-size: 13px;
+
+  box-shadow: 0 7px 20px rgba(25, 32, 44, 0.06);
+}
+
+/* =========================================================
+   CATEGORY KICKER
+========================================================= */
+
+.restaurant-category-kicker {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #ff5757;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+  text-align: left;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.restaurant-category-title {
+  margin: 0;
+
+  color: #202331;
+
+  font-size: 15px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+  text-align: justify;
+  letter-spacing: -0.3px;
+}
+
+/* =========================================================
+   CATEGORY LINE
+========================================================= */
+
+.restaurant-category-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin-left: 10px;
+
+  background: linear-gradient(to right, rgb(255, 87, 87), rgba(255, 87, 87, 0));
+}
+
+/* =========================================================
+   CATEGORY GRID
+========================================================= */
+
+.restaurant-category-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 38px;
+}
+
+/* =========================================================
+   MENU CARD
+========================================================= */
+
+.restaurant-menu-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-width: 0;
+  width: 456px;
+  min-height: 158px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(255, 87, 87, 0.11);
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(255, 250, 250, 0.95)
+  );
+
+  box-shadow: 0 9px 28px rgba(25, 32, 44, 0.055);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.restaurant-menu-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: linear-gradient(to bottom, #ff5757, rgba(255, 87, 87, 0.08));
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.restaurant-menu-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 87, 87, 0.25);
+
+  box-shadow: 0 18px 40px rgba(25, 32, 44, 0.1);
+}
+
+.restaurant-menu-card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================================
+   FOOD IMAGE WRAPPER
+========================================================= */
+
+.restaurant-menu-image-wrapper {
+  position: relative;
+
+  width: 116px;
+  height: 136px;
+
+  flex: 0 0 116px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #f2f2f2, #e6e6e6);
+
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================
+   FOOD IMAGE
+========================================================= */
+
+.restaurant-menu-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.restaurant-menu-card:hover .restaurant-menu-image {
+  transform: scale(1.07);
+}
+
+/* =========================================================
+   IMAGE FALLBACK
+========================================================= */
+
+.restaurant-menu-image-fallback {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #f5f5f5, #e9e9e9);
+}
+
+.restaurant-menu-image-fallback::after {
+  content: "Food Image";
+
+  color: #a0a0a0;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+.restaurant-menu-type-badge-veg {
+  color: #299b55;
+  border: 1px solid rgba(41, 155, 85, 0.25);
+}
+
+.restaurant-menu-type-badge-nonveg {
+  color: #d84b4b;
+  border: 1px solid rgba(216, 75, 75, 0.25);
+}
+
+.restaurant-menu-type-badge-beverage {
+  color: #d39b24;
+  border: 1px solid rgba(211, 155, 36, 0.25);
+}
+
+/* =========================================================
+   TYPE BADGE
+========================================================= */
+
+/* =========================================================
+   TYPE BADGE
+========================================================= */
+
+.restaurant-menu-type-badge {
+  position: absolute;
+
+  left: 8px;
+  bottom: 8px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 37px;
+
+  padding: 4px 7px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.93);
+
+  color: #299b55;
+
+  font-size: 7px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(5px);
+}
+
+/* VEG */
+.restaurant-menu-card .restaurant-menu-type-badge {
+  color: #299b55;
+}
+
+/* NON-VEG */
+.restaurant-menu-card
+  .restaurant-menu-image-wrapper
+  .restaurant-menu-type-badge {
+  color: #d84b4b;
+}
+
+/* DRINK */
+.restaurant-menu-type-badge {
+  border: 1px solid transparent;
+}
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.restaurant-menu-info {
+  min-width: 0;
+
+  flex: 1;
+
+  padding-left: 17px;
+}
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.restaurant-menu-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   NAME WRAPPER
+========================================================= */
+
+.restaurant-menu-name-wrapper {
+  min-width: 0;
+
+  flex: 1;
+}
+
+/* =========================================================
+   FOOD NAME
+========================================================= */
+
+.restaurant-menu-name {
+  margin: 0 0 5px;
+
+  color: #252936;
+
+  font-size: 20px;
+  text-align: left;
+  line-height: 1.22;
+
+  font-weight: 800;
+
+  letter-spacing: -0.15px;
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.restaurant-menu-price {
+  margin: 0;
+
+  color: #ff5757;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+  text-align: left;
+  font-weight: 800;
+}
+
+/* =========================================================
+   RESERVE BUTTON
+========================================================= */
+
+.restaurant-reserve-button {
+  flex-shrink: 0;
+
+  padding: 7px 11px;
+
+  border: 1px solid rgba(255, 87, 87, 0.3);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #ff5757;
+
+  font-size: 12px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.restaurant-reserve-button:hover {
+  transform: translateY(-2px);
+
+  border-color: #ff5757;
+
+  background: #ff5757;
+
+  color: #ffffff;
+
+  box-shadow: 0 7px 18px rgba(255, 87, 87, 0.2);
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.restaurant-menu-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 10px 0;
+
+  background: linear-gradient(to right, rgb(255, 87, 87), rgba(255, 87, 87, 0));
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.restaurant-menu-description {
+  display: -webkit-box;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #000000;
+
+  font-size: 13.5px;
+
+  line-height: 1.25;
+  text-align: left;
+  font-weight: 500;
+  line-clamp: 2.5;
+  -webkit-line-clamp: 2.5;
+  -webkit-box-orient: vertical;
+}
+
+/* =========================================================
+   CHEF
+========================================================= */
+
+.restaurant-chef {
+  position: absolute;
+
+  right: -145px;
+  bottom: -125px;
+
+  z-index: 4;
+
+  width: 380px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: translateX(180px);
+
+  transition:
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1.2s ease;
+}
+
+/* =========================================================
+   CHEF REVEAL
+========================================================= */
+
+.restaurant-chef.restaurant-chef-enter {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* =========================================================
+   CHEF IMAGE
+========================================================= */
+
+.restaurant-chef-image {
+  display: block;
+
+  width: 100%;
+  height: 800px;
+
+  object-fit: contain;
+
+  object-position: bottom right;
+
+  transform: scale(1.15);
+
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.08));
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .restaurant-container {
+    max-width: 1120px;
+  }
+
+  .restaurant-chef {
+    right: -110px;
+
+    width: 300px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+  .restaurant-section {
+    padding: 82px 0 95px;
+  }
+
+  .restaurant-category-grid {
+    gap: 15px;
+  }
+
+  .restaurant-menu-card {
+    min-height: 150px;
+
+    padding: 12px;
+  }
+
+  .restaurant-menu-image-wrapper {
+    width: 102px;
+    height: 102px;
+
+    flex-basis: 102px;
+  }
+
+  .restaurant-menu-info {
+    padding-left: 13px;
+  }
+
+  .restaurant-menu-name {
+    font-size: 14px;
+  }
+
+  .restaurant-menu-description {
+    font-size: 9.5px;
+  }
+
+  .restaurant-chef {
+    right: -75px;
+
+    width: 250px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  .restaurant-section {
+    padding: 70px 0 85px;
+  }
+
+  .restaurant-container {
+    max-width: 900px;
+
+    padding: 0 20px;
+  }
+
+  .restaurant-title {
+    font-size: 29px;
+  }
+
+  .restaurant-header {
+    margin-bottom: 38px;
+  }
+
+  .restaurant-menu-switch-wrapper {
+    margin-bottom: 40px;
+  }
+
+  .restaurant-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .restaurant-category-title {
+    font-size: 18px;
+  }
+
+  .restaurant-chef {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+  .restaurant-section {
+    padding: 60px 0 72px;
+  }
+
+  .restaurant-container {
+    padding: 0 16px;
+  }
+
+  .restaurant-title {
+    font-size: 25px;
+  }
+
+  .restaurant-title span {
+    display: block;
+
+    margin: 3px 0 0;
+  }
+
+  .restaurant-header-description {
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .restaurant-menu-switch-wrapper {
+    margin-bottom: 34px;
+  }
+
+  .restaurant-menu-switch {
+    width: 100%;
+
+    max-width: 410px;
+
+    justify-content: center;
+  }
+
+  .restaurant-switch-button {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 9px 10px;
+
+    font-size: 11px;
+  }
+
+  .restaurant-switch-dot {
+    width: 16px;
+    height: 16px;
+
+    font-size: 8px;
+  }
+
+  .restaurant-category-header {
+    margin-bottom: 18px;
+  }
+
+  .restaurant-category-title {
+    font-size: 17px;
+  }
+
+  .restaurant-category-grid {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+    margin-bottom: 30px;
+  }
+
+  .restaurant-menu-card {
+    min-height: 140px;
+
+    padding: 11px;
+  }
+
+  .restaurant-menu-image-wrapper {
+    width: 98px;
+    height: 98px;
+
+    flex-basis: 98px;
+  }
+
+  .restaurant-menu-info {
+    padding-left: 12px;
+  }
+
+  .restaurant-menu-name {
+    font-size: 14px;
+  }
+
+  .restaurant-menu-price {
+    font-size: 13px;
+  }
+
+  .restaurant-menu-description {
+    font-size: 9.5px;
+
+    line-height: 1.6;
+  }
+
+  .restaurant-reserve-button {
+    padding: 6px 9px;
+
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+  .restaurant-section {
+    padding: 52px 0 62px;
+  }
+
+  .restaurant-container {
+    padding: 0 13px;
+  }
+
+  .restaurant-subtitle {
+    font-size: 9px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .restaurant-title {
+    font-size: 22px;
+
+    letter-spacing: -0.4px;
+  }
+
+  .restaurant-header-description {
+    padding: 0 8px;
+
+    font-size: 11px;
+  }
+
+  .restaurant-menu-switch-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .restaurant-menu-switch {
+    padding: 4px;
+
+    border-radius: 45px;
+  }
+
+  .restaurant-switch-button {
+    gap: 5px;
+
+    padding: 8px 6px;
+
+    font-size: 10px;
+  }
+
+  .restaurant-switch-dot {
+    width: 15px;
+    height: 15px;
+
+    font-size: 7px;
+  }
+
+  .restaurant-category-header {
+    gap: 9px;
+
+    margin: 22px 0 16px;
+  }
+
+  .restaurant-category-icon {
+    width: 29px;
+    height: 29px;
+
+    font-size: 10px;
+  }
+
+  .restaurant-category-kicker {
+    font-size: 7px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .restaurant-category-title {
+    font-size: 15px;
+  }
+
+  .restaurant-category-line {
+    margin-left: 5px;
+  }
+
+  .restaurant-category-grid {
+    gap: 11px;
+
+    margin-bottom: 26px;
+  }
+
+  .restaurant-menu-card {
+    min-height: 126px;
+
+    padding: 9px;
+
+    border-radius: 10px;
+  }
+
+  .restaurant-menu-image-wrapper {
+    width: 84px;
+    height: 84px;
+
+    flex-basis: 84px;
+
+    border-radius: 8px;
+  }
+
+  .restaurant-menu-info {
+    padding-left: 10px;
+  }
+
+  .restaurant-menu-top {
+    gap: 7px;
+  }
+
+  .restaurant-menu-name {
+    margin-bottom: 3px;
+
+    font-size: 12px;
+  }
+
+  .restaurant-menu-price {
+    font-size: 11px;
+  }
+
+  .restaurant-reserve-button {
+    padding: 5px 7px;
+
+    font-size: 7px;
+  }
+
+  .restaurant-menu-divider {
+    margin: 7px 0;
+  }
+
+  .restaurant-menu-description {
+    font-size: 8.5px;
+
+    line-height: 1.55;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+  }
+
+  .restaurant-menu-type-badge {
+    left: 5px;
+    bottom: 5px;
+
+    min-width: 31px;
+
+    padding: 3px 5px;
+
+    font-size: 6px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .restaurant-section {
+    padding: 46px 0 55px;
+  }
+
+  .restaurant-container {
+    padding: 0 10px;
+  }
+
+  .restaurant-title {
+    font-size: 20px;
+  }
+
+  .restaurant-menu-switch-button {
+    font-size: 9px;
+  }
+
+  .restaurant-switch-button {
+    padding: 7px 4px;
+  }
+
+  .restaurant-category-title {
+    font-size: 14px;
+  }
+
+  .restaurant-menu-card {
+    min-height: 116px;
+
+    padding: 8px;
+  }
+
+  .restaurant-menu-image-wrapper {
+    width: 76px;
+    height: 76px;
+
+    flex-basis: 76px;
+  }
+
+  .restaurant-menu-info {
+    padding-left: 8px;
+  }
+
+  .restaurant-menu-name {
+    font-size: 11px;
+  }
+
+  .restaurant-menu-price {
+    font-size: 10px;
+  }
+
+  .restaurant-reserve-button {
+    padding: 4px 6px;
+
+    font-size: 6.5px;
+  }
+
+  .restaurant-menu-description {
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+.restaurant-filter-wrapper {
+  width: 100%;
+  margin: -18px 0 42px;
+}
+
+.restaurant-filter-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: 100%;
+
+  padding: 16px 18px;
+
+  border: 1px solid rgba(255, 87, 87, 0.12);
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.97),
+    rgba(255, 250, 250, 0.92)
+  );
+
+  box-shadow: 0 10px 30px rgba(25, 32, 44, 0.055);
+}
+
+/* =========================================================
+   FILTER LABEL
+========================================================= */
+
+.restaurant-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.restaurant-filter-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 87, 87, 0.22);
+  border-radius: 50%;
+
+  background: rgba(255, 87, 87, 0.06);
+
+  color: #ff5757;
+
+  font-size: 13px;
+}
+
+.restaurant-filter-kicker {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #ff5757;
+
+  font-size: 12px;
+  text-align: left;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+
+  text-transform: uppercase;
+}
+
+.restaurant-filter-title {
+  margin: 0;
+
+  color: #252936;
+
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.3;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   SELECT WRAPPER
+========================================================= */
+
+.restaurant-filter-select-wrapper {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 280px;
+}
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.restaurant-filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+
+  padding: 12px 40px 12px 15px;
+
+  border: 1px solid rgba(255, 87, 87, 0.2);
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #252936;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.restaurant-filter-select:hover {
+  border-color: rgba(255, 87, 87, 0.45);
+}
+
+.restaurant-filter-select:focus {
+  border-color: #ff5757;
+
+  box-shadow: 0 0 0 3px rgba(255, 87, 87, 0.08);
+}
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.restaurant-filter-chevron {
+  position: absolute;
+
+  top: 50%;
+  right: 14px;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
+
+  color: #ff5757;
+
+  font-size: 20px;
+
+  font-weight: 900;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.restaurant-pagination {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  width: 100%;
+
+  margin: 8px 0 35px;
+}
+
+.restaurant-pagination-pages {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+/* =========================================================
+   PAGINATION BUTTONS
+========================================================= */
+
+.restaurant-pagination-button,
+.restaurant-pagination-page {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 34px;
+
+  padding: 0 10px;
+
+  border: 1px solid rgba(255, 87, 87, 0.18);
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #777d88;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.restaurant-pagination-button:hover:not(:disabled),
+.restaurant-pagination-page:hover {
+  transform: translateY(-2px);
+
+  border-color: #ff5757;
+
+  color: #ff5757;
+
+  box-shadow: 0 6px 16px rgba(255, 87, 87, 0.1);
+}
+
+/* =========================================================
+   ACTIVE PAGE
+========================================================= */
+
+.restaurant-pagination-page-active {
+  border-color: #ff5757;
+
+  background: #ff5757;
+
+  color: #ffffff;
+
+  box-shadow: 0 7px 18px rgba(255, 87, 87, 0.2);
+}
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.restaurant-pagination-button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.restaurant-empty-state {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 220px;
+
+  margin-bottom: 35px;
+
+  padding: 35px 20px;
+
+  border: 1px solid rgba(255, 87, 87, 0.1);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  text-align: center;
+}
+
+.restaurant-empty-icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 87, 87, 0.08);
+
+  color: #ff5757;
+
+  font-size: 15px;
+}
+
+.restaurant-empty-state h4 {
+  margin: 0 0 6px;
+
+  color: #252936;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.restaurant-empty-state p {
+  margin: 0;
+
+  color: #777d88;
+
+  font-size: 11px;
+}
+
+@media (max-width: 991px) {
+  .restaurant-filter-content {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .restaurant-filter-select-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .restaurant-filter-wrapper {
+    margin: -8px 0 32px;
+  }
+
+  .restaurant-filter-content {
+    padding: 14px;
+  }
+
+  .restaurant-filter-title {
+    font-size: 12px;
+  }
+
+  .restaurant-filter-select {
+    padding: 11px 38px 11px 13px;
+
+    font-size: 10px;
+  }
+
+  .restaurant-pagination {
+    margin-top: 5px;
+
+    margin-bottom: 30px;
+  }
+
+  .restaurant-pagination-button,
+  .restaurant-pagination-page {
+    min-width: 31px;
+    height: 31px;
+
+    padding: 0 8px;
+
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 575px) {
+  .restaurant-filter-wrapper {
+    margin-bottom: 28px;
+  }
+
+  .restaurant-filter-content {
+    border-radius: 12px;
+  }
+
+  .restaurant-filter-label {
+    gap: 9px;
+  }
+
+  .restaurant-filter-icon {
+    width: 28px;
+    height: 28px;
+
+    font-size: 11px;
+  }
+
+  .restaurant-filter-kicker {
+    font-size: 7px;
+  }
+
+  .restaurant-filter-title {
+    font-size: 11px;
+  }
+
+  .restaurant-pagination-pages {
+    gap: 4px;
+  }
+
+  .restaurant-pagination {
+    gap: 5px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE SAFETY & MOBILE REFINEMENTS
+   ---------------------------------------------------------
+   These overrides preserve the existing desktop design and
+   functionality while correcting responsive behavior.
+========================================================= */
+
+/* Prevent flex/grid children from creating accidental overflow */
+.restaurant-container,
+.restaurant-content,
+.restaurant-menu,
+.restaurant-category-grid,
+.restaurant-menu-card,
+.restaurant-menu-info,
+.restaurant-menu-name-wrapper,
+.restaurant-filter-content,
+.restaurant-filter-label {
+  min-width: 0;
+}
+
+/* The original desktop card width is preserved above.
+   At responsive widths, the card must fit its grid column. */
+@media (max-width: 1100px) {
+  .restaurant-menu-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   TOUCH + KEYBOARD INTERACTION
+========================================================= */
+
+.restaurant-switch-button:focus-visible,
+.restaurant-reserve-button:focus-visible,
+.restaurant-filter-select:focus-visible,
+.restaurant-pagination-button:focus-visible,
+.restaurant-pagination-page:focus-visible {
+  outline: 2px solid rgba(255, 87, 87, 0.55);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLET RESPONSIVE SAFETY
+========================================================= */
+
+@media (max-width: 991px) {
+  .restaurant-section {
+    background-position: center center;
+  }
+
+  .restaurant-menu-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .restaurant-menu-top {
+    min-width: 0;
+  }
+
+  .restaurant-menu-name {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .restaurant-menu-price {
+    overflow-wrap: anywhere;
+  }
+
+  .restaurant-menu-description {
+    overflow-wrap: anywhere;
+  }
+
+  .restaurant-filter-content {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .restaurant-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .restaurant-header {
+    max-width: 100%;
+  }
+
+  .restaurant-title {
+    overflow-wrap: anywhere;
+  }
+
+  .restaurant-header-description {
+    max-width: 100%;
+  }
+
+  .restaurant-menu-switch {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .restaurant-switch-button {
+    min-height: 42px;
+  }
+
+  .restaurant-filter-select {
+    min-height: 42px;
+  }
+
+  .restaurant-menu-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .restaurant-menu-image-wrapper {
+    flex-shrink: 0;
+  }
+
+  .restaurant-menu-info {
+    min-width: 0;
+  }
+
+  .restaurant-menu-top {
+    align-items: flex-start;
+  }
+
+  .restaurant-reserve-button {
+    min-height: 34px;
+  }
+
+  .restaurant-pagination-button,
+  .restaurant-pagination-page {
+    min-height: 34px;
+  }
+
+  /* Keep the existing mobile composition, but avoid
+     persistent hover states on touch devices. */
+  .restaurant-menu-card:hover {
+    transform: none;
+    border-color: rgba(255, 87, 87, 0.11);
+    box-shadow: 0 9px 28px rgba(25, 32, 44, 0.055);
+  }
+
+  .restaurant-menu-card:hover::before {
+    opacity: 0;
+  }
+
+  .restaurant-menu-card:hover .restaurant-menu-image {
+    transform: none;
+  }
+
+  .restaurant-menu-card:active {
+    transform: translateY(-2px);
+  }
+
+  .restaurant-menu-card:active .restaurant-menu-image {
+    transform: scale(1.025);
+  }
+
+  .restaurant-switch-button:hover {
+    transform: none;
+  }
+
+  .restaurant-reserve-button:hover {
+    transform: none;
+    border-color: rgba(255, 87, 87, 0.3);
+    background: #ffffff;
+    color: #ff5757;
+    box-shadow: none;
+  }
+
+  .restaurant-pagination-button:hover:not(:disabled),
+  .restaurant-pagination-page:hover {
+    transform: none;
+    border-color: rgba(255, 87, 87, 0.18);
+    color: #777d88;
+    box-shadow: none;
+  }
+
+  .restaurant-pagination-page-active:hover {
+    border-color: #ff5757;
+    background: #ff5757;
+    color: #ffffff;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+  .restaurant-section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .restaurant-container {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .restaurant-heading-line {
+    flex-shrink: 0;
+  }
+
+  .restaurant-menu-switch-wrapper {
+    width: 100%;
+  }
+
+  .restaurant-menu-switch {
+    width: 100%;
+  }
+
+  .restaurant-switch-button {
+    min-width: 0;
+    min-height: 42px;
+    white-space: nowrap;
+  }
+
+  .restaurant-category-header {
+    min-width: 0;
+  }
+
+  .restaurant-category-line {
+    min-width: 0;
+  }
+
+  .restaurant-category-grid {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .restaurant-menu-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .restaurant-menu-name {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .restaurant-menu-price {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .restaurant-menu-description {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .restaurant-filter-wrapper {
+    width: 100%;
+  }
+
+  .restaurant-filter-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .restaurant-filter-select-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .restaurant-pagination {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .restaurant-pagination-pages {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .restaurant-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .restaurant-switch-button {
+    min-height: 40px;
+  }
+
+  .restaurant-menu-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .restaurant-menu-image-wrapper {
+    flex-shrink: 0;
+  }
+
+  .restaurant-menu-top {
+    gap: 6px;
+  }
+
+  .restaurant-reserve-button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .restaurant-pagination-pages {
+    gap: 3px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 359px) {
+  .restaurant-container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .restaurant-menu-card {
+    padding: 7px;
+  }
+
+  .restaurant-menu-image-wrapper {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+
+  .restaurant-menu-info {
+    padding-left: 7px;
+  }
+
+  .restaurant-menu-top {
+    gap: 5px;
+  }
+
+  .restaurant-menu-name {
+    font-size: 10.5px;
+  }
+
+  .restaurant-menu-price {
+    font-size: 9.5px;
+  }
+
+  .restaurant-menu-description {
+    font-size: 7.8px;
+  }
+
+  .restaurant-reserve-button {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .restaurant-menu-card,
+  .restaurant-menu-card::before,
+  .restaurant-menu-image,
+  .restaurant-switch-button,
+  .restaurant-reserve-button,
+  .restaurant-filter-select,
+  .restaurant-pagination-button,
+  .restaurant-pagination-page,
+  .restaurant-chef {
+    transition: none !important;
+  }
+}

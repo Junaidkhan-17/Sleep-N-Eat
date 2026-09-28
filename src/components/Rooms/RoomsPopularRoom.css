@@ -1,0 +1,1083 @@
+/* =========================================================
+   ROOMS POPULAR ROOM SECTION
+========================================================= */
+
+.rooms-popular-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 70px 0 80px;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.rooms-popular-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 55px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.rooms-popular-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 42px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+.rooms-popular-heading-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.rooms-popular-title {
+  margin: 0 0 12px;
+  color: #071719;
+  font-size: 38px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+
+.rooms-popular-title span {
+  color: #ff4d50;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.rooms-popular-description {
+  max-width: 680px;
+  margin: 0;
+  color: #737878;
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 400;
+  text-align: center;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.rooms-popular-slider-wrapper {
+  position: relative;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SLIDER VIEWPORT
+========================================================= */
+
+.rooms-popular-slider {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SLIDER TRACK
+========================================================= */
+
+.rooms-popular-track {
+  display: flex;
+  width: 100%;
+
+  transform: translateX(
+    calc(
+      var(--rooms-popular-index) *
+      (-100% / var(--rooms-popular-visible))
+    )
+  );
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SLIDER ANIMATION
+========================================================= */
+
+.rooms-popular-track-transition {
+  transition:
+    transform 0.75s cubic-bezier(
+      0.22,
+      0.61,
+      0.36,
+      1
+    );
+}
+
+
+/* =========================================================
+   ROOM CARD
+========================================================= */
+
+.rooms-popular-card {
+  position: relative;
+
+  flex: 0 0
+    calc(
+      100% /
+      var(--rooms-popular-visible)
+    );
+
+  width: calc(
+    100% /
+    var(--rooms-popular-visible)
+  );
+
+  min-width: 0;
+
+  padding-right: 18px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGE LINK
+========================================================= */
+
+.rooms-popular-image-link {
+  display: block;
+
+  width: 100%;
+
+  color: inherit;
+  text-decoration: none;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.rooms-popular-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background: #eeeeee;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ROOM IMAGE
+========================================================= */
+
+.rooms-popular-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.rooms-popular-image-link:hover
+.rooms-popular-image {
+  transform: scale(1.045);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.rooms-popular-card-content {
+  width: 100%;
+
+  padding-top: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ROOM TITLE
+========================================================= */
+
+.rooms-popular-room-title {
+  display: block;
+
+  width: fit-content;
+  max-width: 100%;
+
+  margin-bottom: 13px;
+
+  color: #343747;
+
+  text-decoration: none;
+
+  font-size: 27px;
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+
+  transition: color 0.25s ease;
+}
+
+
+.rooms-popular-room-title:hover {
+  color: #ff4d50;
+}
+
+
+/* =========================================================
+   ROOM DETAILS
+========================================================= */
+
+.rooms-popular-room-details {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 17px;
+
+  margin-bottom: 13px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.rooms-popular-detail {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #7e8491;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.rooms-popular-detail svg {
+  width: 15px;
+  height: 15px;
+
+  color: #858991;
+
+  stroke-width: 1.8;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.rooms-popular-rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 11px;
+}
+
+
+/* =========================================================
+   STAR CONTAINER
+========================================================= */
+
+.rooms-popular-stars {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2px;
+}
+
+
+/* =========================================================
+   STAR
+========================================================= */
+
+.rooms-popular-star {
+  display: inline-block;
+
+  color: #b9bdc6;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   FILLED STAR
+========================================================= */
+
+.rooms-popular-star-filled {
+  color: #ff4d50;
+}
+
+
+/* =========================================================
+   RATING NUMBER
+========================================================= */
+
+.rooms-popular-rating-value {
+  color: #8290aa;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   PRICE ROW
+========================================================= */
+
+.rooms-popular-price-row {
+  display: flex;
+
+  align-items: baseline;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.rooms-popular-price {
+  display: inline-flex;
+
+  align-items: baseline;
+
+  color: #ff4d50;
+
+  font-size: 28px;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CURRENCY
+========================================================= */
+
+.rooms-popular-currency {
+  margin-right: 2px;
+
+  font-size: 31px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   PRICE META
+========================================================= */
+
+.rooms-popular-price-meta,
+.rooms-popular-room-type {
+  color: #555863;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   SLIDER ARROWS
+========================================================= */
+
+.rooms-popular-arrow {
+  position: absolute;
+
+  top: 215px;
+
+  z-index: 10;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 77, 80, 0.75);
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  color: #ff4d50;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   ARROW ICON
+========================================================= */
+
+.rooms-popular-arrow svg {
+  width: 17px;
+  height: 17px;
+
+  stroke-width: 2;
+}
+
+
+/* =========================================================
+   PREVIOUS ARROW
+========================================================= */
+
+.rooms-popular-arrow-prev {
+  left: -18px;
+}
+
+
+/* =========================================================
+   NEXT ARROW
+========================================================= */
+
+.rooms-popular-arrow-next {
+  right: -6px;
+}
+
+
+/* =========================================================
+   ARROW HOVER
+========================================================= */
+
+.rooms-popular-arrow:hover {
+  background: #ff4d50;
+
+  color: #ffffff;
+
+  transform: scale(1.08);
+
+  box-shadow:
+    0 8px 22px rgba(255, 77, 80, 0.22);
+}
+
+
+/* =========================================================
+   ARROW ACTIVE
+========================================================= */
+
+.rooms-popular-arrow:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   ARROW FOCUS
+========================================================= */
+
+.rooms-popular-arrow:focus-visible {
+  outline: 2px solid #ff4d50;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .rooms-popular-section {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+
+  .rooms-popular-container {
+    max-width: 1700px;
+
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+
+  .rooms-popular-header {
+    margin-bottom: 45px;
+  }
+
+
+  .rooms-popular-title {
+    font-size: 42px;
+  }
+
+
+  .rooms-popular-description {
+    max-width: 720px;
+
+    font-size: 18px;
+  }
+
+
+  .rooms-popular-card {
+    padding-right: 20px;
+  }
+
+
+  .rooms-popular-image-wrapper {
+    height: 470px;
+  }
+
+
+  .rooms-popular-card-content {
+    padding-top: 22px;
+  }
+
+
+  .rooms-popular-room-title {
+    font-size: 23px;
+  }
+
+
+  .rooms-popular-detail {
+    font-size: 12px;
+  }
+
+
+  .rooms-popular-price {
+    font-size: 30px;
+  }
+
+
+  .rooms-popular-arrow {
+    top: 235px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .rooms-popular-arrow-prev {
+    left: -20px;
+  }
+
+
+  .rooms-popular-arrow-next {
+    right: -20px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .rooms-popular-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+
+  .rooms-popular-title {
+    font-size: 34px;
+  }
+
+
+  .rooms-popular-description {
+    font-size: 16px;
+  }
+
+
+  .rooms-popular-image-wrapper {
+    height: 370px;
+  }
+
+
+  .rooms-popular-room-title {
+    font-size: 19px;
+  }
+
+
+  .rooms-popular-price {
+    font-size: 25px;
+  }
+
+
+  .rooms-popular-arrow {
+    top: 185px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .rooms-popular-section {
+    padding: 60px 0 65px;
+  }
+
+
+  .rooms-popular-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+
+  .rooms-popular-header {
+    margin-bottom: 30px;
+  }
+
+
+  .rooms-popular-title {
+    font-size: 30px;
+  }
+
+
+  .rooms-popular-description {
+    max-width: 520px;
+
+    font-size: 14px;
+  }
+
+
+  .rooms-popular-card {
+    padding-right: 15px;
+  }
+
+
+  .rooms-popular-image-wrapper {
+    height: 350px;
+  }
+
+
+  .rooms-popular-card-content {
+    padding-top: 17px;
+  }
+
+
+  .rooms-popular-room-title {
+    font-size: 18px;
+
+    margin-bottom: 11px;
+  }
+
+
+  .rooms-popular-room-details {
+    gap: 11px;
+  }
+
+
+  .rooms-popular-detail {
+    font-size: 10px;
+  }
+
+
+  .rooms-popular-detail svg {
+    width: 13px;
+    height: 13px;
+  }
+
+
+  .rooms-popular-star {
+    font-size: 16px;
+  }
+
+
+  .rooms-popular-price {
+    font-size: 23px;
+  }
+
+
+  .rooms-popular-currency {
+    font-size: 25px;
+  }
+
+
+  .rooms-popular-price-meta,
+  .rooms-popular-room-type {
+    font-size: 11px;
+  }
+
+
+  .rooms-popular-arrow {
+    top: 175px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .rooms-popular-arrow-prev {
+    left: -12px;
+  }
+
+
+  .rooms-popular-arrow-next {
+    right: -12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .rooms-popular-section {
+    padding: 48px 0 55px;
+  }
+
+
+  .rooms-popular-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  .rooms-popular-header {
+    margin-bottom: 25px;
+  }
+
+
+  .rooms-popular-title {
+    font-size: 27px;
+
+    line-height: 1.3;
+  }
+
+
+  .rooms-popular-description {
+    max-width: 100%;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+
+  .rooms-popular-card {
+    padding-right: 0;
+  }
+
+
+  .rooms-popular-image-wrapper {
+    height: 360px;
+
+    border-radius: 8px;
+  }
+
+
+  .rooms-popular-card-content {
+    padding-top: 16px;
+  }
+
+
+  .rooms-popular-room-title {
+    font-size: 19px;
+  }
+
+
+  .rooms-popular-room-details {
+    gap: 12px;
+  }
+
+
+  .rooms-popular-detail {
+    font-size: 10px;
+  }
+
+
+  .rooms-popular-rating {
+    margin-bottom: 10px;
+  }
+
+
+  .rooms-popular-price {
+    font-size: 25px;
+  }
+
+
+  .rooms-popular-currency {
+    font-size: 27px;
+  }
+
+
+  .rooms-popular-price-meta,
+  .rooms-popular-room-type {
+    font-size: 11px;
+  }
+
+
+  .rooms-popular-arrow {
+    top: 180px;
+
+    width: 34px;
+    height: 34px;
+
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+
+  .rooms-popular-arrow-prev {
+    left: 8px;
+  }
+
+
+  .rooms-popular-arrow-next {
+    right: 8px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .rooms-popular-section {
+    padding: 42px 0 48px;
+  }
+
+
+  .rooms-popular-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  .rooms-popular-title {
+    font-size: 24px;
+  }
+
+
+  .rooms-popular-description {
+    font-size: 12px;
+  }
+
+
+  .rooms-popular-image-wrapper {
+    height: 315px;
+  }
+
+
+  .rooms-popular-room-title {
+    font-size: 18px;
+  }
+
+
+  .rooms-popular-detail {
+    font-size: 9.5px;
+  }
+
+
+  .rooms-popular-detail svg {
+    width: 12px;
+    height: 12px;
+  }
+
+
+  .rooms-popular-star {
+    font-size: 15px;
+  }
+
+
+  .rooms-popular-price {
+    font-size: 23px;
+  }
+
+
+  .rooms-popular-currency {
+    font-size: 25px;
+  }
+
+
+  .rooms-popular-price-meta,
+  .rooms-popular-room-type {
+    font-size: 10px;
+  }
+
+
+  .rooms-popular-arrow {
+    top: 157px;
+
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .rooms-popular-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .rooms-popular-title {
+    font-size: 22px;
+  }
+
+
+  .rooms-popular-description {
+    font-size: 11.5px;
+  }
+
+
+  .rooms-popular-image-wrapper {
+    height: 285px;
+  }
+
+
+  .rooms-popular-room-title {
+    font-size: 17px;
+  }
+
+
+  .rooms-popular-price {
+    font-size: 22px;
+  }
+
+
+  .rooms-popular-currency {
+    font-size: 24px;
+  }
+
+
+  .rooms-popular-arrow {
+    top: 142px;
+
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .rooms-popular-arrow-prev {
+    left: 6px;
+  }
+
+
+  .rooms-popular-arrow-next {
+    right: 6px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .rooms-popular-track-transition {
+    transition: none;
+  }
+
+
+  .rooms-popular-image {
+    transition: none;
+  }
+
+
+  .rooms-popular-arrow,
+  .rooms-popular-room-title {
+    transition: none;
+  }
+}

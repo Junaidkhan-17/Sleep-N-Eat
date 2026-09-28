@@ -1,0 +1,1080 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  position: relative;
+
+  width: 100vw;
+  max-width: 100vw;
+
+  margin-left: calc(50% - 50vw);
+
+  background: #303545;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+  width: 100%;
+
+  background: #303545;
+
+  padding: 50px 0 52px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FULL WIDTH FOOTER CONTAINER
+========================================================= */
+
+.footer-container {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 0 52px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 1.35fr)
+    minmax(180px, 0.75fr)
+    minmax(300px, 1.15fr)
+    minmax(260px, 0.95fr);
+
+  column-gap: 70px;
+
+  box-sizing: border-box;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.footer-logo {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-left: -210px;
+  margin-bottom: 20px;
+
+  color: #e7bc55;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOOTER LOGO MARK
+========================================================= */
+
+.footer-logo-mark-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d7aa3d;
+
+  border-radius: 50%;
+
+  color: #e7bc55;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER LOGO IMAGE
+========================================================= */
+
+.footer-logo-image {
+  display: block;
+
+  width: 170px;
+  height: auto;
+
+  max-width: 100%;
+
+  object-fit: contain;
+
+  object-position: left center;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.footer-logo:hover .footer-logo-image {
+  transform: translateY(-2px);
+
+  opacity: 0.92;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.footer-description {
+  max-width: 330px;
+
+  margin: 0 0 23px;
+
+  color: #f0f1f4;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+
+  font-weight: 400;
+
+  overflow-wrap: break-word;
+}
+
+
+.footer-description strong {
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 15px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.footer-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+
+.footer-social-link {
+  width: 36px;
+  height: 36px;
+
+  min-width: 36px;
+  min-height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #5b6171;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footer-social-link:hover {
+  background: #ff5053;
+
+  transform: translateY(-3px);
+}
+
+
+.footer-social-link:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   FOOTER COLUMN
+========================================================= */
+
+.footer-column {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FOOTER COLUMN TITLE
+========================================================= */
+
+.footer-column-title {
+  margin: 0 0 23px;
+
+  text-align: left;
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.footer-navigation {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+
+.footer-navigation-link {
+  color: #d9dce3;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.footer-navigation-link:hover {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+
+.footer-navigation-link:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.footer-contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 17px;
+
+  min-width: 0;
+}
+
+
+.footer-contact-icon {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #5b6171;
+
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+
+.footer-contact-content {
+  min-width: 0;
+
+  padding-top: 2px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.footer-contact-content a,
+.footer-contact-content address {
+  margin: 0;
+
+  color: #e0e2e7;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  text-decoration: none;
+
+  word-break: break-word;
+
+  overflow-wrap: anywhere;
+}
+
+
+.footer-contact-content a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.footer-instagram-grid {
+  width: 100%;
+
+  max-width: 290px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.footer-instagram-item {
+  position: relative;
+
+  width: 100%;
+
+  height: 80px;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: 3px;
+
+  background: #454b5a;
+
+  min-width: 0;
+}
+
+
+.footer-instagram-item img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+
+.footer-instagram-item:hover img {
+  transform: scale(1.08);
+
+  filter: brightness(0.8);
+}
+
+
+/* =========================================================
+   COPYRIGHT BAR
+========================================================= */
+
+.footer-bottom {
+  width: 100%;
+
+  min-height: 55px;
+
+  background: #202636;
+
+  box-sizing: border-box;
+}
+
+
+.footer-bottom-container {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1500px;
+
+  min-height: 55px;
+
+  margin: 0 auto;
+
+  padding: 0 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-copyright {
+  margin: 0;
+
+  color: #e3e5e9;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  text-align: center;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   WEBDOCK LOGO
+========================================================= */
+
+.webdocklogo {
+  width: 150px;
+  height: 25px;
+
+  max-width: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   SPONSORED BY WEBDOCK
+========================================================= */
+
+.footer-sponsored {
+  position: absolute;
+
+  right: 52px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  white-space: nowrap;
+
+  min-width: 0;
+}
+
+
+.footer-sponsored-label {
+  color: #aeb3bf;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+}
+
+
+.footer-sponsored-brand {
+  color: #ffffff;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  transition: color 0.3s ease;
+}
+
+
+.footer-sponsored:hover .footer-sponsored-brand {
+  color: #e7bc55;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .footer-container {
+    max-width: 1650px;
+
+    padding-left: 65px;
+    padding-right: 65px;
+
+    column-gap: 85px;
+  }
+
+  .footer-bottom-container {
+    max-width: 1650px;
+
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+
+  .footer-sponsored {
+    right: 65px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .footer-container {
+    max-width: 100%;
+
+    padding-left: 35px;
+    padding-right: 35px;
+
+    grid-template-columns:
+      1.25fr
+      0.8fr
+      1.1fr
+      0.95fr;
+
+    column-gap: 35px;
+  }
+
+  .footer-description {
+    max-width: 280px;
+
+    font-size: 13px;
+  }
+
+  .footer-column-title {
+    font-size: 20px;
+  }
+
+  .footer-instagram-grid {
+    max-width: 240px;
+
+    gap: 8px;
+  }
+
+  .footer-bottom-container {
+    max-width: 100%;
+
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .footer-sponsored {
+    right: 35px;
+  }
+
+  .footer-logo-image {
+    width: 155px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    padding: 45px 0;
+  }
+
+  .footer-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    row-gap: 45px;
+
+    column-gap: 55px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / 2;
+  }
+
+  .footer-quick-links {
+    grid-column: 2 / 3;
+  }
+
+  .footer-contact {
+    grid-column: 1 / 2;
+  }
+
+  .footer-instagram {
+    grid-column: 2 / 3;
+  }
+
+  .footer-instagram-grid {
+    max-width: 270px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .footer-main {
+    padding: 45px 0 40px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    row-gap: 35px;
+
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  /*
+   * The desktop logo intentionally uses a negative
+   * horizontal offset. Reset it on mobile so it
+   * cannot leave the viewport.
+   */
+
+  .footer-logo {
+    margin-left: 0;
+  }
+
+  .footer-brand,
+  .footer-quick-links,
+  .footer-contact,
+  .footer-instagram {
+    grid-column: auto;
+  }
+
+  .footer-description {
+    max-width: 430px;
+  }
+
+  .footer-column-title {
+    margin-bottom: 17px;
+
+    font-size: 20px;
+  }
+
+  .footer-navigation {
+    gap: 12px;
+  }
+
+  .footer-instagram-grid {
+    max-width: 285px;
+  }
+
+  .footer-bottom {
+    min-height: 100px;
+  }
+
+  .footer-bottom-container {
+    min-height: 100px;
+
+    padding: 18px 20px;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .footer-copyright {
+    font-size: 11px;
+  }
+
+  .footer-sponsored {
+    position: static;
+
+    transform: none;
+
+    white-space: normal;
+
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  .footer-logo-image {
+    width: 165px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .footer-main {
+    padding: 40px 0 35px;
+  }
+
+  .footer-container {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    row-gap: 32px;
+  }
+
+  .footer-logo {
+    margin-left: 0;
+  }
+
+  .footer-logo-image {
+    width: 150px;
+  }
+
+  .footer-description {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .footer-social-link {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .footer-contact-item {
+    gap: 11px;
+  }
+
+  .footer-contact-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-basis: 34px;
+  }
+
+  .footer-contact-content a,
+  .footer-contact-content address {
+    font-size: 13px;
+  }
+
+  .footer-instagram-grid {
+    max-width: 300px;
+  }
+
+  .footer-bottom-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .webdocklogo {
+    width: 135px;
+    height: auto;
+  }
+
+  .footer-sponsored-label {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .footer-main {
+    padding: 36px 0 32px;
+  }
+
+  .footer-container {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    row-gap: 29px;
+  }
+
+  .footer-column-title {
+    font-size: 19px;
+  }
+
+  .footer-description {
+    font-size: 12.5px;
+  }
+
+  .footer-navigation-link {
+    font-size: 13px;
+  }
+
+  .footer-contact-content a,
+  .footer-contact-content address {
+    font-size: 12.5px;
+  }
+
+  .footer-instagram-grid {
+    max-width: 100%;
+    gap: 7px;
+  }
+
+  .footer-instagram-item {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .footer-bottom-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .footer-copyright {
+    font-size: 10.5px;
+  }
+
+  .footer-sponsored-label {
+    font-size: 12px;
+  }
+
+  .webdocklogo {
+    width: 125px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 359px) {
+
+  .footer-main {
+    padding-top: 32px;
+    padding-bottom: 30px;
+  }
+
+  .footer-container {
+    padding-left: 13px;
+    padding-right: 13px;
+
+    row-gap: 27px;
+  }
+
+  .footer-logo-image {
+    width: 140px;
+  }
+
+  .footer-description {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .footer-column-title {
+    font-size: 18px;
+  }
+
+  .footer-navigation {
+    gap: 10px;
+  }
+
+  .footer-navigation-link {
+    font-size: 12.5px;
+  }
+
+  .footer-contact-item {
+    gap: 9px;
+    margin-bottom: 14px;
+  }
+
+  .footer-contact-icon {
+    width: 32px;
+    height: 32px;
+
+    flex-basis: 32px;
+
+    font-size: 14px;
+  }
+
+  .footer-contact-content a,
+  .footer-contact-content address {
+    font-size: 12px;
+  }
+
+  .footer-socials {
+    gap: 8px;
+  }
+
+  .footer-social-link {
+    width: 33px;
+    height: 33px;
+
+    min-width: 33px;
+    min-height: 33px;
+  }
+
+  .footer-bottom-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .footer-copyright {
+    font-size: 10px;
+  }
+
+  .footer-sponsored-label {
+    font-size: 11px;
+  }
+
+  .webdocklogo {
+    width: 115px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .footer-social-link:active {
+    transform: translateY(-2px);
+    background: #ff5053;
+  }
+
+  .footer-navigation-link:active {
+    color: #ffffff;
+  }
+
+  .footer-contact-content a:active {
+    color: #ffffff;
+  }
+
+  .footer-instagram-item:active img {
+    transform: scale(1.04);
+    filter: brightness(0.85);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer-logo-image,
+  .footer-social-link,
+  .footer-navigation-link,
+  .footer-instagram-item img,
+  .footer-sponsored-brand {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+html,
+body {
+  max-width: 100%;
+
+  overflow-x: clip;
+}

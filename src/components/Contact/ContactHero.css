@@ -1,0 +1,416 @@
+/* =========================================================
+   CONTACT HERO SECTION
+========================================================= */
+
+.contact-hero {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  min-height: 800px;
+
+  margin: 0;
+
+  padding: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background-repeat: no-repeat;
+
+  background-position: center center;
+
+  background-size: cover;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.contact-hero-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 48, 48, 0.181) 0%,
+      rgba(17, 62, 62, 0.158) 50%,
+      rgba(11, 47, 47, 0.134) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.contact-hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 55px 20px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.contact-hero-title {
+
+  margin: 0 0 14px;
+
+  color: #ffffff;
+
+  font-size: 48px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.contact-hero-breadcrumb {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   BREADCRUMB LINKS
+========================================================= */
+
+.contact-hero-breadcrumb-link {
+
+  color: rgba(255, 255, 255, 0.96);
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   BREADCRUMB LINK HOVER
+========================================================= */
+
+.contact-hero-breadcrumb-link:hover {
+
+  color: #ff4d50;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ACTIVE BREADCRUMB
+========================================================= */
+
+.contact-hero-breadcrumb-active {
+
+  color: #ffffff;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   SEPARATOR
+========================================================= */
+
+.contact-hero-breadcrumb-separator {
+
+  color: rgba(255, 255, 255, 0.72);
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY FOCUS
+========================================================= */
+
+.contact-hero-breadcrumb-link:focus-visible {
+
+  outline: 2px solid #ffffff;
+
+  outline-offset: 4px;
+
+  border-radius: 2px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .contact-hero {
+
+    min-height: 390px;
+  }
+
+
+  .contact-hero-content {
+
+    padding-top: 70px;
+
+    padding-bottom: 70px;
+  }
+
+
+  .contact-hero-title {
+
+    font-size: 54px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .contact-hero-breadcrumb {
+
+    font-size: 16px;
+
+    gap: 8px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .contact-hero {
+
+    min-height: 330px;
+  }
+
+
+  .contact-hero-content {
+
+    padding: 50px 20px;
+  }
+
+
+  .contact-hero-title {
+
+    font-size: 44px;
+  }
+
+
+  .contact-hero-breadcrumb {
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .contact-hero {
+
+    min-height: 300px;
+
+    background-position: center center;
+  }
+
+
+  .contact-hero-content {
+
+    padding: 45px 20px;
+  }
+
+
+  .contact-hero-title {
+
+    font-size: 40px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .contact-hero-breadcrumb {
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .contact-hero {
+
+    min-height: 270px;
+
+    background-position: center center;
+  }
+
+
+  .contact-hero-content {
+
+    padding: 40px 16px;
+  }
+
+
+  .contact-hero-title {
+
+    font-size: 34px;
+
+    letter-spacing: -0.4px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .contact-hero-breadcrumb {
+
+    font-size: 13px;
+
+    gap: 6px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .contact-hero {
+
+    min-height: 240px;
+  }
+
+
+  .contact-hero-content {
+
+    padding: 35px 14px;
+  }
+
+
+  .contact-hero-title {
+
+    font-size: 30px;
+
+    margin-bottom: 9px;
+  }
+
+
+  .contact-hero-breadcrumb {
+
+    font-size: 12px;
+
+    gap: 5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .contact-hero {
+
+    min-height: 220px;
+  }
+
+
+  .contact-hero-title {
+
+    font-size: 28px;
+  }
+
+
+  .contact-hero-breadcrumb {
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-hero-breadcrumb-link {
+
+    transition: none;
+  }
+}

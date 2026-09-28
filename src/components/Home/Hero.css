@@ -1,0 +1,722 @@
+/* =========================================================
+   HOTEL HERO SECTION
+========================================================= */
+
+.hotel-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+}
+
+/* =========================================================
+   SWIPER
+========================================================= */
+
+.hotel-hero-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.hotel-hero .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   HERO SLIDE
+========================================================= */
+
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 22, 38, 0.45) 0%,
+      rgba(10, 22, 38, 0.18) 35%,
+      rgba(10, 22, 38, 0.30) 100%
+    );
+
+  z-index: 1;
+}
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  padding: 120px 30px 230px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 100px;
+  text-align: center;
+}
+
+.hero-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(44px, 4.2vw, 68px);
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  text-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   BOOKING AREA
+========================================================= */
+
+.hero-booking-wrapper {
+  position: absolute;
+
+  left: 50%;
+  bottom: 52px;
+
+  transform: translateX(-50%);
+
+  width: min(95%, 960px);
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================================================
+   BOOKING CARD
+========================================================= */
+
+.hero-booking-card {
+  width: 100%;
+  min-height: 92px;
+
+  padding: 7px;
+
+  background: #ffffff;
+
+  border: 4px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 55px;
+
+  display: flex;
+  align-items: stretch;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   BOOKING FIELD
+========================================================= */
+
+.booking-field {
+  flex: 0 0 205px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 7px 24px;
+}
+
+.booking-field label,
+.booking-capacity label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #ff555b;
+
+  font-size: 13px;
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.booking-input {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.booking-input svg {
+  flex-shrink: 0;
+
+  color: #687286;
+
+  font-size: 15px;
+}
+
+.booking-input input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #687286;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+/* Remove native date appearance where possible */
+
+.booking-input input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* =========================================================
+   BOOKING DIVIDER
+========================================================= */
+
+.booking-divider {
+  width: 1px;
+
+  margin: 14px 0;
+
+  background: #d8dce3;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CAPACITY
+========================================================= */
+
+.booking-capacity {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 7px 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.capacity-options {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+
+  color: #687286;
+}
+
+.capacity-item {
+  display: flex;
+  align-items: center;
+
+  min-width: 0;
+}
+
+.capacity-item svg {
+  flex-shrink: 0;
+
+  margin-right: 10px;
+
+  color: #687286;
+
+  font-size: 15px;
+}
+
+.capacity-item select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #687286;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  padding: 0;
+}
+
+.capacity-dot {
+  margin: 0 9px;
+
+  color: #7e8797;
+
+  font-size: 18px;
+}
+
+/* Room arrow */
+
+.capacity-arrow {
+  margin-left: 5px !important;
+  margin-right: 0 !important;
+
+  font-size: 11px !important;
+}
+
+/* =========================================================
+   CHECK AVAILABILITY BUTTON
+========================================================= */
+
+.availability-button {
+  flex: 0 0 180px;
+
+  margin: 0;
+
+  border: none;
+
+  border-radius: 0 48px 48px 0;
+
+  background: #292d3d;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.availability-button:hover {
+  background: #1e2230;
+}
+
+/* =========================================================
+   HERO BOOK NOW
+========================================================= */
+
+.hero-book-now {
+  margin-top: 18px;
+
+  min-width: 118px;
+  height: 38px;
+
+  padding: 0 24px;
+
+  border: none;
+
+  background: #ff555b;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-book-now:hover {
+  background: #e9484f;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(255, 85, 91, 0.35);
+}
+
+/* =========================================================
+   SLIDE TRANSITION
+========================================================= */
+
+.hotel-hero .swiper-slide-active .hero-title {
+  animation: heroTitleAnimation 0.9s ease both;
+}
+
+@keyframes heroTitleAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1600px) {
+
+  .hero-booking-wrapper {
+    width: min(94%, 950px);
+  }
+
+  .booking-field {
+    flex-basis: 200px;
+  }
+
+  .availability-button {
+    flex-basis: 175px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .hotel-hero {
+    min-height: 650px;
+  }
+
+  .hero-title {
+    font-size: clamp(42px, 4vw, 60px);
+  }
+
+  .hero-booking-wrapper {
+    width: min(94%, 900px);
+  }
+
+  .booking-field {
+    flex-basis: 185px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .booking-capacity {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .availability-button {
+    flex-basis: 165px;
+  }
+
+  .capacity-item select {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .hero-booking-wrapper {
+    width: 94%;
+  }
+
+  .booking-field {
+    flex-basis: 175px;
+  }
+
+  .booking-field label,
+  .booking-capacity label {
+    font-size: 12px;
+  }
+
+  .booking-input input,
+  .capacity-item select {
+    font-size: 13px;
+  }
+
+  .availability-button {
+    flex-basis: 155px;
+    font-size: 13px;
+  }
+
+  .capacity-dot {
+    margin: 0 6px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .hotel-hero {
+    height: 850px;
+    min-height: 850px;
+  }
+
+  .hero-content {
+    padding: 150px 25px 330px;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 6vw, 58px);
+  }
+
+  .hero-booking-wrapper {
+    width: 92%;
+
+    bottom: 30px;
+  }
+
+  .hero-booking-card {
+    min-height: auto;
+
+    padding: 14px 18px;
+
+    border-radius: 25px;
+
+    flex-wrap: wrap;
+  }
+
+  .booking-field {
+    flex: 1 1 45%;
+
+    padding: 10px 15px;
+  }
+
+  .booking-divider {
+    display: none;
+  }
+
+  .booking-capacity {
+    flex: 1 1 100%;
+
+    padding: 12px 15px;
+  }
+
+  .availability-button {
+    flex: 1 1 100%;
+
+    min-height: 55px;
+
+    border-radius: 15px;
+  }
+
+  .hero-book-now {
+    margin-top: 15px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .hotel-hero {
+    height: auto;
+    min-height: 850px;
+  }
+
+  .hero-slide {
+    min-height: 850px;
+
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    padding: 190px 20px 420px;
+  }
+
+  .hero-title {
+    font-size: clamp(34px, 9vw, 46px);
+
+    line-height: 1.12;
+
+    letter-spacing: -0.5px;
+  }
+
+  .hero-booking-wrapper {
+    width: calc(100% - 30px);
+
+    bottom: 25px;
+  }
+
+  .hero-booking-card {
+    padding: 12px;
+
+    border-radius: 25px;
+
+    display: block;
+  }
+
+  .booking-field {
+    width: 100%;
+
+    padding: 10px 8px;
+  }
+
+  .booking-input {
+    min-height: 35px;
+  }
+
+  .booking-capacity {
+    width: 100%;
+
+    padding: 10px 8px;
+  }
+
+  .capacity-options {
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .capacity-dot {
+    margin: 0 2px;
+  }
+
+  .capacity-item select {
+    font-size: 13px;
+  }
+
+  .availability-button {
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-top: 10px;
+
+    border-radius: 15px;
+  }
+
+  .hero-book-now {
+    min-width: 110px;
+
+    height: 36px;
+
+    margin-top: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .hotel-hero,
+  .hero-slide {
+    min-height: 820px;
+  }
+
+  .hero-content {
+    padding-top: 175px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-booking-wrapper {
+    width: calc(100% - 20px);
+
+    bottom: 18px;
+  }
+
+  .hero-booking-card {
+    padding: 10px;
+  }
+
+  .booking-field label,
+  .booking-capacity label {
+    font-size: 11px;
+  }
+
+  .booking-input input,
+  .capacity-item select {
+    font-size: 12px;
+  }
+
+  .booking-input {
+    gap: 10px;
+  }
+
+  .capacity-item svg {
+    margin-right: 6px;
+  }
+
+  .hero-book-now {
+    height: 34px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .hero-title {
+    font-size: 31px;
+  }
+
+  .hero-booking-wrapper {
+    width: calc(100% - 16px);
+  }
+
+  .capacity-options {
+    gap: 5px;
+  }
+
+  .capacity-dot {
+    display: none;
+  }
+
+  .capacity-item {
+    margin-right: 6px;
+  }
+}

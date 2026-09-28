@@ -1,0 +1,388 @@
+/* =========================================================
+   ABOUT HERO SECTION
+========================================================= */
+
+.about-hero-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 800px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.about-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 48, 48, 0.181) 0%,
+      rgba(17, 62, 62, 0.158) 50%,
+      rgba(11, 47, 47, 0.134) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.about-hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1400px;
+
+  min-height: 340px;
+
+  margin: 0 auto;
+
+  padding: 40px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.about-hero-content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-hero-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 50px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+
+  text-align: center;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.about-hero-breadcrumb {
+  margin-top: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   BREADCRUMB LINK
+========================================================= */
+
+.about-hero-breadcrumb-link {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+
+.about-hero-breadcrumb-link:hover {
+  color: #ffffff;
+
+  opacity: 0.75;
+}
+
+
+.about-hero-breadcrumb-link:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 4px;
+
+  border-radius: 2px;
+}
+
+
+/* =========================================================
+   BREADCRUMB SEPARATOR
+========================================================= */
+
+.about-hero-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.8);
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   CURRENT PAGE
+========================================================= */
+
+.about-hero-breadcrumb-current {
+  color: rgba(255, 255, 255, 0.95);
+
+  font-weight: 400;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .about-hero-section {
+    min-height: 370px;
+  }
+
+  .about-hero-container {
+    max-width: 1600px;
+
+    min-height: 370px;
+  }
+
+  .about-hero-title {
+    font-size: 54px;
+  }
+
+  .about-hero-breadcrumb {
+    margin-top: 18px;
+
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .about-hero-section {
+    min-height: 330px;
+  }
+
+  .about-hero-container {
+    min-height: 330px;
+
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .about-hero-title {
+    font-size: 46px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .about-hero-section {
+    min-height: 300px;
+  }
+
+  .about-hero-container {
+    min-height: 300px;
+
+    padding: 35px 25px;
+  }
+
+  .about-hero-title {
+    font-size: 42px;
+
+    letter-spacing: -0.7px;
+  }
+
+  .about-hero-breadcrumb {
+    margin-top: 15px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .about-hero-section {
+    min-height: 260px;
+
+    background-position: center center;
+  }
+
+  .about-hero-container {
+    min-height: 260px;
+
+    padding: 30px 20px;
+  }
+
+  .about-hero-title {
+    font-size: 36px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .about-hero-breadcrumb {
+    margin-top: 13px;
+
+    gap: 6px;
+
+    font-size: 14px;
+  }
+
+  .about-hero-overlay {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(25, 55, 60, 0.82) 0%,
+        rgba(35, 72, 77, 0.72) 50%,
+        rgba(24, 54, 59, 0.82) 100%
+      );
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .about-hero-section {
+    min-height: 230px;
+  }
+
+  .about-hero-container {
+    min-height: 230px;
+
+    padding: 25px 16px;
+  }
+
+  .about-hero-title {
+    font-size: 31px;
+
+    line-height: 1.2;
+  }
+
+  .about-hero-breadcrumb {
+    margin-top: 11px;
+
+    font-size: 13px;
+
+    gap: 5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .about-hero-section {
+    min-height: 215px;
+  }
+
+  .about-hero-container {
+    min-height: 215px;
+
+    padding: 22px 14px;
+  }
+
+  .about-hero-title {
+    font-size: 28px;
+  }
+
+  .about-hero-breadcrumb {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-hero-breadcrumb-link {
+    transition: none;
+  }
+}

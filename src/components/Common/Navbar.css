@@ -1,0 +1,2038 @@
+/* ==========================================================
+   SLEEP N EAT HOTEL
+   PREMIUM NAVBAR
+   NAVY BLUE + GOLD LUXURY DESIGN
+========================================================== */
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root {
+  --navy: #07172f;
+  --navy-light: #0b2142;
+  --navy-medium: #102a50;
+  --navy-dark: #040e20;
+
+  --gold: #d4af37;
+  --gold-light: #f1d77a;
+  --gold-dark: #b88f16;
+
+  --white: #ffffff;
+  --muted-white: rgba(255, 255, 255, 0.72);
+
+  --border-gold: rgba(212, 175, 55, 0.45);
+
+  --transition: 0.35s ease;
+}
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================
+   TOP HEADER
+========================================================== */
+
+.top-header {
+  width: 100%;
+  height: 52px;
+
+  background: linear-gradient(135deg, #07172f 0%, #0a1d3b 50%, #06142b 100%);
+
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+
+  position: relative;
+
+  z-index: 9999;
+}
+
+/* ==========================================================
+   TOP HEADER CONTAINER
+========================================================== */
+
+.top-header-container {
+  width: 100%;
+  max-width: 1700px;
+  min-height: 52px;
+
+  margin: 0 auto;
+
+  padding: 0 45px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+/* ==========================================================
+   TOP ITEMS
+========================================================== */
+
+.top-item {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  color: var(--white);
+
+  white-space: nowrap;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 0.1px;
+}
+
+/* ==========================================================
+   TOP ICON
+========================================================== */
+
+.top-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(212, 175, 55, 0.75);
+
+  border-radius: 50%;
+
+  color: var(--gold);
+
+  font-size: 12px;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+/* ==========================================================
+   TOP ICON HOVER
+========================================================== */
+
+.top-item:hover .top-icon {
+  background: var(--gold);
+
+  color: var(--navy);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* ==========================================================
+   TOP TEXT
+========================================================== */
+
+.top-text {
+  color: rgba(255, 255, 255, 0.9);
+
+  line-height: 1.4;
+}
+
+/* ==========================================================
+   LOCATION
+========================================================== */
+
+.location-item {
+  flex: 1;
+
+  justify-content: flex-start;
+}
+
+/* ==========================================================
+   WORKING TIME
+========================================================== */
+
+.working-time {
+  margin-left: auto;
+}
+
+/* ==========================================================
+   SOCIAL LINKS
+========================================================== */
+
+.social-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-left: 10px;
+}
+
+/* ==========================================================
+   SOCIAL BUTTON
+========================================================== */
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(212, 175, 55, 0.55);
+
+  color: var(--gold);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  transition: all var(--transition);
+}
+
+/* ==========================================================
+   SOCIAL HOVER
+========================================================== */
+
+.social-links a:hover {
+  background: var(--gold);
+
+  color: var(--navy);
+
+  border-color: var(--gold);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+}
+
+/* ==========================================================
+   MAIN NAVBAR
+========================================================== */
+
+.hotel-navbar {
+  width: 100%;
+
+  position: fixed;
+
+  top: 68px;
+  left: 0;
+
+  z-index: 9998;
+
+  padding: 0 16px;
+
+  transition:
+    top 0.4s ease,
+    background 0.4s ease,
+    padding 0.4s ease;
+}
+
+/* ==========================================================
+   SCROLLED NAVBAR
+========================================================== */
+
+.hotel-navbar.navbar-scrolled {
+  top: 0;
+
+  padding-top: 22px;
+  padding-bottom: 8px;
+}
+
+/* ==========================================================
+   NAVBAR CONTAINER
+========================================================== */
+
+.navbar-container {
+  width: 100%;
+  max-width: 1700px;
+  height: 67px;
+  min-height: 67px;
+
+  margin: 0 auto;
+  margin-top: -20px;
+  padding: 0 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: linear-gradient(135deg, #07172f 0%, #0b2142 48%, #07172f 100%);
+
+  border: 1px solid rgba(212, 175, 55, 0.55);
+
+  border-radius: 0 0 28px 28px;
+
+  box-shadow: 0 20px 45px rgba(4, 14, 32, 0.28);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* ==========================================================
+   DECORATIVE GOLD LINE
+========================================================== */
+
+.navbar-container::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 29%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold),
+    var(--gold-light)
+  );
+}
+
+/* ==========================================================
+   DECORATIVE GOLD DOTS
+========================================================== */
+
+.navbar-container::after {
+  content: "";
+
+  position: absolute;
+
+  right: 15px;
+  bottom: 0;
+
+  width: 95px;
+  height: 75px;
+
+  background-image: radial-gradient(var(--gold) 1.2px, transparent 1.2px);
+
+  background-size: 14px 14px;
+
+  opacity: 0.45;
+
+  pointer-events: none;
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.navbar-logo {
+  width: 27%;
+  height: 100%;
+
+  min-height: 92px;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 2;
+
+  padding-right: 35px;
+}
+
+/* ==========================================================
+   LOGO GOLD DIVIDER
+========================================================== */
+
+.navbar-logo::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: 18px;
+  bottom: 18px;
+
+  width: 1px;
+
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+
+/* ==========================================================
+   LOGO IMAGE
+========================================================== */
+
+.navbar-logo a {
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  width: auto;
+
+  max-width: 140px;
+
+  height: 38px;
+
+  object-fit: contain;
+
+  display: block;
+
+  transition:
+    transform var(--transition),
+    height var(--transition);
+}
+
+/* ==========================================================
+   LOGO HOVER
+========================================================== */
+
+.navbar-logo a:hover img {
+  transform: scale(1.03);
+}
+
+/* ==========================================================
+   DESKTOP NAVIGATION
+========================================================== */
+
+.navbar-menu {
+  width: 38%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 34px;
+
+  padding-left: 30px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+/* ==========================================================
+   NAV LINKS
+========================================================== */
+
+.navbar-menu a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  padding: 34px 0;
+
+  transition: color var(--transition);
+}
+
+/* ==========================================================
+   NAV LINK HOVER
+========================================================== */
+
+.navbar-menu a:hover {
+  color: var(--gold);
+}
+
+/* ==========================================================
+   NAV LINK ACTIVE
+========================================================== */
+
+.navbar-menu a.active {
+  color: var(--gold);
+}
+
+/* ==========================================================
+   NAV UNDERLINE
+========================================================== */
+
+.navbar-menu a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 23px;
+
+  width: 0;
+
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+
+  border-radius: 20px;
+
+  transition: width var(--transition);
+}
+
+/* ==========================================================
+   HOVER / ACTIVE UNDERLINE
+========================================================== */
+
+.navbar-menu a:hover::after,
+.navbar-menu a.active::after {
+  width: 100%;
+}
+
+/* ==========================================================
+   RIGHT ACTIONS
+========================================================== */
+
+.navbar-actions {
+  width: 35%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+/* ==========================================================
+   SEARCH BOX
+========================================================== */
+
+.navbar-search {
+  width: 245px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 17px;
+
+  border-radius: 50px;
+
+  border: 1px solid rgba(212, 175, 55, 0.48);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  transition: all var(--transition);
+}
+
+/* ==========================================================
+   SEARCH HOVER / FOCUS
+========================================================== */
+
+.navbar-search:hover,
+.navbar-search:focus-within {
+  border-color: var(--gold);
+
+  background: rgba(212, 175, 55, 0.06);
+
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.08);
+}
+
+/* ==========================================================
+   SEARCH ICON
+========================================================== */
+
+.navbar-search svg {
+  flex-shrink: 0;
+
+  color: var(--gold);
+
+  font-size: 16px;
+
+  transition: transform var(--transition);
+}
+
+.navbar-search:hover svg {
+  transform: scale(1.08);
+}
+
+/* ==========================================================
+   SEARCH INPUT
+========================================================== */
+
+.navbar-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: var(--white);
+
+  font-size: 13px;
+
+  font-weight: 400;
+}
+
+.navbar-search input::placeholder {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* ==========================================================
+   BOOK NOW BUTTON
+========================================================== */
+
+.book-now-btn {
+  min-width: 178px;
+
+  height: 38px;
+
+  padding: 0 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #e9c65b, #d4af37);
+
+  color: var(--navy-dark);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.2);
+
+  transition: all var(--transition);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* ==========================================================
+   BOOK BUTTON SHINE
+========================================================== */
+
+.book-now-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+/* ==========================================================
+   BOOK BUTTON HOVER
+========================================================== */
+
+.book-now-btn:hover {
+  background: linear-gradient(135deg, #f5d978, #d4af37);
+
+  color: var(--navy-dark);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.32);
+}
+
+.book-now-btn:hover::before {
+  left: 140%;
+}
+
+/* ==========================================================
+   BOOK ICON
+========================================================== */
+
+.book-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+
+  color: var(--gold-light);
+
+  font-size: 12px;
+
+  transition: transform var(--transition);
+}
+
+.book-now-btn:hover .book-icon {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* ==========================================================
+   MOBILE TOGGLE
+========================================================== */
+
+.mobile-toggle {
+  display: none;
+
+  width: 45px;
+  height: 45px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(212, 175, 55, 0.6);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--gold);
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  transition: all var(--transition);
+
+  position: relative;
+
+  z-index: 10;
+}
+
+.mobile-toggle:hover {
+  background: var(--gold);
+
+  color: var(--navy);
+
+  transform: rotate(5deg);
+}
+
+/* ==========================================================
+   MOBILE OVERLAY
+========================================================== */
+
+.mobile-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(2, 8, 18, 0.78);
+
+  backdrop-filter: blur(5px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+
+  z-index: 99999;
+}
+
+/* ==========================================================
+   SHOW MOBILE MENU
+========================================================== */
+
+.mobile-overlay.show-mobile-menu {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+/* ==========================================================
+   MOBILE SIDEBAR
+========================================================== */
+
+.mobile-sidebar {
+  width: 350px;
+
+  max-width: 92%;
+
+  height: 100%;
+
+  margin-left: auto;
+
+  padding: 30px 28px;
+
+  background: linear-gradient(145deg, #07172f, #0b2142 55%, #06142b);
+
+  border-left: 1px solid rgba(212, 175, 55, 0.45);
+
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.3);
+
+  transform: translateX(100%);
+
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+
+  overflow-y: auto;
+
+  position: relative;
+}
+
+/* ==========================================================
+   SIDEBAR DECORATION
+========================================================== */
+
+.mobile-sidebar::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 130px;
+  height: 130px;
+
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.14),
+    transparent 65%
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================================
+   SHOW SIDEBAR
+========================================================== */
+
+.show-mobile-menu .mobile-sidebar {
+  transform: translateX(0);
+}
+
+/* ==========================================================
+   MOBILE HEADER
+========================================================== */
+
+.mobile-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* ==========================================================
+   MOBILE LOGO
+========================================================== */
+
+.mobile-header img {
+  width: auto;
+
+  height: 55px;
+
+  max-width: 180px;
+
+  object-fit: contain;
+}
+
+/* ==========================================================
+   MOBILE CLOSE BUTTON
+========================================================== */
+
+.mobile-header button {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(212, 175, 55, 0.55);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: var(--gold);
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition: all var(--transition);
+}
+
+.mobile-header button:hover {
+  background: var(--gold);
+
+  color: var(--navy);
+
+  transform: rotate(90deg);
+}
+
+/* ==========================================================
+   MOBILE GOLD LINE
+========================================================== */
+
+.mobile-gold-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 28px 0;
+
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+.mobile-nav {
+  display: flex;
+
+  flex-direction: column;
+}
+
+/* ==========================================================
+   MOBILE NAV LINK
+========================================================== */
+
+.mobile-nav a {
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition: all var(--transition);
+}
+
+/* ==========================================================
+   MOBILE NAV HOVER
+========================================================== */
+
+.mobile-nav a:hover {
+  color: var(--gold);
+
+  padding-left: 8px;
+
+  border-bottom-color: rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================
+   MOBILE ACTIVE
+========================================================== */
+
+.mobile-nav a.active {
+  color: var(--gold);
+
+  padding-left: 8px;
+
+  border-bottom-color: rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================
+   MOBILE ARROW
+========================================================== */
+
+.mobile-arrow {
+  color: var(--gold);
+
+  opacity: 0;
+
+  transform: translateX(-8px);
+
+  transition: all var(--transition);
+}
+
+.mobile-nav a:hover .mobile-arrow,
+.mobile-nav a.active .mobile-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+/* ==========================================================
+   MOBILE BOOK BUTTON
+========================================================== */
+
+.mobile-book-btn {
+  width: 100%;
+
+  height: 55px;
+
+  margin-top: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  border: 1px solid var(--gold);
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #e9c65b, #d4af37);
+
+  color: var(--navy-dark);
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+
+  cursor: pointer;
+
+  transition: all var(--transition);
+}
+
+.mobile-book-btn:hover {
+  background: linear-gradient(135deg, #f5d978, #d4af37);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+}
+
+/* ==========================================================
+   MOBILE CONTACT
+========================================================== */
+
+.mobile-contact {
+  margin-top: 30px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+/* ==========================================================
+   MOBILE CONTACT ITEM
+========================================================== */
+
+.mobile-contact-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 13px;
+}
+
+.mobile-contact-item svg {
+  color: var(--gold);
+
+  flex-shrink: 0;
+}
+
+/* ==========================================================
+   MOBILE SOCIAL LINKS
+========================================================== */
+
+.mobile-social-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.mobile-social-links a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(212, 175, 55, 0.5);
+
+  color: var(--gold);
+
+  text-decoration: none;
+
+  transition: all var(--transition);
+}
+
+.mobile-social-links a:hover {
+  background: var(--gold);
+
+  color: var(--navy);
+
+  transform: translateY(-3px);
+}
+
+/* ==========================================================
+   LARGE DESKTOP
+========================================================== */
+
+@media (max-width: 1600px) {
+  .top-header-container {
+    padding: 0 35px;
+
+    gap: 20px;
+  }
+
+  .navbar-container {
+    max-width: 1500px;
+
+    padding: 0 25px;
+  }
+
+  .navbar-menu {
+    gap: 27px;
+  }
+
+  .navbar-search {
+    width: 210px;
+  }
+
+  .book-now-btn {
+    min-width: 155px;
+  }
+}
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width: 1400px) {
+  .top-header-container {
+    padding: 0 25px;
+
+    gap: 15px;
+  }
+
+  .top-item {
+    font-size: 12px;
+  }
+
+  .top-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .navbar-logo {
+    width: 25%;
+  }
+
+  .navbar-logo img {
+    max-width: 170px;
+
+    height: 53px;
+  }
+
+  .navbar-menu {
+    width: 40%;
+
+    gap: 21px;
+
+    padding-left: 20px;
+  }
+
+  .navbar-menu a {
+    font-size: 13px;
+  }
+
+  .navbar-actions {
+    width: 35%;
+
+    gap: 12px;
+  }
+
+  .navbar-search {
+    width: 185px;
+
+    height: 45px;
+  }
+
+  .book-now-btn {
+    min-width: 140px;
+
+    height: 45px;
+
+    font-size: 12px;
+  }
+
+  .book-icon {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* ==========================================================
+   SMALL LAPTOP
+========================================================== */
+
+@media (max-width: 1200px) {
+  .top-header {
+    height: 62px;
+  }
+
+  .top-header-container {
+    min-height: 62px;
+
+    padding: 0 20px;
+
+    gap: 10px;
+  }
+
+  .top-item {
+    font-size: 11px;
+
+    gap: 7px;
+  }
+
+  .top-icon {
+    width: 26px;
+    height: 26px;
+
+    font-size: 10px;
+  }
+
+  .social-links {
+    gap: 6px;
+  }
+
+  .social-links a {
+    width: 31px;
+    height: 31px;
+
+    font-size: 11px;
+  }
+
+  .hotel-navbar {
+    top: 62px;
+  }
+
+  .navbar-container {
+    min-height: 84px;
+
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    width: 23%;
+    min-height: 84px;
+  }
+
+  .navbar-logo img {
+    height: 48px;
+
+    max-width: 155px;
+  }
+
+  .navbar-menu {
+    width: 43%;
+
+    gap: 17px;
+
+    padding-left: 15px;
+  }
+
+  .navbar-menu a {
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .navbar-menu a::after {
+    bottom: 20px;
+  }
+
+  .navbar-actions {
+    width: 34%;
+  }
+
+  .navbar-search {
+    width: 155px;
+
+    height: 42px;
+  }
+
+  .book-now-btn {
+    min-width: 125px;
+
+    height: 42px;
+
+    gap: 6px;
+
+    padding: 0 7px;
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 991px) {
+  .top-header {
+    display: none;
+  }
+
+  .hotel-navbar {
+    top: 0;
+
+    padding: 0;
+  }
+
+  .hotel-navbar.navbar-scrolled {
+    padding: 0;
+  }
+
+  .navbar-container {
+    min-height: 82px;
+
+    padding: 0 25px;
+
+    border-radius: 0 0 22px 22px;
+  }
+
+  .navbar-container::before {
+    width: 45%;
+  }
+
+  .navbar-container::after {
+    width: 75px;
+    height: 60px;
+  }
+
+  .navbar-logo {
+    width: auto;
+
+    min-height: 82px;
+
+    padding-right: 0;
+  }
+
+  .navbar-logo::after {
+    display: none;
+  }
+
+  .navbar-logo img {
+    height: 52px;
+
+    max-width: 175px;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-actions {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+
+    margin-left: auto;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    min-height: 76px;
+
+    padding: 0 20px;
+
+    border-radius: 0 0 18px 18px;
+  }
+
+  .navbar-logo {
+    min-height: 76px;
+  }
+
+  .navbar-logo img {
+    height: 47px;
+
+    max-width: 160px;
+  }
+
+  .mobile-toggle {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .mobile-sidebar {
+    width: 330px;
+
+    padding: 25px 22px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 576px) {
+  .navbar-container {
+    min-height: 70px;
+
+    padding: 0 16px;
+  }
+
+  .navbar-logo {
+    min-height: 70px;
+  }
+
+  .navbar-logo img {
+    height: 42px;
+
+    max-width: 145px;
+  }
+
+  .mobile-toggle {
+    width: 40px;
+    height: 40px;
+
+    font-size: 16px;
+  }
+
+  .mobile-sidebar {
+    width: 310px;
+
+    max-width: 92%;
+
+    padding: 24px 20px;
+  }
+
+  .mobile-header img {
+    height: 47px;
+
+    max-width: 155px;
+  }
+
+  .mobile-nav a {
+    min-height: 55px;
+
+    font-size: 15px;
+  }
+
+  .mobile-book-btn {
+    height: 52px;
+
+    margin-top: 26px;
+  }
+}
+
+/* ==========================================================
+   EXTRA SMALL MOBILE
+========================================================== */
+
+@media (max-width: 420px) {
+  .navbar-container {
+    min-height: 66px;
+
+    padding: 0 14px;
+  }
+
+  .navbar-logo {
+    min-height: 66px;
+  }
+
+  .navbar-logo img {
+    height: 39px;
+
+    max-width: 135px;
+  }
+
+  .mobile-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-sidebar {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 22px 18px;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================
+   TEXT SELECTION
+========================================================== */
+
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* ==========================================================
+   FINAL MOBILE RESPONSIVE REFINEMENTS
+   Desktop layout/design remains unchanged.
+========================================================== */
+
+/* ==========================================================
+   TABLET / MOBILE NAVBAR POSITIONING
+========================================================== */
+
+@media (max-width: 991px) {
+  /*
+    The desktop navbar intentionally uses a -20px top overlap
+    against the top contact bar. Since the contact bar is hidden
+    on tablet/mobile, remove that overlap so the navbar sits
+    correctly at the top of the viewport.
+  */
+  .navbar-container {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .hotel-navbar {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-container {
+    height: 82px;
+    min-height: 82px;
+    padding: 0 24px;
+  }
+
+  .navbar-logo img {
+    height: 50px;
+    max-width: 170px;
+  }
+
+  .mobile-toggle {
+    min-width: 45px;
+    min-height: 45px;
+  }
+
+  .mobile-sidebar {
+    width: min(390px, 88vw);
+    padding: 30px 28px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 767px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .hotel-navbar {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+  }
+
+  .hotel-navbar.navbar-scrolled {
+    top: 0;
+    padding: 0;
+  }
+
+  .navbar-container {
+    width: 100%;
+    height: 76px;
+    min-height: 76px;
+    margin: 0;
+    padding: 0 20px;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .navbar-container::before {
+    width: 42%;
+    max-width: 210px;
+  }
+
+  .navbar-container::after {
+    right: 8px;
+    width: 70px;
+    height: 55px;
+    background-size: 12px 12px;
+  }
+
+  .navbar-logo {
+    width: auto;
+    height: 76px;
+    min-height: 76px;
+    max-width: calc(100% - 64px);
+    padding: 0;
+  }
+
+  .navbar-logo img {
+    width: auto;
+    height: 46px;
+    max-width: min(160px, 58vw);
+  }
+
+  .mobile-toggle {
+    flex: 0 0 auto;
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    min-height: 43px;
+    margin-left: auto;
+  }
+
+  .mobile-sidebar {
+    width: min(340px, 92vw);
+    max-width: 92vw;
+    padding: 25px 22px;
+  }
+
+  .mobile-header {
+    min-height: 47px;
+  }
+
+  .mobile-header img {
+    width: auto;
+    height: 48px;
+    max-width: min(165px, 58vw);
+  }
+
+  .mobile-header button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mobile-gold-line {
+    margin: 25px 0;
+  }
+
+  .mobile-nav a {
+    min-height: 56px;
+    padding: 0 2px;
+    font-size: 15px;
+  }
+
+  .mobile-book-btn {
+    min-height: 54px;
+    height: 54px;
+    margin-top: 27px;
+  }
+
+  .mobile-contact {
+    margin-top: 28px;
+    padding-top: 22px;
+    gap: 15px;
+  }
+
+  .mobile-contact-item {
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-social-links {
+    margin-top: 24px;
+    padding-bottom: 8px;
+  }
+
+  .mobile-social-links a {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width: 575px) {
+  .navbar-container {
+    height: 70px;
+    min-height: 70px;
+    padding: 0 16px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .navbar-container::before {
+    width: 46%;
+    height: 2px;
+  }
+
+  .navbar-container::after {
+    right: 6px;
+    width: 62px;
+    height: 48px;
+    background-size: 11px 11px;
+  }
+
+  .navbar-logo {
+    height: 70px;
+    min-height: 70px;
+    max-width: calc(100% - 58px);
+  }
+
+  .navbar-logo img {
+    height: 41px;
+    max-width: min(145px, 57vw);
+  }
+
+  .mobile-toggle {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 16px;
+  }
+
+  .mobile-sidebar {
+    width: min(320px, 94vw);
+    max-width: 94vw;
+    padding: 23px 19px;
+  }
+
+  .mobile-header img {
+    height: 45px;
+    max-width: min(150px, 57vw);
+  }
+
+  .mobile-header button {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .mobile-gold-line {
+    margin: 23px 0;
+  }
+
+  .mobile-nav a {
+    min-height: 54px;
+    font-size: 14px;
+    letter-spacing: 0.55px;
+  }
+
+  .mobile-book-btn {
+    height: 52px;
+    min-height: 52px;
+    margin-top: 25px;
+    font-size: 13px;
+  }
+
+  .mobile-contact-item {
+    font-size: 12.5px;
+    gap: 10px;
+  }
+
+  .mobile-social-links {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .mobile-social-links a {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+/* ==========================================================
+   VERY SMALL DEVICES
+========================================================== */
+
+@media (max-width: 374px) {
+  .navbar-container {
+    height: 64px;
+    min-height: 64px;
+    padding: 0 12px;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .navbar-container::after {
+    right: 4px;
+    width: 52px;
+    height: 42px;
+    background-size: 10px 10px;
+  }
+
+  .navbar-logo {
+    height: 64px;
+    min-height: 64px;
+    max-width: calc(100% - 54px);
+  }
+
+  .navbar-logo img {
+    height: 37px;
+    max-width: 130px;
+  }
+
+  .mobile-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    font-size: 15px;
+  }
+
+  .mobile-sidebar {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+
+  .mobile-header img {
+    height: 42px;
+    max-width: 140px;
+  }
+
+  .mobile-header button {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .mobile-gold-line {
+    margin: 20px 0;
+  }
+
+  .mobile-nav a {
+    min-height: 52px;
+    font-size: 13.5px;
+  }
+
+  .mobile-book-btn {
+    height: 50px;
+    min-height: 50px;
+    margin-top: 23px;
+    font-size: 12.5px;
+  }
+
+  .mobile-contact {
+    margin-top: 24px;
+    padding-top: 20px;
+    gap: 13px;
+  }
+
+  .mobile-contact-item {
+    font-size: 12px;
+  }
+
+  .mobile-social-links {
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .mobile-social-links a {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+}
+
+/* ==========================================================
+   TOUCH DEVICES
+   Preserve desktop hover effects while providing clean
+   touch feedback on mobile/tablet devices.
+========================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .top-item:hover .top-icon,
+  .social-links a:hover,
+  .navbar-logo a:hover img,
+  .navbar-menu a:hover,
+  .navbar-menu a:hover::after,
+  .navbar-search:hover,
+  .navbar-search:hover svg,
+  .book-now-btn:hover,
+  .book-now-btn:hover::before,
+  .book-now-btn:hover .book-icon,
+  .mobile-toggle:hover,
+  .mobile-header button:hover,
+  .mobile-nav a:hover,
+  .mobile-nav a:hover .mobile-arrow,
+  .mobile-social-links a:hover {
+    transform: none;
+  }
+
+  .mobile-nav a:active {
+    color: var(--gold);
+    padding-left: 8px;
+    border-bottom-color: rgba(212, 175, 55, 0.4);
+  }
+
+  .mobile-book-btn:active {
+    transform: scale(0.985);
+  }
+
+  .mobile-header button:active {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .mobile-social-links a:active {
+    background: var(--gold);
+    color: var(--navy);
+  }
+}
+
+/* ==========================================================
+   KEYBOARD FOCUS
+========================================================== */
+
+.navbar-menu a:focus-visible,
+.book-now-btn:focus-visible,
+.mobile-toggle:focus-visible,
+.mobile-header button:focus-visible,
+.mobile-nav a:focus-visible,
+.mobile-book-btn:focus-visible,
+.social-links a:focus-visible,
+.mobile-social-links a:focus-visible,
+.navbar-search input:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   SAFE LONG-TEXT HANDLING
+========================================================== */
+
+.top-text,
+.mobile-contact-item span,
+.navbar-search input {
+  overflow-wrap: anywhere;
+}

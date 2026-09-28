@@ -1,0 +1,364 @@
+/* =========================================================
+   HOTEL FEATURES SECTION
+========================================================= */
+
+.hotel-features-section {
+  width: 100%;
+  padding: 62px 0 68px;
+  background: #f7f9f9;
+  overflow: hidden;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.hotel-features-container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   FEATURES ROW
+========================================================= */
+
+.hotel-features-row {
+  align-items: flex-start;
+  margin: 0 -5px;
+}
+
+/* =========================================================
+   FEATURE CARD
+========================================================= */
+
+.hotel-feature-card {
+  width: 100%;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.hotel-feature-icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #4b4f58;
+  font-size: 27px;
+
+  flex-shrink: 0;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.03);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.hotel-feature-card:hover .hotel-feature-icon {
+  transform: translateY(-4px);
+  border-color: #dddddd;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================================================
+   FEATURE CONTENT
+========================================================= */
+
+.hotel-feature-content {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   FEATURE TITLE
+========================================================= */
+
+.hotel-feature-title {
+  margin: 0 0 9px;
+
+  color: #202631;
+
+  font-size: 21px;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+
+  overflow-wrap: break-word;
+}
+
+/* =========================================================
+   FEATURE DESCRIPTION
+========================================================= */
+
+.hotel-feature-description {
+  width: 100%;
+  max-width: 300px;
+
+  margin: 0 auto;
+
+  color: #646464;
+
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 500;
+
+  overflow-wrap: break-word;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .hotel-features-container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .hotel-feature-description {
+    max-width: 280px;
+  }
+}
+
+/* =========================================================
+   TABLET / LAPTOP
+========================================================= */
+
+@media (max-width: 991px) {
+  .hotel-features-section {
+    padding: 55px 0 60px;
+  }
+
+  .hotel-features-container {
+    max-width: 900px;
+  }
+
+  .hotel-features-row {
+    row-gap: 45px;
+  }
+
+  .hotel-feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 18px;
+    font-size: 22px;
+  }
+
+  .hotel-feature-title {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .hotel-feature-description {
+    max-width: 250px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   MOBILE / SMALL TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+  .hotel-features-section {
+    padding: 50px 0 55px;
+  }
+
+  .hotel-features-container {
+    width: 100%;
+    padding: 0 18px;
+  }
+
+  .hotel-features-row {
+    row-gap: 42px;
+    margin: 0 -8px;
+  }
+
+  .hotel-feature-card {
+    padding: 0 8px;
+  }
+
+  .hotel-feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 17px;
+    font-size: 20px;
+  }
+
+  .hotel-feature-title {
+    margin-bottom: 9px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .hotel-feature-description {
+    max-width: 280px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+  .hotel-features-section {
+    padding: 45px 0 50px;
+  }
+
+  .hotel-features-container {
+    padding: 0 20px;
+  }
+
+  .hotel-features-row {
+    row-gap: 38px;
+    margin: 0;
+  }
+
+  .hotel-feature-card {
+    padding: 0;
+  }
+
+  .hotel-feature-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .hotel-feature-title {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .hotel-feature-description {
+    max-width: 340px;
+    font-size: 12px;
+    line-height: 1.75;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .hotel-features-section {
+    padding: 40px 0 45px;
+  }
+
+  .hotel-features-container {
+    padding: 0 16px;
+  }
+
+  .hotel-features-row {
+    row-gap: 34px;
+  }
+
+  .hotel-feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    font-size: 19px;
+  }
+
+  .hotel-feature-title {
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .hotel-feature-description {
+    max-width: 300px;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 359px) {
+  .hotel-features-container {
+    padding: 0 14px;
+  }
+
+  .hotel-features-row {
+    row-gap: 32px;
+  }
+
+  .hotel-feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+
+  .hotel-feature-title {
+    font-size: 13px;
+  }
+
+  .hotel-feature-description {
+    max-width: 280px;
+    font-size: 10.5px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .hotel-feature-card:hover .hotel-feature-icon {
+    transform: none;
+    border-color: #e8e8e8;
+
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hotel-feature-icon {
+    transition: none;
+  }
+
+  .hotel-feature-card:hover .hotel-feature-icon {
+    transform: none;
+  }
+}

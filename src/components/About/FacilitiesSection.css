@@ -1,0 +1,654 @@
+/* =========================================================
+   FACILITIES SECTION
+========================================================= */
+
+.facilities-section {
+  width: 100%;
+  padding: 70px 0;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.facilities-container {
+  width: calc(100% - 110px);
+  max-width: 1400px;
+
+  min-height: 390px;
+
+  margin: 0 auto;
+
+  padding: 60px 40px;
+
+  display: grid;
+  grid-template-columns: 38% 62%;
+
+  align-items: center;
+
+  background: #f3f8fc;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.facilities-content {
+  width: 100%;
+
+  max-width: 390px;
+
+  padding-left: 0;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.facilities-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #ff4d50;
+
+  font-size: 21px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.facilities-title {
+  margin: 0 0 18px;
+
+  color: #343747;
+
+  font-size: 31px;
+
+  line-height: 1.34;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.facilities-description {
+  max-width: 340px;
+
+  margin: 0 0 22px;
+
+  color: #3c3f43;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   DISCOVER MORE BUTTON
+========================================================= */
+
+.facilities-discover-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 132px;
+  min-height: 48px;
+
+  padding: 10px 22px;
+
+  border: 1px solid #ff4d50;
+
+  border-radius: 4px;
+
+  background: #ff4d50;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 17px;
+
+  line-height: 1;
+
+  font-weight: 600;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.facilities-discover-button:hover {
+  background: #e94447;
+
+  border-color: #e94447;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(255, 77, 80, 0.2);
+}
+
+
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
+
+.facilities-discover-button:focus-visible {
+  outline: 2px solid #ff4d50;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   FACILITIES GRID
+========================================================= */
+
+.facilities-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-rows: repeat(2, 112px);
+
+  border-top: 1px solid #dfe6ec;
+
+  border-left: 1px solid #dfe6ec;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FACILITY CARD
+========================================================= */
+
+.facility-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 0;
+
+  padding: 15px;
+
+  border-right: 1px solid #dfe6ec;
+
+  border-bottom: 1px solid #dfe6ec;
+
+  background: transparent;
+
+  color: #15161b;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================================
+   FACILITY CARD HOVER
+========================================================= */
+
+.facility-card:hover {
+  background: #ffffff;
+
+  color: #ff4d50;
+
+  transform: translateY(-2px);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   FACILITY ICON WRAPPER
+========================================================= */
+
+.facility-icon-wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  color: #6f809f;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   FACILITY ICON
+========================================================= */
+
+.facility-icon {
+  width: 34px;
+  height: 34px;
+
+  display: block;
+
+  color: inherit;
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.facility-card:hover .facility-icon-wrapper {
+  color: #ff4d50;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FACILITY NAME
+========================================================= */
+
+.facility-name {
+  margin: 0;
+
+  color: #343747;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  transition: color 0.3s ease;
+}
+
+
+/* =========================================================
+   NAME HOVER
+========================================================= */
+
+.facility-card:hover .facility-name {
+  color: #ff4d50;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .facilities-section {
+    padding: 85px 0;
+  }
+
+  .facilities-container {
+    width: calc(100% - 140px);
+
+    max-width: 1550px;
+
+    min-height: 430px;
+
+    padding: 65px 55px;
+
+    grid-template-columns: 38% 62%;
+  }
+
+  .facilities-title {
+    font-size: 36px;
+  }
+
+  .facilities-description {
+    max-width: 390px;
+
+    font-size: 12px;
+  }
+
+  .facilities-grid {
+    grid-template-rows: repeat(2, 125px);
+  }
+
+  .facility-card {
+    gap: 10px;
+  }
+
+  .facility-icon-wrapper {
+    width: 46px;
+    height: 46px;
+  }
+
+  .facility-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .facility-name {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .facilities-container {
+    width: calc(100% - 80px);
+
+    padding: 50px 35px;
+
+    grid-template-columns: 40% 60%;
+  }
+
+  .facilities-title {
+    font-size: 29px;
+  }
+
+  .facilities-description {
+    max-width: 310px;
+
+    font-size: 11px;
+  }
+
+  .facilities-grid {
+    grid-template-rows: repeat(2, 105px);
+  }
+
+  .facility-name {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .facilities-section {
+    padding: 60px 0;
+  }
+
+  .facilities-container {
+    width: calc(100% - 50px);
+
+    min-height: auto;
+
+    padding: 45px 30px;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 40px;
+  }
+
+  .facilities-content {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .facilities-description {
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .facilities-discover-button {
+    margin: 0 auto;
+  }
+
+  .facilities-grid {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    grid-template-rows: repeat(2, 110px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .facilities-section {
+    padding: 50px 0;
+  }
+
+  .facilities-container {
+    width: calc(100% - 30px);
+
+    padding: 38px 20px;
+
+    border-radius: 12px;
+
+    row-gap: 32px;
+  }
+
+  .facilities-label {
+    font-size: 10px;
+  }
+
+  .facilities-title {
+    font-size: 27px;
+
+    line-height: 1.35;
+  }
+
+  .facilities-description {
+    max-width: 450px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-rows: repeat(3, 105px);
+  }
+
+  .facility-card {
+    padding: 12px 8px;
+
+    gap: 6px;
+  }
+
+  .facility-icon-wrapper {
+    width: 38px;
+    height: 38px;
+  }
+
+  .facility-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .facility-name {
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .facilities-section {
+    padding: 42px 0;
+  }
+
+  .facilities-container {
+    width: calc(100% - 20px);
+
+    padding: 32px 15px;
+
+    row-gap: 28px;
+  }
+
+  .facilities-title {
+    font-size: 24px;
+
+    line-height: 1.35;
+  }
+
+  .facilities-description {
+    font-size: 10.5px;
+  }
+
+  .facilities-discover-button {
+    min-width: 125px;
+
+    min-height: 37px;
+
+    padding: 9px 18px;
+
+    font-size: 10px;
+  }
+
+  .facilities-grid {
+    grid-template-rows: repeat(3, 95px);
+  }
+
+  .facility-card {
+    padding: 10px 5px;
+  }
+
+  .facility-icon-wrapper {
+    width: 34px;
+    height: 34px;
+  }
+
+  .facility-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .facility-name {
+    font-size: 9.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .facilities-container {
+    width: calc(100% - 16px);
+
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .facilities-title {
+    font-size: 22px;
+  }
+
+  .facilities-description {
+    font-size: 10px;
+  }
+
+  .facilities-grid {
+    grid-template-rows: repeat(3, 88px);
+  }
+
+  .facility-name {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .facilities-discover-button,
+  .facility-card,
+  .facility-icon-wrapper,
+  .facility-name {
+    transition: none;
+  }
+}

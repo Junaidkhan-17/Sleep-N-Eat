@@ -1,0 +1,870 @@
+/* =========================================================
+   ABOUT INTRO SECTION
+========================================================= */
+
+.about-intro-section {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  padding: 58px 0 72px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FULL WIDTH CONTAINER
+========================================================= */
+
+.about-intro-container {
+  position: relative;
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  padding: 0 50px;
+
+  display: grid;
+
+  /*
+    Left = gallery
+    Right = content
+  */
+  grid-template-columns: 42% 58%;
+
+  align-items: start;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT GALLERY AREA
+========================================================= */
+
+.about-intro-gallery {
+  position: relative;
+
+  width: 100%;
+
+  /*
+    Extra height is intentional because
+    thumbnails extend underneath the right content.
+  */
+  min-height: 390px;
+
+  padding: 20px 0 0 20px;
+
+  box-sizing: border-box;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   RED DECORATIVE BLOCK
+========================================================= */
+
+.about-intro-gallery-decoration {
+  position: absolute;
+
+  margin-top: -10px;
+  margin-bottom: 10px;
+  width: 150px;
+  height: 150px;
+
+  background: #ff4d50;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN IMAGE WRAPPER
+========================================================= */
+
+.about-intro-main-image-wrapper {
+  position: relative;
+
+  z-index: 1;
+
+  width: calc(100% - 20px);
+
+  height: 470px;
+  margin-top: 10px;
+  margin-left: 20px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+.about-intro-main-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  animation: aboutIntroImageReveal 0.45s ease both;
+}
+
+
+/* =========================================================
+   MAIN IMAGE REVEAL
+========================================================= */
+
+@keyframes aboutIntroImageReveal {
+
+  from {
+    opacity: 0;
+
+    transform: scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   THUMBNAILS
+   IMPORTANT:
+   They extend from underneath the main image
+   toward the right-side content.
+========================================================= */
+
+.about-intro-thumbnails {
+  position: absolute;
+
+  z-index: 5;
+
+  /*
+    Start underneath the middle/right
+    portion of the main image.
+  */
+  left: 520px;
+
+  bottom: 0;
+
+  /*
+    Extend beyond the left gallery column
+    into the right content area.
+  */
+  width: 900px;
+
+  max-width: 870px;
+
+  height: 174px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 30px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   THUMBNAIL BUTTON
+========================================================= */
+
+.about-intro-thumbnail {
+  position: relative;
+
+  width: 175px;
+  height: 175px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 2px solid transparent;
+
+  border-radius: 0;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   THUMBNAIL IMAGE
+========================================================= */
+
+.about-intro-thumbnail img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.3s ease;
+}
+
+
+/* =========================================================
+   THUMBNAIL HOVER
+========================================================= */
+
+.about-intro-thumbnail:hover img {
+  transform: scale(1.07);
+}
+
+
+/* =========================================================
+   ACTIVE THUMBNAIL
+========================================================= */
+
+.about-intro-thumbnail-active {
+  border-color: #ff4d50;
+
+  z-index: 5;
+}
+
+
+.about-intro-thumbnail-active::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border: 3px solid rgba(255, 255, 255, 0.9);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   THUMBNAIL FOCUS
+========================================================= */
+
+.about-intro-thumbnail:focus-visible {
+  outline: 2px solid #ff4d50;
+
+  outline-offset: 3px;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.about-intro-content {
+  position: relative;
+
+  width: 100%;
+  align-items: flex-start;
+  min-width: 0;
+
+  padding: 0 55px 0 20px;
+
+  text-align: left;
+
+  box-sizing: border-box;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.about-intro-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+  margin-top: 5px;
+  color: #ff4d50;
+
+  font-size: 25px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  letter-spacing: 0.35px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-intro-title {
+  margin: 0 0 12px;
+
+  color: #242438;
+
+  font-size: 35px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+
+  text-align: left;
+}
+
+
+.about-intro-title span {
+  color: #ff4d50;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-intro-description {
+  width: 100%;
+
+  max-width: 680px;
+
+  margin: 0 0 24px;
+
+  color: #6f7180;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  font-weight: 500;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.about-intro-features {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 30px;
+
+  row-gap: 9px;
+
+  margin-top: 5px;
+
+  justify-items: start;
+  text-align: left;
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.about-intro-feature {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.about-intro-feature-icon {
+  width: 40px;
+  height: 30px;
+
+  flex: 0 0 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ff4d50;
+
+  color: #ff4d50;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FEATURE TITLE
+========================================================= */
+
+.about-intro-feature-title {
+  color: #292936;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .about-intro-section {
+    padding-top: 65px;
+    padding-bottom: 80px;
+  }
+
+  .about-intro-container {
+    padding-left: 68px;
+    padding-right: 68px;
+
+    grid-template-columns: 42% 58%;
+  }
+
+  .about-intro-gallery {
+    min-height: 420px;
+
+    padding-top: 20px;
+  }
+
+  .about-intro-gallery-decoration {
+    width: 165px;
+    height: 165px;
+  }
+
+  .about-intro-main-image-wrapper {
+    height: 325px;
+  }
+
+  .about-intro-thumbnails {
+    left: 245px;
+
+    width: calc(100vw - 315px);
+
+    max-width: 720px;
+
+    height: 108px;
+  }
+
+  .about-intro-thumbnail {
+    height: 108px;
+  }
+
+  .about-intro-content {
+    padding-left: 25px;
+    padding-right: 80px;
+  }
+
+  .about-intro-title {
+    font-size: 36px;
+  }
+
+  .about-intro-description {
+    font-size: 12px;
+  }
+
+  .about-intro-feature-title {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .about-intro-container {
+    padding-left: 35px;
+    padding-right: 35px;
+
+    grid-template-columns: 43% 57%;
+  }
+
+  .about-intro-gallery {
+    min-height: 370px;
+  }
+
+  .about-intro-main-image-wrapper {
+    height: 285px;
+  }
+
+  .about-intro-thumbnails {
+    left: 180px;
+
+    width: calc(100vw - 225px);
+
+    max-width: 590px;
+
+    height: 95px;
+  }
+
+  .about-intro-thumbnail {
+    height: 95px;
+  }
+
+  .about-intro-content {
+    padding-left: 18px;
+    padding-right: 30px;
+  }
+
+  .about-intro-title {
+    font-size: 28px;
+  }
+
+  .about-intro-description {
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .about-intro-section {
+    padding: 60px 0;
+  }
+
+  .about-intro-container {
+    width: 100%;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 45px;
+  }
+
+  .about-intro-gallery {
+    width: 100%;
+
+    max-width: 760px;
+
+    min-height: auto;
+
+    margin: 0 auto;
+
+    padding-top: 20px;
+  }
+
+  .about-intro-gallery-decoration {
+    width: 140px;
+    height: 140px;
+  }
+
+  .about-intro-main-image-wrapper {
+    width: calc(100% - 20px);
+
+    height: 340px;
+  }
+
+  /*
+    At tablet width thumbnails return
+    underneath the main image.
+  */
+  .about-intro-thumbnails {
+    position: relative;
+
+    left: auto;
+    bottom: auto;
+
+    width: calc(100% - 20px);
+
+    max-width: none;
+
+    margin-left: 20px;
+
+    height: 100px;
+  }
+
+  .about-intro-thumbnail {
+    height: 100px;
+  }
+
+  .about-intro-content {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding: 0;
+  }
+
+  .about-intro-title {
+    font-size: 33px;
+  }
+
+  .about-intro-description {
+    max-width: 100%;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .about-intro-section {
+    padding: 50px 0;
+  }
+
+  .about-intro-container {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    row-gap: 38px;
+  }
+
+  .about-intro-gallery {
+    padding-top: 15px;
+    padding-left: 12px;
+  }
+
+  .about-intro-gallery-decoration {
+    width: 110px;
+    height: 110px;
+  }
+
+  .about-intro-main-image-wrapper {
+    width: calc(100% - 12px);
+
+    height: 280px;
+
+    margin-left: 12px;
+  }
+
+  .about-intro-thumbnails {
+    width: calc(100% - 12px);
+
+    margin-left: 12px;
+
+    height: 78px;
+  }
+
+  .about-intro-thumbnail {
+    height: 78px;
+  }
+
+  .about-intro-title {
+    font-size: 29px;
+
+    line-height: 1.25;
+  }
+
+  .about-intro-description {
+    font-size: 11.5px;
+
+    line-height: 1.75;
+  }
+
+  .about-intro-features {
+    column-gap: 20px;
+
+    row-gap: 13px;
+  }
+
+  .about-intro-feature {
+    align-items: flex-start;
+  }
+
+  .about-intro-feature-title {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .about-intro-section {
+    padding: 42px 0;
+  }
+
+  .about-intro-container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    row-gap: 32px;
+  }
+
+  .about-intro-gallery {
+    padding-top: 12px;
+
+    padding-left: 9px;
+  }
+
+  .about-intro-gallery-decoration {
+    width: 85px;
+    height: 90px;
+  }
+
+  .about-intro-main-image-wrapper {
+    width: calc(100% - 9px);
+
+    height: 220px;
+
+    margin-left: 9px;
+  }
+
+  .about-intro-thumbnails {
+    width: calc(100% - 9px);
+
+    margin-left: 9px;
+
+    height: 62px;
+  }
+
+  .about-intro-thumbnail {
+    height: 62px;
+
+    border-width: 1px;
+  }
+
+  .about-intro-thumbnail-active::after {
+    border-width: 2px;
+  }
+
+  .about-intro-label {
+    font-size: 8px;
+  }
+
+  .about-intro-title {
+    font-size: 25px;
+
+    letter-spacing: -0.4px;
+  }
+
+  .about-intro-description {
+    font-size: 11px;
+  }
+
+  .about-intro-features {
+    grid-template-columns: 1fr;
+
+    row-gap: 11px;
+  }
+
+  .about-intro-feature-title {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .about-intro-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .about-intro-main-image-wrapper {
+    height: 195px;
+  }
+
+  .about-intro-thumbnail {
+    height: 56px;
+  }
+
+  .about-intro-title {
+    font-size: 23px;
+  }
+
+  .about-intro-description {
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-intro-main-image {
+    animation: none;
+  }
+
+  .about-intro-thumbnail,
+  .about-intro-thumbnail img {
+    transition: none;
+  }
+}

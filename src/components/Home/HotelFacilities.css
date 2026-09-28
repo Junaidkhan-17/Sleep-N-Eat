@@ -1,0 +1,349 @@
+/* =========================================================
+   HOTEL FACILITIES SECTION
+========================================================= */
+
+.hotel-facilities-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* =========================================================
+   SWIPER
+========================================================= */
+
+.hotel-facilities-swiper {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* =========================================================
+   SWIPER SLIDE
+========================================================= */
+
+.hotel-facilities-swiper .swiper-slide {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* =========================================================
+   FACILITY CARD
+========================================================= */
+
+.hotel-facility-card {
+  position: relative;
+  width: 100%;
+  height: 265px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #eeeeee;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hotel-facility-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1);
+  transform-origin: center center;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+
+  will-change: transform;
+}
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.hotel-facility-card:hover .hotel-facility-image {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   BOTTOM GRADIENT
+========================================================= */
+
+.hotel-facility-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 60%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.04) 20%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.62) 100%
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hotel-facility-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 3;
+
+  width: 100%;
+
+  padding: 0 15px 18px;
+
+  box-sizing: border-box;
+
+  pointer-events: none;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hotel-facility-title {
+  margin: 0;
+
+  max-width: 100%;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+
+  text-align: left;
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.35);
+
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   1440px+
+========================================================= */
+
+@media (min-width: 1440px) {
+  .hotel-facility-card {
+    height: 265px;
+  }
+
+  .hotel-facility-title {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   992px - 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+  .hotel-facility-card {
+    height: 245px;
+  }
+
+  .hotel-facility-content {
+    padding: 0 14px 17px;
+  }
+
+  .hotel-facility-title {
+    font-size: 17px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   768px - 991px
+========================================================= */
+
+@media (max-width: 991px) {
+  .hotel-facility-card {
+    height: 230px;
+  }
+
+  .hotel-facility-content {
+    padding: 0 14px 16px;
+  }
+
+  .hotel-facility-title {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+   576px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+  .hotel-facility-card {
+    height: 250px;
+  }
+
+  .hotel-facility-image {
+    transition:
+      transform 0.65s ease,
+      filter 0.65s ease;
+  }
+
+  .hotel-facility-content {
+    padding: 0 15px 17px;
+  }
+
+  .hotel-facility-title {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   375px - 575px
+========================================================= */
+
+@media (max-width: 575px) {
+  .hotel-facilities-section {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hotel-facilities-swiper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hotel-facility-card {
+    width: 100%;
+    height: clamp(225px, 62vw, 240px);
+  }
+
+  .hotel-facility-image {
+    object-position: center center;
+  }
+
+  .hotel-facility-overlay {
+    height: 65%;
+  }
+
+  .hotel-facility-content {
+    padding: 0 14px 16px;
+  }
+
+  .hotel-facility-title {
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  /*
+   * Prevent persistent hover-like zoom behavior
+   * on touch devices.
+   */
+  .hotel-facility-card:hover .hotel-facility-image {
+    transform: none;
+  }
+
+  .hotel-facility-card:active .hotel-facility-image {
+    transform: scale(1.025);
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   320px - 374px
+========================================================= */
+
+@media (max-width: 374px) {
+  .hotel-facility-card {
+    height: clamp(210px, 60vw, 220px);
+  }
+
+  .hotel-facility-overlay {
+    height: 66%;
+  }
+
+  .hotel-facility-content {
+    padding: 0 12px 14px;
+  }
+
+  .hotel-facility-title {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+   320px
+========================================================= */
+
+@media (max-width: 340px) {
+  .hotel-facility-card {
+    height: 210px;
+  }
+
+  .hotel-facility-content {
+    padding: 0 11px 13px;
+  }
+
+  .hotel-facility-title {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hotel-facility-image {
+    transition: none;
+  }
+
+  .hotel-facility-card:hover .hotel-facility-image {
+    transform: none;
+  }
+}

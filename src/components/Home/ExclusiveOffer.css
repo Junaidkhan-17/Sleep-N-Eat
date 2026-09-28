@@ -1,0 +1,577 @@
+/* =========================================================
+   EXCLUSIVE OFFER SECTION
+========================================================= */
+
+.exclusive-offer-section {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.exclusive-offer-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.exclusive-offer-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1450px;
+  min-height: 360px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   OFFER CARD
+========================================================= */
+
+.exclusive-offer-card {
+  width: 47%;
+  max-width: 650px;
+  min-height: 265px;
+  margin-top: 80px;
+  padding: 30px 34px;
+  background: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   OFFER LABEL
+========================================================= */
+
+.exclusive-offer-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ff555b;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+/* =========================================================
+   OFFER TITLE
+========================================================= */
+
+.exclusive-offer-title {
+  margin: 0;
+  color: #303544;
+  text-align: left;
+  font-size: 32px;
+  line-height: 1.45;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   OFFER INFORMATION
+========================================================= */
+
+.exclusive-offer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: auto;
+  min-width: 250px;
+  margin-top: 30px;
+  padding-right: 20px;
+  border-right: 1px solid #d9d9d9;
+}
+
+/* =========================================================
+   STAY INFORMATION
+========================================================= */
+
+.exclusive-offer-stay {
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.exclusive-offer-stay span {
+  display: block;
+  color: #303544;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.exclusive-offer-rating {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+}
+
+.exclusive-offer-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.exclusive-offer-stars svg {
+  display: block;
+  color: #ff555b;
+  font-size: 17px;
+}
+
+.exclusive-offer-rating-value {
+  color: #8991a0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* =========================================================
+   PRICE + ACTION
+========================================================= */
+
+.exclusive-offer-action {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 35px;
+  margin-top: 30px;
+  padding-left: 20px;
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.exclusive-offer-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.exclusive-offer-price-label {
+  display: block;
+  margin: 0 0 3px;
+  color: #5b5d62;
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.exclusive-offer-price-value {
+  display: block;
+  margin: 0;
+  color: #ff555b;
+  font-size: 27px;
+  line-height: 1.15;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BOOK NOW BUTTON
+========================================================= */
+
+.exclusive-offer-button {
+  width: 125px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: #ff555b;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.exclusive-offer-button:hover {
+  background: #e94d52;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 85, 91, 0.25);
+}
+
+.exclusive-offer-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   OFFER BOTTOM
+========================================================= */
+
+.exclusive-offer-bottom {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 28px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .exclusive-offer-container {
+    min-height: 350px;
+    padding: 0 25px;
+  }
+
+  .exclusive-offer-card {
+    width: 50%;
+    min-height: 255px;
+    padding: 28px 30px;
+  }
+
+  .exclusive-offer-title {
+    font-size: 29px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 991px) {
+  .exclusive-offer-section {
+    min-height: 340px;
+  }
+
+  .exclusive-offer-container {
+    min-height: 340px;
+    padding: 0 22px;
+  }
+
+  .exclusive-offer-card {
+    width: 56%;
+    min-height: 245px;
+    padding: 25px 28px;
+  }
+
+  .exclusive-offer-label {
+    font-size: 13px;
+  }
+
+  .exclusive-offer-title {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .exclusive-offer-info {
+    margin-top: 24px;
+  }
+
+  .exclusive-offer-stay span {
+    font-size: 13px;
+  }
+
+  .exclusive-offer-action {
+    gap: 24px;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 767px) {
+  .exclusive-offer-section {
+    min-height: auto;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .exclusive-offer-background {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-position: center center;
+  }
+
+  .exclusive-offer-container {
+    min-height: auto;
+    padding: 0;
+    display: block;
+  }
+
+  .exclusive-offer-card {
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+    margin-top: 0;
+    padding: 30px 25px;
+    box-shadow: none;
+  }
+
+  .exclusive-offer-title {
+    font-size: 28px;
+  }
+
+  .exclusive-offer-info {
+    margin-top: 24px;
+  }
+
+  .exclusive-offer-action {
+    margin-top: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+  .exclusive-offer-background {
+    height: 250px;
+    background-position: center center;
+  }
+
+  .exclusive-offer-card {
+    padding: 26px 20px 30px;
+  }
+
+  .exclusive-offer-label {
+    margin-bottom: 7px;
+    font-size: 12px;
+  }
+
+  .exclusive-offer-title {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .exclusive-offer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 22px;
+  }
+
+  .exclusive-offer-info {
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 0;
+    padding-right: 0;
+    padding-bottom: 16px;
+    border-right: none;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  .exclusive-offer-stay {
+    padding-right: 0;
+  }
+
+  .exclusive-offer-stay span {
+    white-space: normal;
+    font-size: 13px;
+  }
+
+  .exclusive-offer-rating {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .exclusive-offer-action {
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 18px;
+    padding-left: 0;
+  }
+
+  .exclusive-offer-price {
+    min-width: 0;
+  }
+
+  .exclusive-offer-price-label {
+    font-size: 16px;
+  }
+
+  .exclusive-offer-price-value {
+    font-size: 23px;
+  }
+
+  .exclusive-offer-button {
+    flex: 0 0 auto;
+    min-width: 115px;
+    height: 44px;
+    padding: 0 20px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .exclusive-offer-background {
+    height: 220px;
+  }
+
+  .exclusive-offer-card {
+    padding: 24px 17px 28px;
+  }
+
+  .exclusive-offer-title {
+    font-size: 22px;
+  }
+
+  .exclusive-offer-stay span {
+    font-size: 12px;
+  }
+
+  .exclusive-offer-stars svg {
+    font-size: 14px;
+  }
+
+  .exclusive-offer-action {
+    align-items: center;
+  }
+
+  .exclusive-offer-price-value {
+    font-size: 21px;
+  }
+
+  .exclusive-offer-button {
+    min-width: 105px;
+    height: 42px;
+    padding: 0 16px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 374px) {
+  .exclusive-offer-background {
+    height: 205px;
+  }
+
+  .exclusive-offer-card {
+    padding: 22px 15px 25px;
+  }
+
+  .exclusive-offer-label {
+    font-size: 11px;
+  }
+
+  .exclusive-offer-title {
+    font-size: 21px;
+    line-height: 1.35;
+  }
+
+  .exclusive-offer-bottom {
+    margin-top: 19px;
+  }
+
+  .exclusive-offer-info {
+    gap: 10px;
+    padding-bottom: 14px;
+  }
+
+  .exclusive-offer-stay span {
+    font-size: 11.5px;
+  }
+
+  .exclusive-offer-stars {
+    gap: 3px;
+  }
+
+  .exclusive-offer-stars svg {
+    font-size: 13px;
+  }
+
+  .exclusive-offer-rating-value {
+    font-size: 12px;
+  }
+
+  .exclusive-offer-action {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .exclusive-offer-price-label {
+    font-size: 15px;
+  }
+
+  .exclusive-offer-price-value {
+    font-size: 20px;
+  }
+
+  .exclusive-offer-button {
+    min-width: 102px;
+    height: 41px;
+    padding: 0 14px;
+    font-size: 11.5px;
+  }
+}
+
+/* =========================================================
+   TOUCH DEVICES
+   Preserve desktop hover behavior without sticky hover
+   states on touch screens.
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  .exclusive-offer-button:hover {
+    background: #ff555b;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .exclusive-offer-button:active {
+    background: #e94d52;
+    transform: translateY(1px);
+    box-shadow: 0 5px 14px rgba(255, 85, 91, 0.2);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .exclusive-offer-button {
+    transition-duration: 0.01ms;
+  }
+}

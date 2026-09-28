@@ -1,0 +1,978 @@
+/* =========================================================
+   GALLERY EXPLORE SECTION
+========================================================= */
+
+.gallery-explore-section {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 70px 0 80px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.gallery-explore-header {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 52px;
+
+  padding: 0 20px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SMALL RED HEADING
+========================================================= */
+
+.gallery-explore-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #ff4d50;
+
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.gallery-explore-title {
+  margin: 0;
+
+  color: #071719;
+
+  font-size: 38px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   TWO SLIDERS WRAPPER
+========================================================= */
+
+.gallery-explore-sliders {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.gallery-explore-slider-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SLIDER VIEWPORT
+========================================================= */
+
+.gallery-explore-slider {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SLIDER TRACK
+========================================================= */
+
+.gallery-explore-track {
+  display: flex;
+
+  align-items: stretch;
+
+  width: max-content;
+
+  gap: 16px;
+
+  will-change: transform;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   UPPER SLIDER
+   RIGHT → LEFT
+========================================================= */
+
+.gallery-explore-track-left {
+  animation:
+    galleryExploreMoveLeft
+    42s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   LOWER SLIDER
+   LEFT → RIGHT
+========================================================= */
+
+.gallery-explore-track-right {
+  animation:
+    galleryExploreMoveRight
+    46s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   UPPER SLIDER ANIMATION
+========================================================= */
+
+@keyframes galleryExploreMoveLeft {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* =========================================================
+   LOWER SLIDER ANIMATION
+========================================================= */
+
+@keyframes galleryExploreMoveRight {
+
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
+   PAUSE SLIDERS
+========================================================= */
+
+.gallery-explore-track-paused {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   COMMON IMAGE CARD
+========================================================= */
+
+.gallery-explore-image-card {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BOX IMAGE
+========================================================= */
+
+.gallery-explore-image-box {
+  width: 270px;
+
+  height: 270px;
+
+  flex-basis: 270px;
+}
+
+
+/* =========================================================
+   HORIZONTAL IMAGE
+========================================================= */
+
+.gallery-explore-image-horizontal {
+  width: 440px;
+
+  height: 270px;
+
+  flex-basis: 440px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.gallery-explore-image {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transition:
+    transform 0.9s ease,
+    opacity 0.8s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.gallery-explore-image-card:hover
+.gallery-explore-image {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.gallery-explore-image-overlay {
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding:
+    55px 20px 18px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.28) 42%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SHOW OVERLAY ON HOVER
+========================================================= */
+
+.gallery-explore-image-card:hover
+.gallery-explore-image-overlay {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.gallery-explore-image-category {
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 10px;
+
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.gallery-explore-image-title {
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FADE OUT
+   Used only for selected slots
+========================================================= */
+
+.gallery-explore-fade-out {
+  animation:
+    galleryExploreFadeOut
+    0.7s
+    ease
+    forwards;
+}
+
+
+@keyframes galleryExploreFadeOut {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   FADE IN
+   Used only for selected slots
+========================================================= */
+
+.gallery-explore-fade-in {
+  animation:
+    galleryExploreFadeIn
+    1.5s
+    ease
+    forwards;
+}
+
+
+@keyframes galleryExploreFadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0.35;
+  }
+
+  70% {
+    opacity: 0.78;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   HOVER PAUSE
+========================================================= */
+
+.gallery-explore-section:hover
+.gallery-explore-track-left,
+
+.gallery-explore-section:hover
+.gallery-explore-track-right {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   PREVENT IMAGE FADE FROM BEING DISTURBED
+========================================================= */
+
+.gallery-explore-section:hover
+.gallery-explore-fade-out,
+
+.gallery-explore-section:hover
+.gallery-explore-fade-in {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .gallery-explore-section {
+    padding: 80px 0 90px;
+  }
+
+
+  .gallery-explore-header {
+    margin-bottom: 58px;
+  }
+
+
+  .gallery-explore-label {
+    font-size: 29px;
+  }
+
+
+  .gallery-explore-title {
+    font-size: 42px;
+  }
+
+
+  .gallery-explore-sliders {
+    gap: 20px;
+  }
+
+
+  .gallery-explore-track {
+    gap: 18px;
+  }
+
+
+  .gallery-explore-image-box {
+    width: 310px;
+
+    height: 310px;
+
+    flex-basis: 310px;
+
+    border-radius: 14px;
+  }
+
+
+  .gallery-explore-image-horizontal {
+    width: 500px;
+
+    height: 310px;
+
+    flex-basis: 500px;
+
+    border-radius: 14px;
+  }
+
+
+  .gallery-explore-image-card {
+    border-radius: 14px;
+  }
+
+
+  .gallery-explore-image-title {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .gallery-explore-section {
+    padding: 62px 0 70px;
+  }
+
+
+  .gallery-explore-header {
+    margin-bottom: 45px;
+  }
+
+
+  .gallery-explore-label {
+    font-size: 25px;
+  }
+
+
+  .gallery-explore-title {
+    font-size: 34px;
+  }
+
+
+  .gallery-explore-sliders {
+    gap: 14px;
+  }
+
+
+  .gallery-explore-track {
+    gap: 13px;
+  }
+
+
+  .gallery-explore-image-box {
+    width: 230px;
+
+    height: 230px;
+
+    flex-basis: 230px;
+
+    border-radius: 10px;
+  }
+
+
+  .gallery-explore-image-horizontal {
+    width: 375px;
+
+    height: 230px;
+
+    flex-basis: 375px;
+
+    border-radius: 10px;
+  }
+
+
+  .gallery-explore-image-card {
+    border-radius: 10px;
+  }
+
+
+  .gallery-explore-track-left {
+    animation-duration: 46s;
+  }
+
+
+  .gallery-explore-track-right {
+    animation-duration: 50s;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .gallery-explore-section {
+    padding: 55px 0 62px;
+  }
+
+
+  .gallery-explore-header {
+    margin-bottom: 38px;
+  }
+
+
+  .gallery-explore-label {
+    font-size: 23px;
+  }
+
+
+  .gallery-explore-title {
+    font-size: 30px;
+  }
+
+
+  .gallery-explore-sliders {
+    gap: 11px;
+  }
+
+
+  .gallery-explore-track {
+    gap: 10px;
+  }
+
+
+  .gallery-explore-image-box {
+    width: 195px;
+
+    height: 195px;
+
+    flex-basis: 195px;
+
+    border-radius: 9px;
+  }
+
+
+  .gallery-explore-image-horizontal {
+    width: 315px;
+
+    height: 195px;
+
+    flex-basis: 315px;
+
+    border-radius: 9px;
+  }
+
+
+  .gallery-explore-image-card {
+    border-radius: 9px;
+  }
+
+
+  .gallery-explore-track-left {
+    animation-duration: 50s;
+  }
+
+
+  .gallery-explore-track-right {
+    animation-duration: 54s;
+  }
+
+
+  .gallery-explore-image-overlay {
+    padding:
+      40px 14px 14px;
+  }
+
+
+  .gallery-explore-image-title {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .gallery-explore-section {
+    padding: 48px 0 55px;
+  }
+
+
+  .gallery-explore-header {
+    margin-bottom: 30px;
+
+    padding:
+      0 16px;
+  }
+
+
+  .gallery-explore-label {
+    font-size: 21px;
+  }
+
+
+  .gallery-explore-title {
+    font-size: 27px;
+
+    line-height: 1.3;
+  }
+
+
+  .gallery-explore-sliders {
+    gap: 8px;
+  }
+
+
+  .gallery-explore-track {
+    gap: 8px;
+  }
+
+
+  .gallery-explore-image-box {
+    width: 160px;
+
+    height: 160px;
+
+    flex-basis: 160px;
+
+    border-radius: 8px;
+  }
+
+
+  .gallery-explore-image-horizontal {
+    width: 250px;
+
+    height: 160px;
+
+    flex-basis: 250px;
+
+    border-radius: 8px;
+  }
+
+
+  .gallery-explore-image-card {
+    border-radius: 8px;
+  }
+
+
+  .gallery-explore-track-left {
+    animation-duration: 43s;
+  }
+
+
+  .gallery-explore-track-right {
+    animation-duration: 47s;
+  }
+
+
+  .gallery-explore-image-overlay {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .gallery-explore-section {
+    padding: 42px 0 48px;
+  }
+
+
+  .gallery-explore-header {
+    margin-bottom: 25px;
+  }
+
+
+  .gallery-explore-label {
+    font-size: 20px;
+  }
+
+
+  .gallery-explore-title {
+    font-size: 24px;
+  }
+
+
+  .gallery-explore-sliders {
+    gap: 6px;
+  }
+
+
+  .gallery-explore-track {
+    gap: 6px;
+  }
+
+
+  .gallery-explore-image-box {
+    width: 140px;
+
+    height: 140px;
+
+    flex-basis: 140px;
+
+    border-radius: 7px;
+  }
+
+
+  .gallery-explore-image-horizontal {
+    width: 215px;
+
+    height: 140px;
+
+    flex-basis: 215px;
+
+    border-radius: 7px;
+  }
+
+
+  .gallery-explore-image-card {
+    border-radius: 7px;
+  }
+
+
+  .gallery-explore-track-left {
+    animation-duration: 40s;
+  }
+
+
+  .gallery-explore-track-right {
+    animation-duration: 44s;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .gallery-explore-section {
+    padding: 38px 0 42px;
+  }
+
+
+  .gallery-explore-header {
+    margin-bottom: 22px;
+  }
+
+
+  .gallery-explore-label {
+    font-size: 18px;
+  }
+
+
+  .gallery-explore-title {
+    font-size: 22px;
+  }
+
+
+  .gallery-explore-sliders {
+    gap: 5px;
+  }
+
+
+  .gallery-explore-track {
+    gap: 5px;
+  }
+
+
+  .gallery-explore-image-box {
+    width: 125px;
+
+    height: 125px;
+
+    flex-basis: 125px;
+
+    border-radius: 6px;
+  }
+
+
+  .gallery-explore-image-horizontal {
+    width: 190px;
+
+    height: 125px;
+
+    flex-basis: 190px;
+
+    border-radius: 6px;
+  }
+
+
+  .gallery-explore-image-card {
+    border-radius: 6px;
+  }
+
+
+  .gallery-explore-track-left {
+    animation-duration: 38s;
+  }
+
+
+  .gallery-explore-track-right {
+    animation-duration: 42s;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gallery-explore-track-left,
+  .gallery-explore-track-right {
+    animation: none;
+  }
+
+
+  .gallery-explore-fade-out,
+  .gallery-explore-fade-in {
+    animation: none;
+  }
+
+
+  .gallery-explore-image {
+    transition: none;
+  }
+
+
+  .gallery-explore-image-overlay {
+    transition: none;
+  }
+}

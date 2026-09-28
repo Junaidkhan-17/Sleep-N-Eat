@@ -1,0 +1,638 @@
+/* =========================================================
+   LATEST NEWS SECTION
+========================================================= */
+
+.gallery-latest-news-section {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  padding: 70px 44px 68px;
+  background: #f3f8fc;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.gallery-latest-news-header {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.gallery-latest-news-title {
+  margin: 0 0 12px;
+
+  color: #303545;
+
+  font-size: 38px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.gallery-latest-news-description {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #3e485a;
+
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   NEWS GRID
+========================================================= */
+
+.gallery-latest-news-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NEWS CARD
+========================================================= */
+
+.gallery-latest-news-card {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CARD LINK
+========================================================= */
+
+.gallery-latest-news-card-link {
+  display: block;
+
+  width: 100%;
+
+  color: inherit;
+  text-decoration: none;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.gallery-latest-news-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1.02;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #e6ebef;
+
+  isolation: isolate;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.gallery-latest-news-image {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.8s ease;
+}
+
+
+/* =========================================================
+   IMAGE ZOOM
+========================================================= */
+
+.gallery-latest-news-image-wrapper:hover
+.gallery-latest-news-image {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.gallery-latest-news-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.62) 32%,
+      rgba(0, 0, 0, 0.22) 65%,
+      rgba(0, 0, 0, 0) 100%
+    );
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.45s ease,
+    visibility 0s linear 0.45s;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   SHOW DARK OVERLAY
+========================================================= */
+
+.gallery-latest-news-image-wrapper:hover > .gallery-latest-news-overlay {
+  opacity: 1;
+
+  visibility: visible;
+
+  transition:
+    opacity 0.45s ease,
+    visibility 0s linear 0s;
+}
+
+
+/* =========================================================
+   NEWS CONTENT
+========================================================= */
+
+.gallery-latest-news-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 20;
+
+  width: 100%;
+
+  padding: 80px 20px 22px;
+
+  box-sizing: border-box;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    visibility 0s linear 0.45s;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SHOW NEWS CONTENT
+========================================================= */
+
+.gallery-latest-news-image-wrapper:hover > .gallery-latest-news-content {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    visibility 0s linear 0s;
+}
+
+
+
+/* =========================================================
+   NEWS TITLE
+========================================================= */
+
+.gallery-latest-news-card-title {
+  position: relative;
+
+  z-index: 21;
+
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  color: #ffffff !important;
+
+  font-size: 17px;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+
+  letter-spacing: -0.15px;
+
+  text-align: left;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.7);
+
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.gallery-latest-news-overlay-category {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  z-index: 15;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.16);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  font-weight: 500;
+
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(-10px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0s linear 0.4s;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SHOW CATEGORY
+========================================================= */
+
+.gallery-latest-news-image-wrapper:hover
+.gallery-latest-news-overlay-category {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    visibility 0s linear 0s;
+}
+
+/* =========================================================
+   KEYBOARD FOCUS
+========================================================= */
+
+.gallery-latest-news-card-link:focus-visible {
+  outline: 2px solid #ff4d50;
+
+  outline-offset: 5px;
+
+  border-radius: 12px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+  .gallery-latest-news-section {
+    padding: 78px 60px 76px;
+  }
+
+  .gallery-latest-news-header {
+    margin-bottom: 46px;
+  }
+
+  .gallery-latest-news-title {
+    font-size: 32px;
+  }
+
+  .gallery-latest-news-description {
+    font-size: 14px;
+  }
+
+  .gallery-latest-news-grid {
+    max-width: 1380px;
+    gap: 16px;
+  }
+
+  .gallery-latest-news-card-title {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .gallery-latest-news-section {
+    padding: 62px 30px;
+  }
+
+  .gallery-latest-news-grid {
+    max-width: 1050px;
+    gap: 13px;
+  }
+
+  .gallery-latest-news-title {
+    font-size: 27px;
+  }
+
+  .gallery-latest-news-description {
+    font-size: 12.5px;
+  }
+
+  .gallery-latest-news-card-title {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .gallery-latest-news-section {
+    padding: 55px 24px 58px;
+  }
+
+  .gallery-latest-news-header {
+    margin-bottom: 32px;
+  }
+
+  .gallery-latest-news-title {
+    font-size: 26px;
+  }
+
+  .gallery-latest-news-description {
+    max-width: 500px;
+    font-size: 12px;
+  }
+
+  .gallery-latest-news-grid {
+    gap: 12px;
+  }
+
+  .gallery-latest-news-image-wrapper {
+    border-radius: 10px;
+  }
+
+  .gallery-latest-news-content {
+    padding: 60px 14px 16px;
+  }
+
+  .gallery-latest-news-card-title {
+    font-size: 14px;
+  }
+
+  .gallery-latest-news-overlay-category {
+    top: 13px;
+    left: 13px;
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .gallery-latest-news-section {
+    padding: 48px 18px 52px;
+  }
+
+  .gallery-latest-news-header {
+    margin-bottom: 28px;
+  }
+
+  .gallery-latest-news-title {
+    margin-bottom: 10px;
+    font-size: 25px;
+  }
+
+  .gallery-latest-news-description {
+    max-width: 470px;
+    font-size: 12px;
+  }
+
+  .gallery-latest-news-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    max-width: 500px;
+  }
+
+  .gallery-latest-news-image-wrapper {
+    aspect-ratio: 16 / 10;
+
+    border-radius: 11px;
+  }
+
+  .gallery-latest-news-content {
+    padding: 80px 18px 18px;
+  }
+
+  .gallery-latest-news-card-title {
+    font-size: 16px;
+  }
+
+  .gallery-latest-news-overlay-category {
+    top: 15px;
+    left: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .gallery-latest-news-section {
+    padding: 42px 14px 46px;
+  }
+
+  .gallery-latest-news-header {
+    margin-bottom: 24px;
+  }
+
+  .gallery-latest-news-title {
+    font-size: 23px;
+  }
+
+  .gallery-latest-news-description {
+    font-size: 11.5px;
+  }
+
+  .gallery-latest-news-grid {
+    gap: 13px;
+  }
+
+  .gallery-latest-news-image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .gallery-latest-news-content {
+    padding: 70px 15px 15px;
+  }
+
+  .gallery-latest-news-card-title {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 375px) {
+
+  .gallery-latest-news-section {
+    padding: 38px 12px 42px;
+  }
+
+  .gallery-latest-news-title {
+    font-size: 21px;
+  }
+
+  .gallery-latest-news-description {
+    font-size: 11px;
+  }
+
+  .gallery-latest-news-card-title {
+    font-size: 13px;
+  }
+
+  .gallery-latest-news-content {
+    padding: 60px 13px 13px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gallery-latest-news-image,
+  .gallery-latest-news-overlay,
+  .gallery-latest-news-content,
+  .gallery-latest-news-overlay-category {
+    transition: none;
+  }
+
+  .gallery-latest-news-image-wrapper:hover
+  .gallery-latest-news-image {
+    transform: none;
+  }
+}
+
