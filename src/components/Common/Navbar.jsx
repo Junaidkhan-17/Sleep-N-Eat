@@ -157,19 +157,14 @@ const Navbar = () => {
 
           <div className="navbar-actions">
             {/* Search */}
-            <div className="navbar-search">
-              <FaSearch />
-              <input type="text" placeholder="Search for Rooms..." />
-            </div>
 
             {/* Book Now */}
-            <button className="book-now-btn" type="button">
+            <NavLink to="/contact" className="book-now-btn" onClick={closeMenu}>
               <span className="book-icon">
                 <FaCalendarAlt />
               </span>
-
               <span>Book Now</span>
-            </button>
+            </NavLink>
           </div>
 
           {/* =====================================================
@@ -238,11 +233,14 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile Book Button */}
-          <button className="mobile-book-btn" type="button">
+          <NavLink
+            to="/contact"
+            className="mobile-book-btn"
+            onClick={closeMenu}
+          >
             <FaCalendarAlt />
-
             <span>Book Now</span>
-          </button>
+          </NavLink>
 
           {/* Mobile Contact */}
           <div className="mobile-contact">
