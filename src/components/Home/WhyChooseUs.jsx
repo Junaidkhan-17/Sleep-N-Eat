@@ -26,7 +26,6 @@ const comfortFeatures = [
     image: homehero1,
     theme: wave2,
   },
-
   {
     id: "feature-002",
     number: "02",
@@ -41,7 +40,6 @@ const comfortFeatures = [
     image: homehero2,
     theme: wave2,
   },
-
   {
     id: "feature-003",
     number: "03",
@@ -56,7 +54,6 @@ const comfortFeatures = [
     image: homehero3,
     theme: wave2,
   },
-
   {
     id: "feature-004",
     number: "04",
@@ -97,22 +94,70 @@ const WhyChooseUs = () => {
 
   /*
    * Prevent multiple cards from changing
-   * during one wheel animation.
+   * during one wheel/swipe animation.
    */
   const isAnimatingRef = useRef(false);
 
+  /*
+   * Mobile touch start position.
+   */
+  const touchStartRef = useRef({
+    x: 0,
+    y: 0,
+  });
+
   /* =======================================================
-     WHEEL CONTROL
+     CHANGE CARD HELPER
+     Shared by desktop wheel + mobile swipe.
+  ======================================================= */
+
+  const changeCard = (nextIndex, animationDirection) => {
+    if (isAnimatingRef.current) {
+      return;
+    }
+
+    if (
+      nextIndex < 0 ||
+      nextIndex > comfortFeatures.length - 1
+    ) {
+      return;
+    }
+
+    if (nextIndex === activeCard) {
+      return;
+    }
+
+    isAnimatingRef.current = true;
+
+    setDirection(animationDirection);
+
+    setIncomingCard(nextIndex);
+
+    setTimeout(() => {
+      setActiveCard(nextIndex);
+      setIncomingCard(null);
+      isAnimatingRef.current = false;
+    }, 1200);
+  };
+
+  /* =======================================================
+     DESKTOP WHEEL + MOBILE TOUCH
   ======================================================= */
 
   useEffect(() => {
     const container = scrollContainerRef.current;
 
-    if (!container) return;
+    if (!container) {
+      return;
+    }
+
+    /* =====================================================
+       DESKTOP WHEEL CONTROL
+    ===================================================== */
 
     const handleWheel = (event) => {
       /*
-       * Use normal page scrolling on mobile.
+       * Mobile uses swipe instead of wheel.
        */
       if (window.innerWidth <= 767) {
         return;
@@ -120,10 +165,6 @@ const WhyChooseUs = () => {
 
       event.preventDefault();
 
-      /*
-       * Don't allow another card change while
-       * the current transition is running.
-       */
       if (isAnimatingRef.current) {
         return;
       }
@@ -169,37 +210,140 @@ const WhyChooseUs = () => {
         nextIndex = activeCard - 1;
       }
 
-      /*
-       * Lock scrolling during animation.
-       */
-      isAnimatingRef.current = true;
+      changeCard(
+        nextIndex,
+        scrollingDown ? "down" : "up"
+      );
+    };
+
+    /* =====================================================
+       MOBILE TOUCH START
+    ===================================================== */
+
+    const handleTouchStart = (event) => {
+      if (window.innerWidth > 767) {
+        return;
+      }
+
+      if (!event.touches || event.touches.length === 0) {
+        return;
+      }
+
+      const touch = event.touches[0];
+
+      touchStartRef.current = {
+        x: touch.clientX,
+        y: touch.clientY,
+      };
+    };
+
+    /* =====================================================
+       MOBILE TOUCH END
+    ===================================================== */
+
+    const handleTouchEnd = (event) => {
+      if (window.innerWidth > 767) {
+        return;
+      }
+
+      if (isAnimatingRef.current) {
+        return;
+      }
+
+      if (!event.changedTouches || event.changedTouches.length === 0) {
+        return;
+      }
+
+      const touch = event.changedTouches[0];
+
+      const startX = touchStartRef.current.x;
+      const startY = touchStartRef.current.y;
+
+      const endX = touch.clientX;
+      const endY = touch.clientY;
+
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
 
       /*
-       * Set animation direction.
+       * Ignore very small movements.
        */
-      setDirection(scrollingDown ? "down" : "up");
+      const minimumSwipeDistance = 45;
 
       /*
-       * Put the new card above the old card.
+       * Ignore horizontal gestures.
+       * Only a clearly vertical swipe changes cards.
        */
-      setIncomingCard(nextIndex);
+      if (Math.abs(deltaY) < minimumSwipeDistance) {
+        return;
+      }
+
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        return;
+      }
 
       /*
-       * Release after the animation.
+       * Swipe UP
+       * → Next card
        */
-      setTimeout(() => {
-        setActiveCard(nextIndex);
-        setIncomingCard(null);
-        isAnimatingRef.current = false;
-      }, 1200);
+      if (deltaY < 0) {
+        if (activeCard >= comfortFeatures.length - 1) {
+          return;
+        }
+
+        changeCard(activeCard + 1, "down");
+
+        return;
+      }
+
+      /*
+       * Swipe DOWN
+       * → Previous card
+       */
+      if (deltaY > 0) {
+        if (activeCard <= 0) {
+          return;
+        }
+
+        changeCard(activeCard - 1, "up");
+      }
     };
 
     container.addEventListener("wheel", handleWheel, {
       passive: false,
     });
 
+    container.addEventListener(
+      "touchstart",
+      handleTouchStart,
+      {
+        passive: true,
+      }
+    );
+
+    container.addEventListener(
+      "touchend",
+      handleTouchEnd,
+      {
+        passive: true,
+      }
+    );
+
     return () => {
-      container.removeEventListener("wheel", handleWheel);
+      container.removeEventListener(
+        "wheel",
+        handleWheel
+      );
+
+      container.removeEventListener(
+        "touchstart",
+        handleTouchStart
+      );
+
+      container.removeEventListener(
+        "touchend",
+        handleTouchEnd
+      );
     };
   }, [activeCard]);
 
@@ -307,6 +451,7 @@ const WhyChooseUs = () => {
         ================================================= */}
 
         <div className="why-choose-right">
+
           <div
             ref={scrollContainerRef}
             className="why-choose-scroll"
@@ -338,6 +483,7 @@ const WhyChooseUs = () => {
 
             </div>
           </div>
+
         </div>
 
       </div>

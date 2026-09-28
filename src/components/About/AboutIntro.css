@@ -135,7 +135,6 @@
 ========================================================= */
 
 @keyframes aboutIntroImageReveal {
-
   from {
     opacity: 0;
 
@@ -532,6 +531,7 @@
 
 /* =========================================================
    LAPTOP
+   ORIGINAL DESKTOP DESIGN PRESERVED
 ========================================================= */
 
 @media (max-width: 1200px) {
@@ -582,11 +582,22 @@
 
 /* =========================================================
    TABLET
+   768px - 991px
+   Desktop design is not redesigned.
+   Only layout flow is made responsive.
 ========================================================= */
 
 @media (max-width: 991px) {
 
   .about-intro-section {
+    /*
+      Required because the desktop section has a fixed
+      600px height. Once the gallery and content stack,
+      the section must grow naturally.
+    */
+    height: auto;
+    min-height: 0;
+
     padding: 60px 0;
   }
 
@@ -622,11 +633,16 @@
     width: calc(100% - 20px);
 
     height: 340px;
+
+    margin-left: 20px;
   }
 
   /*
-    At tablet width thumbnails return
-    underneath the main image.
+    On tablet the thumbnails return underneath
+    the main image.
+
+    The five thumbnails remain in one row,
+    exactly like the original design.
   */
   .about-intro-thumbnails {
     position: relative;
@@ -640,11 +656,26 @@
 
     margin-left: 20px;
 
-    height: 100px;
+    margin-top: 0;
+
+    height: auto;
+
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+
+    gap: 12px;
   }
 
   .about-intro-thumbnail {
-    height: 100px;
+    /*
+      Fluid width prevents the original 175px
+      desktop width from overflowing the grid.
+    */
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 1 / 1;
   }
 
   .about-intro-content {
@@ -666,16 +697,28 @@
 
     font-size: 12px;
   }
+
+  .about-intro-feature {
+    min-width: 0;
+  }
+
+  .about-intro-feature-title {
+    min-width: 0;
+  }
 }
 
 
 /* =========================================================
    MOBILE
+   576px - 767px
 ========================================================= */
 
 @media (max-width: 767px) {
 
   .about-intro-section {
+    height: auto;
+    min-height: 0;
+
     padding: 50px 0;
   }
 
@@ -709,11 +752,19 @@
 
     margin-left: 12px;
 
-    height: 78px;
+    height: auto;
+
+    gap: 8px;
   }
 
   .about-intro-thumbnail {
-    height: 78px;
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    min-width: 0;
   }
 
   .about-intro-title {
@@ -736,21 +787,29 @@
 
   .about-intro-feature {
     align-items: flex-start;
+
+    min-width: 0;
   }
 
   .about-intro-feature-title {
     font-size: 10px;
+
+    min-width: 0;
   }
 }
 
 
 /* =========================================================
    SMALL MOBILE
+   375px - 480px
 ========================================================= */
 
 @media (max-width: 480px) {
 
   .about-intro-section {
+    height: auto;
+    min-height: 0;
+
     padding: 42px 0;
   }
 
@@ -785,11 +844,19 @@
 
     margin-left: 9px;
 
-    height: 62px;
+    height: auto;
+
+    gap: 5px;
   }
 
   .about-intro-thumbnail {
-    height: 62px;
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    min-width: 0;
 
     border-width: 1px;
   }
@@ -826,6 +893,7 @@
 
 /* =========================================================
    VERY SMALL MOBILE
+   320px - 374px
 ========================================================= */
 
 @media (max-width: 375px) {
@@ -839,8 +907,14 @@
     height: 195px;
   }
 
+  .about-intro-thumbnails {
+    gap: 4px;
+  }
+
   .about-intro-thumbnail {
-    height: 56px;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
   }
 
   .about-intro-title {
@@ -849,6 +923,27 @@
 
   .about-intro-description {
     font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Preserve desktop hover but provide touch feedback.
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .about-intro-thumbnail:hover img {
+    transform: none;
+  }
+
+  .about-intro-thumbnail:active img {
+    transform: scale(1.04);
+  }
+
+  .about-intro-thumbnail:active {
+    border-color: #ff4d50;
   }
 }
 
@@ -866,5 +961,10 @@
   .about-intro-thumbnail,
   .about-intro-thumbnail img {
     transition: none;
+  }
+
+  .about-intro-thumbnail:hover img,
+  .about-intro-thumbnail:active img {
+    transform: none;
   }
 }

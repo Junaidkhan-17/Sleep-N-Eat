@@ -1437,7 +1437,7 @@
 }
 
 /* =========================================================
-   SELECT
+   SELECT - PREMIUM SMOOTH STYLE
 ========================================================= */
 
 .restaurant-filter-select {
@@ -1446,39 +1446,73 @@
 
   width: 100%;
 
-  padding: 12px 40px 12px 15px;
+  padding: 12px 44px 12px 15px;
 
-  border: 1px solid rgba(255, 87, 87, 0.2);
+  border: 1px solid rgba(255, 87, 87, 0.20);
   border-radius: 9px;
 
   outline: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fffafa 100%
+    );
+
+  color: #252936;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(25, 32, 44, 0.035);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease,
+    background 0.3s ease;
+}
+
+.restaurant-filter-select:hover {
+  border-color: rgba(255, 87, 87, 0.45);
+
+  box-shadow:
+    0 6px 18px rgba(255, 87, 87, 0.08);
+}
+
+.restaurant-filter-select:focus {
+  border-color: #ff5757;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 87, 87, 0.08),
+    0 8px 22px rgba(255, 87, 87, 0.08);
+}
+
+.restaurant-filter-select:active {
+  transform: scale(0.99);
+}
+
+/* =========================================================
+   DROPDOWN OPTIONS
+========================================================= */
+
+.restaurant-filter-select option {
+  padding: 10px 14px;
 
   background: #ffffff;
 
   color: #252936;
 
   font-family: inherit;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-}
-
-.restaurant-filter-select:hover {
-  border-color: rgba(255, 87, 87, 0.45);
-}
-
-.restaurant-filter-select:focus {
-  border-color: #ff5757;
-
-  box-shadow: 0 0 0 3px rgba(255, 87, 87, 0.08);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /* =========================================================
@@ -1491,15 +1525,126 @@
   top: 50%;
   right: 14px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
   transform: translateY(-50%);
 
   pointer-events: none;
 
   color: #ff5757;
 
-  font-size: 20px;
-
+  font-size: 18px;
   font-weight: 900;
+
+  line-height: 1;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.restaurant-filter-select:focus
+  + .restaurant-filter-chevron {
+  transform: translateY(-50%) rotate(180deg);
+
+  color: #ff5757;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+  .restaurant-filter-select-wrapper {
+    width: 260px;
+    max-width: 100%;
+  }
+
+  .restaurant-filter-select {
+    min-height: 44px;
+
+    padding: 11px 42px 11px 14px;
+
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .restaurant-filter-select-wrapper {
+    width: 100%;
+  }
+
+  .restaurant-filter-select {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 12px 42px 12px 14px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+  }
+
+  .restaurant-filter-chevron {
+    right: 13px;
+
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 575px) {
+  .restaurant-filter-select {
+    min-height: 44px;
+
+    font-size: 12px;
+  }
+
+  .restaurant-filter-select option {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .restaurant-filter-select {
+    min-height: 43px;
+
+    padding: 11px 40px 11px 13px;
+
+    font-size: 11.5px;
+  }
+}
+
+/* =========================================================
+   TOUCH
+========================================================= */
+
+@media (max-width: 767px) {
+  .restaurant-filter-select {
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+  }
+
+  .restaurant-filter-select:active {
+    transform: scale(0.99);
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .restaurant-filter-select,
+  .restaurant-filter-chevron {
+    transition: none;
+  }
 }
 
 /* =========================================================
@@ -2139,4 +2284,50 @@
   .restaurant-chef {
     transition: none !important;
   }
+}
+
+
+/* =========================================================
+   FINAL MOBILE RESPONSIVE OVERRIDES
+   ---------------------------------------------------------
+   Desktop layout/design above is intentionally untouched.
+   These rules only improve mobile behaviour and pagination.
+========================================================= */
+@media (max-width: 767px) {
+  .restaurant-section,.restaurant-container,.restaurant-content,.restaurant-menu,.restaurant-category-grid{max-width:100%;overflow-x:hidden;}
+  .restaurant-category-header{min-width:0;}
+  .restaurant-category-title{min-width:0;overflow-wrap:anywhere;}
+  .restaurant-category-line{min-width:0;flex:1 1 auto;}
+  .restaurant-menu-card{width:100%;max-width:100%;min-width:0;}
+  .restaurant-menu-top,.restaurant-menu-name-wrapper{min-width:0;}
+  .restaurant-menu-name,.restaurant-menu-price,.restaurant-menu-description{max-width:100%;overflow-wrap:anywhere;}
+  .restaurant-reserve-button{flex-shrink:0;white-space:nowrap;}
+}
+
+/* Mobile pagination: all pages remain accessible without horizontal page overflow. */
+@media (max-width: 575px) {
+  .restaurant-pagination{display:grid;grid-template-columns:32px minmax(0,1fr) 32px;align-items:center;gap:6px;width:100%;max-width:100%;box-sizing:border-box;overflow:hidden;}
+  .restaurant-pagination-button{width:32px;min-width:32px;height:32px;padding:0;flex-shrink:0;}
+  .restaurant-pagination-pages{display:flex;align-items:center;justify-content:flex-start;gap:4px;width:100%;min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden;padding:2px 1px 5px;box-sizing:border-box;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .restaurant-pagination-pages::-webkit-scrollbar{display:none;}
+  .restaurant-pagination-page{width:32px;min-width:32px;max-width:32px;height:32px;padding:0;flex:0 0 32px;}
+}
+
+@media (max-width: 400px) {
+  .restaurant-pagination{grid-template-columns:30px minmax(0,1fr) 30px;gap:5px;}
+  .restaurant-pagination-button{width:30px;min-width:30px;height:30px;}
+  .restaurant-pagination-pages{gap:3px;}
+  .restaurant-pagination-page{width:30px;min-width:30px;max-width:30px;height:30px;flex-basis:30px;}
+}
+
+@media (max-width: 359px) {
+  .restaurant-pagination{grid-template-columns:28px minmax(0,1fr) 28px;gap:4px;}
+  .restaurant-pagination-button{width:28px;min-width:28px;height:28px;font-size:9px;}
+  .restaurant-pagination-pages{gap:3px;padding-bottom:4px;}
+  .restaurant-pagination-page{width:28px;min-width:28px;max-width:28px;height:28px;flex-basis:28px;font-size:9px;}
+}
+
+@media (max-width: 767px) {
+  .restaurant-pagination-button,.restaurant-pagination-page,.restaurant-reserve-button,.restaurant-switch-button{-webkit-tap-highlight-color:transparent;}
+  .restaurant-pagination-button:active:not(:disabled),.restaurant-pagination-page:active,.restaurant-reserve-button:active,.restaurant-switch-button:active{transform:scale(0.98);}
 }
