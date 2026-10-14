@@ -12,10 +12,12 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 
-import Testimonial1 from "../../assets/Testimonial1.jpg";
-import Testimonial2 from "../../assets/Testimonial2.jpg";
-import Testimonial3 from "../../assets/Testimonial3.jpg";
-import Testimonial4 from "../../assets/Testimonial4.png";
+import P1412673 from "../../assets/image/P1412673.JPG";
+import P1412687 from "../../assets/image/P1412689.JPG";
+import P1412708 from "../../assets/image/P1412708.JPG";
+import P1412721 from "../../assets/image/P1412738.JPG";
+import P1412727 from "../../assets/image/P1412761.JPG";
+import P1412740 from "../../assets/image/P1412775.JPG";
 
 import logo from "../../assets/logo.png";
 import webdocklogo from "../../assets/webdocklogo.png";
@@ -78,32 +80,32 @@ const footerSocialLinks = [
 const instagramPosts = [
   {
     id: "instagram-001",
-    image: Testimonial1,
+    image: P1412673,
     alt: "Sleep N Eat Instagram post 1",
   },
   {
     id: "instagram-002",
-    image: Testimonial2,
+    image: P1412687,
     alt: "Sleep N Eat Instagram post 2",
   },
   {
     id: "instagram-003",
-    image: Testimonial3,
+    image: P1412708,
     alt: "Sleep N Eat Instagram post 3",
   },
   {
     id: "instagram-004",
-    image: Testimonial4,
+    image: P1412721,
     alt: "Sleep N Eat Instagram post 4",
   },
   {
     id: "instagram-005",
-    image: Testimonial1,
+    image: P1412727,
     alt: "Sleep N Eat Instagram post 5",
   },
   {
     id: "instagram-006",
-    image: Testimonial2,
+    image: P1412740,
     alt: "Sleep N Eat Instagram post 6",
   },
 ];
@@ -222,11 +224,7 @@ const Footer = () => {
               <div className="footer-contact-content">
 
                 <a href="tel:+917070707261">
-                  +91 70707 07261
-                </a>
-
-                <a href="tel:+917070707261">
-                  +91 70707 07261
+                  +91 7972823773
                 </a>
 
               </div>
@@ -250,8 +248,8 @@ const Footer = () => {
                   sleepneat@hotel.com
                 </a>
 
-                <a href="mailto:infosleepneat@hotel.com">
-                  infosleepneat@hotel.com
+                <a href="mailto:sleepneathotel@gmail.com">
+                  sleepneathotel@gmail.com
                 </a>
 
               </div>
@@ -272,7 +270,7 @@ const Footer = () => {
               <div className="footer-contact-content">
 
                 <address>
-                  Sleep N Eat, Vihraon, Nagpur,
+                  Sleep N Eat, Vhirgaon, Nagpur,
                   <br />
                   Maharashtra 440034
                 </address>

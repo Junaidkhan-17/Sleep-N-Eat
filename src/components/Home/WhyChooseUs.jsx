@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import "./WhyChooseUs.css";
-
-import homehero1 from "../../assets/homehero1.png";
-import homehero2 from "../../assets/homehero2.png";
-import homehero3 from "../../assets/homehero3.png";
 import wave2 from "../../assets/wave2.jpg";
+import P1412673 from "../../assets/image/P1412673.JPG";
+import P1412689 from "../../assets/image/P1412689.JPG";
+import P1412700 from "../../assets/image/P1412700.JPG";
+import P1412720 from "../../assets/image/P1412720.JPG";
 
 /* =========================================================
    WHY CHOOSE US DATA
@@ -23,7 +23,7 @@ const comfortFeatures = [
       "Power Backup",
       "Daily Housekeeping",
     ],
-    image: homehero1,
+    image: P1412673,
     theme: wave2,
   },
   {
@@ -37,7 +37,7 @@ const comfortFeatures = [
       "Wardrobe & Hangers",
       "Blackout Curtains",
     ],
-    image: homehero2,
+    image: P1412689,
     theme: wave2,
   },
   {
@@ -51,7 +51,7 @@ const comfortFeatures = [
       "Dental Kit (Toothbrush & Toothpaste)",
       "Shower cap, cotton buds, and vanity kit",
     ],
-    image: homehero3,
+    image: P1412700,
     theme: wave2,
   },
   {
@@ -65,7 +65,7 @@ const comfortFeatures = [
       "Flexible Dining",
       "Guest Assistance",
     ],
-    image: homehero1,
+    image: P1412720,
     theme: wave2,
   },
 ];

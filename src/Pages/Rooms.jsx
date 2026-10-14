@@ -1,7 +1,7 @@
 import React from "react";
 
 import RoomsHero from "../components/Rooms/RoomsHero";
-import RoomsPopularRoom from "../components/Rooms/RoomsPopularRoom";
+import PopularRoom from "../components/Home/PopularRooms";
 import FacilitiesSection from "../components/About/FacilitiesSection";
 import Restaurant from "../components/Home/Restaurant";
 import SubscribeSection from "../components/Home/SubscribeSection";
@@ -15,7 +15,7 @@ const Rooms = () => {
       <RoomsHero />
 
       {/* ================= POPULAR ROOMS ================= */}
-      <RoomsPopularRoom />
+      <PopularRoom />
 
       {/* ================= PROMOTIONAL OFFER ================= */}
       <FacilitiesSection />

@@ -5,9 +5,9 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "./LatestNews.css";
 
-import news1 from "../../assets/news1.png";
-import news2 from "../../assets/news2.png";
-import news3 from "../../assets/news3.png";
+import P1413046 from "../../assets/image/P1413046.JPG";
+import P1413034 from "../../assets/image/P1413034.JPG";
+import P1412865 from "../../assets/image/P1412865.JPG";
 
 /* =========================================================
    LATEST NEWS DATA
@@ -17,25 +17,25 @@ const latestNews = [
   {
     id: "news-001",
     title: "Things You Must Need to See While You’re In Dubai",
-    image: news1,
+    image: P1413046,
   },
 
   {
     id: "news-002",
     title: "Mistakes Every Couple Makes When They Travel Together",
-    image: news2,
+    image: P1413034,
   },
 
   {
     id: "news-003",
     title: "Remember This 10 Things Before Booking Hotel.",
-    image: news3,
+    image: P1412865,
   },
 
   {
     id: "news-004",
     title: "How to Make Your Hotel Stay More Comfortable",
-    image: news2,
+    image: P1413034,
   },
 ];
 

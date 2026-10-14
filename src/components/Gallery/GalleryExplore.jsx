@@ -1,606 +1,300 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import "./GalleryExplore.css";
 
-import aboutbook1 from "../../assets/aboutbook1.png";
-import aboutbook2 from "../../assets/aboutbook2.png";
-import aboutbook3 from "../../assets/aboutbook3.png";
-
-import homehero1 from "../../assets/homehero1.png";
-import homehero2 from "../../assets/homehero2.png";
-import homehero3 from "../../assets/homehero3.png";
-
-
-// =========================================================
-// GALLERY IMAGE DATA
-// =========================================================
-
-const galleryImages = [
+const galleryImageModules = import.meta.glob(
+  "../../assets/image/P*.JPG",
   {
-    id: "gallery-001",
-    title: "Hotel Celebration",
-    category: "Events",
-    image: aboutbook1,
-  },
+    eager: true,
+    import: "default",
+  }
+);
 
-  {
-    id: "gallery-002",
-    title: "Grand Event Hall",
-    category: "Events",
-    image: aboutbook2,
-  },
+const galleryImages = Object.entries(galleryImageModules)
+  .map(([path, image]) => {
+    const fileName = path.split("/").pop();
+    const match = fileName.match(/^P(\d+)\.JPG$/);
 
-  {
-    id: "gallery-003",
-    title: "Guest Experience",
-    category: "Hospitality",
-    image: aboutbook3,
-  },
+    if (!match) return null;
 
-  {
-    id: "gallery-004",
-    title: "Luxury Stay",
-    category: "Rooms",
-    image: homehero1,
-  },
+    const imageNumber = Number(match[1]);
 
-  {
-    id: "gallery-005",
-    title: "Hotel Interior",
-    category: "Interior",
-    image: homehero2,
-  },
+    if (imageNumber < 1412672 || imageNumber > 1413049) {
+      return null;
+    }
 
-  {
-    id: "gallery-006",
-    title: "Premium Hospitality",
-    category: "Hospitality",
-    image: homehero3,
-  },
-
-  {
-    id: "gallery-007",
-    title: "Elegant Dining",
-    category: "Dining",
-    image: aboutbook1,
-  },
-
-  {
-    id: "gallery-008",
-    title: "Relaxing Stay",
-    category: "Rooms",
-    image: aboutbook2,
-  },
-
-  {
-    id: "gallery-009",
-    title: "Beautiful Interiors",
-    category: "Interior",
-    image: aboutbook3,
-  },
-
-  {
-    id: "gallery-010",
-    title: "Guest Moments",
-    category: "Hospitality",
-    image: homehero1,
-  },
-];
-
-
-// =========================================================
-// UPPER SLIDER DATA
-//
-// Position 2 and Position 4 are the ONLY images
-// that will occasionally change/fade.
-//
-// type:
-// "box"        = square/portrait style
-// "horizontal" = wide horizontal style
-// =========================================================
+    return {
+      id: `gallery-${imageNumber}`,
+      title: `P${imageNumber}`,
+      category: "Hotel Gallery",
+      image,
+      imageNumber,
+    };
+  })
+  .filter(Boolean)
+  .sort((a, b) => a.imageNumber - b.imageNumber);
 
 const initialUpperSlider = [
-  {
-    slot: 1,
-    type: "box",
-    imageIndex: 0,
-  },
-
-  {
-    slot: 2,
-    type: "horizontal",
-    imageIndex: 1,
-  },
-
-  {
-    slot: 3,
-    type: "box",
-    imageIndex: 2,
-  },
-
-  {
-    slot: 4,
-    type: "horizontal",
-    imageIndex: 3,
-  },
-
-  {
-    slot: 5,
-    type: "box",
-    imageIndex: 4,
-  },
-
-  {
-    slot: 6,
-    type: "horizontal",
-    imageIndex: 5,
-  },
+  { slot: 1, type: "box", imageIndex: 0 },
+  { slot: 2, type: "horizontal", imageIndex: 1 },
+  { slot: 3, type: "box", imageIndex: 2 },
+  { slot: 4, type: "horizontal", imageIndex: 3 },
+  { slot: 5, type: "box", imageIndex: 4 },
+  { slot: 6, type: "horizontal", imageIndex: 5 },
 ];
-
-
-// =========================================================
-// LOWER SLIDER DATA
-//
-// Position 6 and Position 8 are the ONLY images
-// that will occasionally change/fade.
-// =========================================================
 
 const initialLowerSlider = [
-  {
-    slot: 6,
-    type: "horizontal",
-    imageIndex: 5,
-  },
-
-  {
-    slot: 7,
-    type: "box",
-    imageIndex: 6,
-  },
-
-  {
-    slot: 8,
-    type: "horizontal",
-    imageIndex: 7,
-  },
-
-  {
-    slot: 9,
-    type: "box",
-    imageIndex: 8,
-  },
-
-  {
-    slot: 10,
-    type: "horizontal",
-    imageIndex: 9,
-  },
-
-  {
-    slot: 11,
-    type: "box",
-    imageIndex: 0,
-  },
+  { slot: 6, type: "horizontal", imageIndex: 5 },
+  { slot: 7, type: "box", imageIndex: 6 },
+  { slot: 8, type: "horizontal", imageIndex: 7 },
+  { slot: 9, type: "box", imageIndex: 8 },
+  { slot: 10, type: "horizontal", imageIndex: 9 },
+  { slot: 11, type: "box", imageIndex: 0 },
 ];
 
-
-// =========================================================
-// GALLERY EXPLORE COMPONENT
-// =========================================================
-
 const GalleryExplore = () => {
-
-  // =======================================================
-  // HOVER / PAUSE STATE
-  // =======================================================
-
   const [isHovered, setIsHovered] = useState(false);
-
-
-  // =======================================================
-  // UPPER SLIDER STATE
-  // =======================================================
-
-  const [upperSlider, setUpperSlider] = useState(
-    initialUpperSlider
-  );
-
-
-  // =======================================================
-  // LOWER SLIDER STATE
-  // =======================================================
-
-  const [lowerSlider, setLowerSlider] = useState(
-    initialLowerSlider
-  );
-
-
-  // =======================================================
-  // FADE STATES
-  //
-  // Only selected slots use these.
-  // =======================================================
-
-  const [upperFadeSlots, setUpperFadeSlots] =
-    useState({});
-
-  const [lowerFadeSlots, setLowerFadeSlots] =
-    useState({});
-
-
-  // =======================================================
-  // IMAGE POINTERS
-  //
-  // These keep track of which image should be used
-  // next for each changing slot.
-  // =======================================================
+  const [upperSlider, setUpperSlider] = useState(initialUpperSlider);
+  const [lowerSlider, setLowerSlider] = useState(initialLowerSlider);
+  const [upperFadeSlots, setUpperFadeSlots] = useState({});
+  const [lowerFadeSlots, setLowerFadeSlots] = useState({});
 
   const upperSlot2Pointer = useRef(4);
-
   const upperSlot4Pointer = useRef(5);
-
   const lowerSlot6Pointer = useRef(0);
-
   const lowerSlot8Pointer = useRef(1);
 
+  const getNextImageIndex = (currentIndex, pointerRef) => {
+    if (galleryImages.length <= 1) return currentIndex;
 
-  // =======================================================
-  // GET NEXT DIFFERENT IMAGE
-  // =======================================================
-
-  const getNextImageIndex = (
-    currentIndex,
-    pointerRef
-  ) => {
-
-    let nextIndex =
-      pointerRef.current %
-      galleryImages.length;
-
-
-    /*
-     * Make sure the new image is not the
-     * same as the currently displayed image.
-     */
+    let nextIndex = pointerRef.current % galleryImages.length;
 
     if (nextIndex === currentIndex) {
       pointerRef.current += 1;
-
-      nextIndex =
-        pointerRef.current %
-        galleryImages.length;
+      nextIndex = pointerRef.current % galleryImages.length;
     }
 
-
     pointerRef.current += 1;
-
     return nextIndex;
   };
 
-
-  // =======================================================
-  // UPPER SLOT 2
-  //
-  // Slowly changes only slot 2.
-  // =======================================================
-
   useEffect(() => {
+    if (isHovered || galleryImages.length <= 1) return undefined;
 
-    if (isHovered) {
-      return;
-    }
+    let changeTimeout;
+    let resetTimeout;
 
-    const interval = setInterval(() => {
-
+    const interval = window.setInterval(() => {
       setUpperFadeSlots((previous) => ({
         ...previous,
         2: "gallery-explore-fade-out",
       }));
 
-
-      setTimeout(() => {
-
+      changeTimeout = window.setTimeout(() => {
         setUpperSlider((previous) =>
           previous.map((item) => {
-
-            if (item.slot !== 2) {
-              return item;
-            }
-
-            const nextImageIndex =
-              getNextImageIndex(
-                item.imageIndex,
-                upperSlot2Pointer
-              );
+            if (item.slot !== 2) return item;
 
             return {
               ...item,
-              imageIndex: nextImageIndex,
+              imageIndex: getNextImageIndex(
+                item.imageIndex,
+                upperSlot2Pointer
+              ),
             };
           })
         );
-
 
         setUpperFadeSlots((previous) => ({
           ...previous,
           2: "gallery-explore-fade-in",
         }));
 
-
-        setTimeout(() => {
-
+        resetTimeout = window.setTimeout(() => {
           setUpperFadeSlots((previous) => ({
             ...previous,
             2: "",
           }));
-
         }, 1500);
-
       }, 700);
-
     }, 6500);
 
-
     return () => {
-      clearInterval(interval);
+      window.clearInterval(interval);
+      window.clearTimeout(changeTimeout);
+      window.clearTimeout(resetTimeout);
     };
-
   }, [isHovered]);
 
-
-  // =======================================================
-  // UPPER SLOT 4
-  //
-  // Slowly changes only slot 4.
-  // =======================================================
-
   useEffect(() => {
+    if (isHovered || galleryImages.length <= 1) return undefined;
 
-    if (isHovered) {
-      return;
-    }
+    let changeTimeout;
+    let resetTimeout;
 
-    const interval = setInterval(() => {
-
+    const interval = window.setInterval(() => {
       setUpperFadeSlots((previous) => ({
         ...previous,
         4: "gallery-explore-fade-out",
       }));
 
-
-      setTimeout(() => {
-
+      changeTimeout = window.setTimeout(() => {
         setUpperSlider((previous) =>
           previous.map((item) => {
-
-            if (item.slot !== 4) {
-              return item;
-            }
-
-            const nextImageIndex =
-              getNextImageIndex(
-                item.imageIndex,
-                upperSlot4Pointer
-              );
+            if (item.slot !== 4) return item;
 
             return {
               ...item,
-              imageIndex: nextImageIndex,
+              imageIndex: getNextImageIndex(
+                item.imageIndex,
+                upperSlot4Pointer
+              ),
             };
           })
         );
-
 
         setUpperFadeSlots((previous) => ({
           ...previous,
           4: "gallery-explore-fade-in",
         }));
 
-
-        setTimeout(() => {
-
+        resetTimeout = window.setTimeout(() => {
           setUpperFadeSlots((previous) => ({
             ...previous,
             4: "",
           }));
-
         }, 1500);
-
       }, 700);
-
     }, 8500);
 
-
     return () => {
-      clearInterval(interval);
+      window.clearInterval(interval);
+      window.clearTimeout(changeTimeout);
+      window.clearTimeout(resetTimeout);
     };
-
   }, [isHovered]);
 
-
-  // =======================================================
-  // LOWER SLOT 6
-  //
-  // Slowly changes only slot 6.
-  // =======================================================
-
   useEffect(() => {
+    if (isHovered || galleryImages.length <= 1) return undefined;
 
-    if (isHovered) {
-      return;
-    }
+    let changeTimeout;
+    let resetTimeout;
 
-    const interval = setInterval(() => {
-
+    const interval = window.setInterval(() => {
       setLowerFadeSlots((previous) => ({
         ...previous,
         6: "gallery-explore-fade-out",
       }));
 
-
-      setTimeout(() => {
-
+      changeTimeout = window.setTimeout(() => {
         setLowerSlider((previous) =>
           previous.map((item) => {
-
-            if (item.slot !== 6) {
-              return item;
-            }
-
-            const nextImageIndex =
-              getNextImageIndex(
-                item.imageIndex,
-                lowerSlot6Pointer
-              );
+            if (item.slot !== 6) return item;
 
             return {
               ...item,
-              imageIndex: nextImageIndex,
+              imageIndex: getNextImageIndex(
+                item.imageIndex,
+                lowerSlot6Pointer
+              ),
             };
           })
         );
-
 
         setLowerFadeSlots((previous) => ({
           ...previous,
           6: "gallery-explore-fade-in",
         }));
 
-
-        setTimeout(() => {
-
+        resetTimeout = window.setTimeout(() => {
           setLowerFadeSlots((previous) => ({
             ...previous,
             6: "",
           }));
-
         }, 1500);
-
       }, 700);
-
     }, 7200);
 
-
     return () => {
-      clearInterval(interval);
+      window.clearInterval(interval);
+      window.clearTimeout(changeTimeout);
+      window.clearTimeout(resetTimeout);
     };
-
   }, [isHovered]);
 
-
-  // =======================================================
-  // LOWER SLOT 8
-  //
-  // Slowly changes only slot 8.
-  // =======================================================
-
   useEffect(() => {
+    if (isHovered || galleryImages.length <= 1) return undefined;
 
-    if (isHovered) {
-      return;
-    }
+    let changeTimeout;
+    let resetTimeout;
 
-    const interval = setInterval(() => {
-
+    const interval = window.setInterval(() => {
       setLowerFadeSlots((previous) => ({
         ...previous,
         8: "gallery-explore-fade-out",
       }));
 
-
-      setTimeout(() => {
-
+      changeTimeout = window.setTimeout(() => {
         setLowerSlider((previous) =>
           previous.map((item) => {
-
-            if (item.slot !== 8) {
-              return item;
-            }
-
-            const nextImageIndex =
-              getNextImageIndex(
-                item.imageIndex,
-                lowerSlot8Pointer
-              );
+            if (item.slot !== 8) return item;
 
             return {
               ...item,
-              imageIndex: nextImageIndex,
+              imageIndex: getNextImageIndex(
+                item.imageIndex,
+                lowerSlot8Pointer
+              ),
             };
           })
         );
-
 
         setLowerFadeSlots((previous) => ({
           ...previous,
           8: "gallery-explore-fade-in",
         }));
 
-
-        setTimeout(() => {
-
+        resetTimeout = window.setTimeout(() => {
           setLowerFadeSlots((previous) => ({
             ...previous,
             8: "",
           }));
-
         }, 1500);
-
       }, 700);
-
     }, 9300);
 
-
     return () => {
-      clearInterval(interval);
+      window.clearInterval(interval);
+      window.clearTimeout(changeTimeout);
+      window.clearTimeout(resetTimeout);
     };
-
   }, [isHovered]);
 
+  const renderGalleryCard = (item, row, index) => {
+    const image = galleryImages[item.imageIndex];
 
-  // =======================================================
-  // RENDER IMAGE CARD
-  // =======================================================
-
-  const renderGalleryCard = (
-    item,
-    row,
-    index
-  ) => {
-
-    const image =
-      galleryImages[item.imageIndex];
-
+    if (!image) return null;
 
     const fadeClass =
       row === "upper"
         ? upperFadeSlots[item.slot] || ""
         : lowerFadeSlots[item.slot] || "";
 
-
     return (
       <div
         key={`${row}-${item.slot}-${index}`}
-        className={`
-          gallery-explore-image-card
-          gallery-explore-image-${item.type}
-          ${fadeClass}
-        `}
+        className={`gallery-explore-image-card gallery-explore-image-${item.type} ${fadeClass}`}
       >
-
         <img
           src={image.image}
           alt={image.title}
           className="gallery-explore-image"
           loading="lazy"
+          decoding="async"
+          draggable="false"
         />
 
-
-        {/* =================================================
-            IMAGE OVERLAY
-        ================================================= */}
-
         <div className="gallery-explore-image-overlay">
-
           <span className="gallery-explore-image-category">
             {image.category}
           </span>
@@ -608,65 +302,27 @@ const GalleryExplore = () => {
           <span className="gallery-explore-image-title">
             {image.title}
           </span>
-
         </div>
-
       </div>
     );
   };
 
+  if (galleryImages.length === 0) {
+    return null;
+  }
 
-  // =======================================================
-  // DUPLICATE SLIDES FOR INFINITE LOOP
-  // =======================================================
-
-  const upperLoop = [
-    ...upperSlider,
-    ...upperSlider,
-  ];
-
-
-  const lowerLoop = [
-    ...lowerSlider,
-    ...lowerSlider,
-  ];
-
-
-  // =======================================================
-  // JSX
-  // =======================================================
+  const upperLoop = [...upperSlider, ...upperSlider];
+  const lowerLoop = [...lowerSlider, ...lowerSlider];
 
   return (
     <section
       className="gallery-explore-section"
-
       aria-labelledby="gallery-explore-title"
-
-      /*
-       * Hover anywhere inside the complete section
-       * to pause both sliders and image changes.
-       */
-
-      onMouseEnter={() => {
-        setIsHovered(true);
-      }}
-
-      onMouseLeave={() => {
-        setIsHovered(false);
-      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-
-
-      {/* =================================================
-          SECTION HEADER
-      ================================================= */}
-
       <div className="gallery-explore-header">
-
-        <span className="gallery-explore-label">
-          Explore Us
-        </span>
-
+        <span className="gallery-explore-label">Explore Us</span>
 
         <h2
           id="gallery-explore-title"
@@ -674,92 +330,37 @@ const GalleryExplore = () => {
         >
           A truly exceptional experience
         </h2>
-
       </div>
-
-
-      {/* =================================================
-          TWO SLIDERS
-      ================================================= */}
 
       <div className="gallery-explore-sliders">
-
-
-        {/* =================================================
-            UPPER SLIDER
-            RIGHT → LEFT
-        ================================================= */}
-
         <div className="gallery-explore-slider-wrapper">
-
           <div className="gallery-explore-slider">
-
             <div
-              className={`
-                gallery-explore-track
-                gallery-explore-track-left
-                ${
-                  isHovered
-                    ? "gallery-explore-track-paused"
-                    : ""
-                }
-              `}
+              className={`gallery-explore-track gallery-explore-track-left ${
+                isHovered ? "gallery-explore-track-paused" : ""
+              }`}
             >
-
-              {upperLoop.map(
-                (item, index) =>
-                  renderGalleryCard(
-                    item,
-                    "upper",
-                    index
-                  )
+              {upperLoop.map((item, index) =>
+                renderGalleryCard(item, "upper", index)
               )}
-
             </div>
-
           </div>
-
         </div>
 
-
-        {/* =================================================
-            LOWER SLIDER
-            LEFT → RIGHT
-        ================================================= */}
-
         <div className="gallery-explore-slider-wrapper">
-
           <div className="gallery-explore-slider">
-
             <div
-              className={`
-                gallery-explore-track
-                gallery-explore-track-right
-                ${
-                  isHovered
-                    ? "gallery-explore-track-paused"
-                    : ""
-                }
-              `}
+              className={`gallery-explore-track gallery-explore-track-right ${
+                isHovered ? "gallery-explore-track-paused" : ""
+              }`}
             >
-
-              {lowerLoop.map(
-                (item, index) =>
-                  renderGalleryCard(
-                    item,
-                    "lower",
-                    index
-                  )
+              {lowerLoop.map((item, index) =>
+                renderGalleryCard(item, "lower", index)
               )}
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 };

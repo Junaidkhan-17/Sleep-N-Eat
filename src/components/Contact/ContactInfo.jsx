@@ -24,15 +24,15 @@ import "./ContactInfo.css";
 // =========================================================
 
 const contactConfig = {
-  phone: "+91 70707 07261",
-  phoneRaw: "917070707261",
+  phone: "+91 7972823773",
+  phoneRaw: "+917972823773",
 
-  email: "info@sleepneat.com",
+  email: "sleepneathotel@gmail.com",
 
   address:
-    "Sleep N Eat, Vhiraon, Nagpur, Maharashtra 440034",
+    "Sleep N Eat, Vhirgaon, Nagpur, Maharashtra 440034",
 
-  whatsappNumber: "917070707261",
+  whatsappNumber: "917972823773",
 };
 
 

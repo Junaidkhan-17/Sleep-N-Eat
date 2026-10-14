@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./AboutIntro.css";
 
-import aboutsmall1 from "../../assets/aboutsmall1.png";
-import aboutsmall2 from "../../assets/aboutsmall2.png";
-import aboutsmall3 from "../../assets/aboutsmall3.png";
-import aboutsmall4 from "../../assets/aboutsmall4.png";
-import aboutsmall5 from "../../assets/aboutsmall5.png";
+import P1412673 from "../../assets/image/P1412673.JPG";
+import P1412687 from "../../assets/image/P1412687.JPG";
+import P1412708 from "../../assets/image/P1412708.JPG";
+import P1412783 from "../../assets/image/P1412783.JPG";
+import P1412771 from "../../assets/image/P1412771.JPG";
 
 // =========================================================
 // ABOUT INTRO GALLERY DATA
@@ -14,27 +14,27 @@ import aboutsmall5 from "../../assets/aboutsmall5.png";
 const aboutGallery = [
   {
     id: "about-gallery-001",
-    image: aboutsmall1,
+    image: P1412673,
     alt: "Luxury Sleep N Eat hotel bedroom",
   },
   {
     id: "about-gallery-002",
-    image: aboutsmall2,
+    image: P1412687,
     alt: "Comfortable hotel room interior",
   },
   {
     id: "about-gallery-003",
-    image: aboutsmall3,
+    image: P1412708,
     alt: "Premium hotel bedroom",
   },
   {
     id: "about-gallery-004",
-    image: aboutsmall4,
+    image: P1412783,
     alt: "Luxury hotel workspace",
   },
   {
     id: "about-gallery-005",
-    image: aboutsmall5,
+    image: P1412771,
     alt: "Elegant Sleep N Eat hotel room",
   },
 ];

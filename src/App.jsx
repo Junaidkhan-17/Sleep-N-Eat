@@ -8,7 +8,7 @@ import Rooms from "./Pages/Rooms";
 import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import Footer from "./components/Common/Footer";
-
+import Availability from "./Pages/Availability";
 
 function App() {
   return (
@@ -16,43 +16,26 @@ function App() {
       <Navbar />
 
       <Routes>
-
         {/* ================= HOME PAGE ================= */}
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
+        <Route path="/" element={<Home />} />
 
         {/* ================= ABOUT PAGE ================= */}
 
-        <Route
-          path="/about"
-          element={<About />}
-        />
+        <Route path="/about" element={<About />} />
 
-        <Route
-          path="/rooms"
-          element={<Rooms />}
-        />
-    
-        <Route
-          path="/gallery"
-          element={<Gallery />}
-        />
+        <Route path="/rooms" element={<Rooms />} />
 
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
+        <Route path="/gallery" element={<Gallery />} />
 
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="/availability" element={<Availability />} />
       </Routes>
 
       <Footer />
     </>
   );
 }
-
 
 export default App;

@@ -148,10 +148,10 @@ const roomData = [
     reviewsCount: 42,
 
     pricing: {
-      amount: 3200,
+      amount: 2000,
       currency: "₹",
-      unit: "Night",
-      roomType: "Premium AC Room",
+      unit: "24 Hours",
+      roomType: "Non-AC Room",
     },
 
     status: "available",

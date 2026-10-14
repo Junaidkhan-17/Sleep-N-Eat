@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
 
 import "./Restaurant.css";
+import OrderFood from "./OrderFood";
 
 import restaurantbg from "../../assets/restaurantbg.png";
 import chefbgremove from "../../assets/chefbgremove.png";
@@ -30,6 +30,18 @@ import PaneerLahoriTikka from "../../assets/PaneerLahoriTikka.png";
 import PaneerGilafiKebab from "../../assets/PaneerGilafiKebab.png";
 import PaneerSufiyanaTikka from "../../assets/PaneerSufiyanaTikka.png";
 import PaneerBhattiKaTikka from "../../assets/PaneerBhattiKaTikka.png";
+import chickentikka from "../../assets/chickentikka.png";
+import cheesecornball from "../../assets/cheesecornball.png";
+import vegschezwanmomos from "../../assets/vegschezwanmomos.png";
+import vegchilli from "../../assets/vegchilli.png";
+import orientalcheesefritters from "../../assets/orientalcheesefritters.png";
+import sweetchillipotato from "../../assets/sweetchillipotato.png";
+import paneerkorean from "../../assets/paneerkorean.png";
+import paneercheesygarden from "../../assets/paneercheesygarden.png";
+import vegkadai from "../../assets/vegkadai.png";
+import paneerpepperblast from "../../assets/paneerpepperblast.png";
+import dragonpaneer from "../../assets/dragonpaneer.png";
+import veghandi from "../../assets/veghandi.png";
 
 /* =========================================================
    INTERNET FOOD IMAGE HELPER
@@ -749,7 +761,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹390",
     keywords: "paneer,tikka,platter,tandoori,indian",
-    image: foodImage("paneer,tikka,platter,tandoori,indian", 812),
+    image: chickentikka,
     description:
       "Assorted three types of delicious marination coated on paneer and baked in tandoor.",
   },
@@ -1038,7 +1050,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹320",
     keywords: "veg,chilli,chinese,starter",
-    image: foodImage("veg,chilli,chinese,starter", 409),
+    image: vegchilli,
     description:
       "Crispy and crunchy seasonal vegetables tossed in fresh green chilli flavoured sauce.",
   },
@@ -1050,7 +1062,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "cheese,corn,balls,chinese,starter",
-    image: foodImage("cheese,corn,balls,chinese,starter", 410),
+    image: cheesecornball,
     description: "American sweet corn balls made with processed cheese.",
   },
 
@@ -1061,7 +1073,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "oriental,cheese,fritters,chinese",
-    image: foodImage("oriental,cheese,fritters,chinese", 411),
+    image: orientalcheesefritters,
     description:
       "Cheesy vegetable fritters tossed in lemongrass and Thai ginger flavoured sauce.",
   },
@@ -1073,7 +1085,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹320",
     keywords: "veg,schezwan,momos,chinese",
-    image: foodImage("veg,schezwan,momos,chinese", 412),
+    image: vegschezwanmomos,
     description:
       "Deep-fried vegetable momos tossed in homemade spicy Schezwan sauce.",
   },
@@ -1085,7 +1097,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹320",
     keywords: "sweet,chilli,potato,chinese",
-    image: foodImage("sweet,chilli,potato,chinese", 413),
+    image: sweetchillipotato,
     description: "Kids-friendly potato preparation in sweet chilli sauce.",
   },
 
@@ -1096,7 +1108,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "paneer,korean,chinese,starter",
-    image: foodImage("paneer,korean,chinese,starter", 414),
+    image: paneerkorean,
     description: "Crispy paneer cubes tossed in Korean-style red chilli sauce.",
   },
 
@@ -1107,7 +1119,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "paneer,pepper,blast,chinese",
-    image: foodImage("paneer,pepper,blast,chinese", 415),
+    image: paneerpepperblast,
     description: "Paneer chunks tossed in hot black pepper sauce.",
   },
 
@@ -1118,7 +1130,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "paneer,cheesy,garden,chinese",
-    image: foodImage("paneer,cheesy,garden,chinese", 416),
+    image: paneercheesygarden,
     description:
       "Paneer cubes tossed in spinach-based cheesy and creamy sauce.",
   },
@@ -1130,7 +1142,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "paneer,dragon,chinese,starter",
-    image: foodImage("paneer,dragon,chinese,starter", 417),
+    image: dragonpaneer,
     description:
       "Paneer juliennes tossed in spicy and tangy sauce with mixed bell pepper.",
   },
@@ -1146,7 +1158,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "veg,kadai,indian,main,course",
-    image: foodImage("veg,kadai,indian,main,course", 1001),
+    image: vegkadai,
     description:
       "Seasonal vegetable mild preparation made with a blend of tomato gravy and onion gravy.",
   },
@@ -1158,7 +1170,7 @@ const restaurantMenu = [
     type: "veg",
     price: "₹360",
     keywords: "veg,handi,indian,main,course",
-    image: foodImage("veg,handi,indian,main,course", 1002),
+    image: veghandi,
     description:
       "Seasonal vegetable mild preparation made with tomato gravy and a light touch of onion gravy.",
   },
@@ -1869,9 +1881,8 @@ const chefImage = chefbgremove;
 ========================================================= */
 
 const Restaurant = () => {
-  const navigate = useNavigate();
-
   const restaurantRef = useRef(null);
+  const [selectedFood, setSelectedFood] = useState(null);
 
   /* =======================================================
      MENU TYPE
@@ -1994,19 +2005,11 @@ const Restaurant = () => {
   }, [filteredMenu, currentPage]);
 
   /* =======================================================
-     RESERVE TABLE
+     OPEN FOOD ORDER POPUP
   ======================================================= */
 
   const handleReserveTable = (dish) => {
-    navigate("/contact", {
-      state: {
-        reservationType: "restaurant",
-        selectedDish: dish.name,
-        selectedDishType: dish.type,
-        selectedDishPrice: dish.price,
-        selectedDishCategory: dish.category,
-      },
-    });
+    setSelectedFood(dish);
   };
 
   /* =======================================================
@@ -2305,7 +2308,7 @@ const Restaurant = () => {
                           type="button"
                           className="restaurant-reserve-button"
                           onClick={() => handleReserveTable(item)}
-                          aria-label={`Reserve table for ${item.name}`}
+                          aria-label={`Order ${item.name}`}
                         >
                           Reserve
                         </button>
@@ -2402,6 +2405,14 @@ const Restaurant = () => {
           </div>
         </div>
       </div>
+
+      {selectedFood && (
+        <OrderFood
+          selectedFood={selectedFood}
+          menuItems={restaurantMenu}
+          onClose={() => setSelectedFood(null)}
+        />
+      )}
     </section>
   );
 };

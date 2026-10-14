@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 import "./LatestNews.css";
 
-import homehero1 from "../../assets/homehero1.png";
-import homehero2 from "../../assets/homehero2.png";
-import homehero3 from "../../assets/homehero3.png";
+import homehero1 from "../../assets/image/P1412708.JPG";
+import homehero2 from "../../assets/image/P1412719.JPG";
+import homehero4 from "../../assets/image/P1412818.JPG";
 
 
 // =========================================================
@@ -39,7 +39,7 @@ const newsItems = [
     title: "Remember This 10 Things Before Booking Hotel.",
     slug: "remember-this-10-things-before-booking-hotel",
     category: "Hotel Guide",
-    image: homehero3,
+    image: homehero4,
     status: "published",
     createdAt: "",
   },

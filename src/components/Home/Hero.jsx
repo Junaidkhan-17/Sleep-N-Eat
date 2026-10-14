@@ -1,28 +1,50 @@
-import React, { useState } from "react";
-import "./Hero.css";
-
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 
+import {
+  FaCalendarAlt,
+  FaUser,
+  FaChevronDown,
+  FaTimes,
+} from "react-icons/fa";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
+import "./Hero.css";
 
-import { FaCalendarAlt, FaUser, FaChevronDown } from "react-icons/fa";
+import heroImage1 from "../../assets/image/P1412708.JPG";
+import heroImage2 from "../../assets/image/P1412719.JPG";
+import heroImage3 from "../../assets/image/P1412723.JPG";
+import Availability  from "../../Pages/Availability";
+const heroImages = [heroImage1, heroImage2, heroImage3];
 
-import homehero1 from "../../assets/homehero1.png";
-import homehero2 from "../../assets/homehero2.png";
-import homehero3 from "../../assets/homehero3.png";
+const initialBookingData = {
+  checkIn: "Anytime",
+  checkOut: "Anytime",
+  adults: "0",
+  children: "0",
+  rooms: "0",
+};
 
 const Hero = () => {
-  const [bookingData, setBookingData] = useState({
-    checkIn: "2026-06-25",
-    checkOut: "2026-06-25",
-    adults: "0",
-    children: "0",
-    rooms: "0",
-  });
+  const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
+  const [bookingData, setBookingData] = useState(initialBookingData);
+  const [isBookNowOpen, setIsBookNowOpen] = useState(false);
 
-  const handleChange = (event) => {
+  const openAvailability = () => {
+    setIsAvailabilityOpen(true);
+  };
+
+  const closeAvailability = () => {
+    setIsAvailabilityOpen(false);
+  };
+
+  const openBookNow = () => {
+  setIsBookNowOpen(true);
+};
+
+  const handleBookingChange = (event) => {
     const { name, value } = event.target;
 
     setBookingData((previousData) => ({
@@ -31,240 +53,300 @@ const Hero = () => {
     }));
   };
 
-  const handleAvailabilityCheck = (event) => {
-    event.preventDefault();
 
-    console.log("Availability Search:", bookingData);
+  const ADMIN_WHATSAPP_NUMBER = "917972823773";
+
+  const handleAvailabilitySubmit = (event) => {
+  event.preventDefault();
+
+  const enquiryMessage = [
+    "🏨 SLEEP N EAT — AVAILABILITY ENQUIRY",
+    "",
+    "Hello Sleep N Eat Team,",
+    "I would like to enquire about room availability.",
+    "",
+    "📅 Check-In Time: Anytime",
+    "📅 Check-Out Time: Anytime",
+    `👨‍👩‍👧 Adults: ${bookingData.adults}`,
+    `🧒 Children: ${bookingData.children}`,
+    `🛏️ Rooms: ${bookingData.rooms}`,
+    "",
+    "Please confirm room availability and share the booking details.",
+    "",
+    "Thank you!",
+  ].join("\n");
+
+  const whatsappUrl =
+    `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=` +
+    encodeURIComponent(enquiryMessage);
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+  closeAvailability();
+};
+
+  useEffect(() => {
+    if (!isAvailabilityOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        closeAvailability();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isAvailabilityOpen]);
+
+  const handleOverlayMouseDown = (event) => {
+    if (event.target === event.currentTarget) {
+      closeAvailability();
+    }
   };
-
-  const handleBookNow = () => {
-    console.log("Book Now clicked");
-  };
-
-  const slides = [
-    {
-      id: 1,
-      image: homehero1,
-      title: (
-        <>
-          Find Your Perfect Place
-          <br />
-          To Stay
-        </>
-      ),
-    },
-    {
-      id: 2,
-      image: homehero2,
-      title: (
-        <>
-          Stay Your Way, Your
-          <br />
-          Comfort
-        </>
-      ),
-    },
-    {
-      id: 3,
-      image: homehero3,
-      title: (
-        <>
-          Relax, Refresh & Feel at
-          <br />
-          Home
-        </>
-      ),
-    },
-  ];
 
   return (
-    <section className="hotel-hero">
-      <Swiper
-        modules={[Autoplay, EffectFade]}
-        effect="fade"
-        fadeEffect={{
-          crossFade: true,
-        }}
-        slidesPerView={1}
-        loop={true}
-        speed={1200}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-        }}
-        allowTouchMove={true}
-        className="hotel-hero-slider"
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <div
-              className="hero-slide"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
+    <>
+      <section className="hotel-hero">
+        <Swiper
+          className="hotel-hero-slider"
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          fadeEffect={{ crossFade: true }}
+          loop
+          speed={1200}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+          }}
+          allowTouchMove
+        >
+          {heroImages.map((image, index) => (
+            <SwiperSlide key={image}>
+              <div
+                className="hero-slide"
+                style={{ backgroundImage: `url("${image}")` }}
+                role="img"
+                aria-label={`Sleep N Eat hotel background ${index + 1}`}
+              >
+                <div className="hero-overlay" />
+
+                <div className="hero-content">
+                  <div className="hero-text">
+                    <p className="hero-eyebrow">WELCOME TO SLEEP N EAT</p>
+
+                    <h1 className="hero-title">
+                      Experience Comfort,
+                      <br />
+                      Stay in Style
+                    </h1>
+
+                    <p className="hero-description">
+                      Discover comfort, exceptional hospitality, and a
+                      relaxing stay designed around you.
+                    </p>
+
+                    <div className="hero-cta-buttons">
+                      <button
+                        type="button"
+                        className="availability-button hero-cta-button"
+                        onClick={openAvailability}
+                      >
+                        Check Availability
+                      </button>
+
+                      <button
+                        type="button"
+                        className="hero-book-now hero-cta-button"
+                        onClick={openBookNow}
+                      >
+                        Book Now
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+
+      {isAvailabilityOpen && (
+        <div
+          className="hero-availability-overlay"
+          onMouseDown={handleOverlayMouseDown}
+          role="presentation"
+        >
+          <section
+            className="hero-availability-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="hero-availability-title"
+          >
+            <button
+              type="button"
+              className="hero-availability-close"
+              onClick={closeAvailability}
+              aria-label="Close availability form"
             >
-              {/* Background Overlay */}
+              <FaTimes aria-hidden="true" />
+            </button>
 
-              <div className="hero-overlay"></div>
+            <div className="hero-availability-header">
+              <span className="hero-modal-eyebrow">PLAN YOUR STAY</span>
 
-              {/* Hero Content */}
+              <h2 id="hero-availability-title">
+                Check Availability
+              </h2>
 
-              <div className="hero-content">
-                <h1 className="hero-title">{slide.title}</h1>
-              </div>
-
-              {/* Booking Area */}
-
-              <div className="hero-booking-wrapper">
-                <form
-                  className="hero-booking-card"
-                  onSubmit={handleAvailabilityCheck}
-                >
-                  {/* Check In */}
-
-                  <div className="booking-field">
-                    <label htmlFor="checkIn">Check In Time</label>
-
-                    <div className="booking-input">
-                      <FaCalendarAlt />
-
-                      <input
-                        id="checkIn"
-                        type="date"
-                        name="checkIn"
-                        value={bookingData.checkIn}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Divider */}
-
-                  <div className="booking-divider"></div>
-
-                  {/* Check Out */}
-
-                  <div className="booking-field">
-                    <label htmlFor="checkOut">Check Out Time</label>
-
-                    <div className="booking-input">
-                      <FaCalendarAlt />
-
-                      <input
-                        id="checkOut"
-                        type="date"
-                        name="checkOut"
-                        value={bookingData.checkOut}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Divider */}
-
-                  <div className="booking-divider"></div>
-
-                  {/* Capacity */}
-
-                  <div className="booking-capacity">
-                    <label>Capacity</label>
-
-                    <div className="capacity-options">
-                      {/* Adults */}
-
-                      <div className="capacity-item">
-                        <FaUser />
-
-                        <select
-                          name="adults"
-                          value={bookingData.adults}
-                          onChange={handleChange}
-                        >
-                          <option value="0">0 Adults</option>
-
-                          <option value="1">1 Adult</option>
-
-                          <option value="2">2 Adults</option>
-
-                          <option value="3">3 Adults</option>
-
-                          <option value="4">4 Adults</option>
-
-                          <option value="5">5 Adults</option>
-                        </select>
-                      </div>
-
-                      <span className="capacity-dot">•</span>
-
-                      {/* Children */}
-
-                      <div className="capacity-item">
-                        <select
-                          name="children"
-                          value={bookingData.children}
-                          onChange={handleChange}
-                        >
-                          <option value="0">0 Children</option>
-
-                          <option value="1">1 Child</option>
-
-                          <option value="2">2 Children</option>
-
-                          <option value="3">3 Children</option>
-
-                          <option value="4">4 Children</option>
-                        </select>
-                      </div>
-
-                      <span className="capacity-dot">•</span>
-
-                      {/* Rooms */}
-
-                      <div className="capacity-item">
-                        <select
-                          name="rooms"
-                          value={bookingData.rooms}
-                          onChange={handleChange}
-                        >
-                          <option value="0">0 Room</option>
-
-                          <option value="1">1 Room</option>
-
-                          <option value="2">2 Rooms</option>
-
-                          <option value="3">3 Rooms</option>
-
-                          <option value="4">4 Rooms</option>
-                        </select>
-
-                        <FaChevronDown className="capacity-arrow" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Availability Button */}
-
-                  <button type="submit" className="availability-button">
-                    Check Availability
-                  </button>
-                </form>
-
-                {/* Hero Book Now */}
-
-                <button
-                  type="button"
-                  className="hero-book-now"
-                  onClick={handleBookNow}
-                >
-                  Book Now
-                </button>
-              </div>
+              <p>
+                Choose your guests and rooms to start planning your stay.
+              </p>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </section>
+
+            <form
+              className="hero-availability-form"
+              onSubmit={handleAvailabilitySubmit}
+            >
+              <div className="hero-modal-field">
+                <label htmlFor="hero-check-in">Check In Time</label>
+
+                <div className="hero-modal-input hero-anytime-input">
+                  <FaCalendarAlt aria-hidden="true" />
+
+                  <span id="hero-check-in">Anytime</span>
+                </div>
+              </div>
+
+              <div className="hero-modal-field">
+                <label htmlFor="hero-check-out">Check Out Time</label>
+
+                <div className="hero-modal-input hero-anytime-input">
+                  <FaCalendarAlt aria-hidden="true" />
+
+                  <span id="hero-check-out">Anytime</span>
+                </div>
+
+              </div>
+
+              <div className="hero-modal-field">
+                <label htmlFor="hero-adults">Adults</label>
+
+                <div className="hero-modal-input">
+                  <FaUser aria-hidden="true" />
+
+                  <select
+                    id="hero-adults"
+                    name="adults"
+                    value={bookingData.adults}
+                    onChange={handleBookingChange}
+                    required
+                  >
+                    <option value="0" disabled>
+                      Select adults
+                    </option>
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((count) => (
+                      <option key={count} value={String(count)}>
+                        {count} {count === 1 ? "Adult" : "Adults"}
+                      </option>
+                    ))}
+                  </select>
+
+                  <FaChevronDown
+                    className="hero-select-arrow"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              <div className="hero-modal-field">
+                <label htmlFor="hero-children">Children</label>
+
+                <div className="hero-modal-input">
+                  <FaUser aria-hidden="true" />
+
+                  <select
+                    id="hero-children"
+                    name="children"
+                    value={bookingData.children}
+                    onChange={handleBookingChange}
+                    required
+                  >
+                    {[0, 1, 2, 3, 4, 5, 6].map((count) => (
+                      <option key={count} value={String(count)}>
+                        {count} {count === 1 ? "Child" : "Children"}
+                      </option>
+                    ))}
+                  </select>
+
+                  <FaChevronDown
+                    className="hero-select-arrow"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              <div className="hero-modal-field">
+                <label htmlFor="hero-rooms">Rooms</label>
+
+                <div className="hero-modal-input">
+                  <FaCalendarAlt aria-hidden="true" />
+
+                  <select
+                    id="hero-rooms"
+                    name="rooms"
+                    value={bookingData.rooms}
+                    onChange={handleBookingChange}
+                    required
+                  >
+                    <option value="0" disabled>
+                      Select rooms
+                    </option>
+
+                    {[1, 2, 3, 4, 5, 6].map((count) => (
+                      <option key={count} value={String(count)}>
+                        {count} {count === 1 ? "Room" : "Rooms"}
+                      </option>
+                    ))}
+                  </select>
+
+                  <FaChevronDown
+                    className="hero-select-arrow"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="hero-modal-submit"
+              >
+                Search Availability
+              </button>
+
+              <p className="hero-modal-note">
+                Your stay details can be confirmed with our hotel team.
+              </p>
+            </form>
+          </section>
+        </div>
+      )}
+      {/* Book Now - Existing Availability Component */}
+    {isBookNowOpen && (
+      <Availability
+        room={null}
+        onClose={() => setIsBookNowOpen(false)}
+      />
+    )}
+    </>
   );
 };
 

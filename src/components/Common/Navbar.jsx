@@ -19,10 +19,20 @@ import {
 } from "react-icons/fa";
 
 import logo from "../../assets/logo.png";
+import Availability from "../../Pages/Availability";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
+
+  const handleBookNow = () => {
+    setIsAvailabilityOpen(true);
+  };
+
+  const closeAvailability = () => {
+    setIsAvailabilityOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +76,9 @@ const Navbar = () => {
               <FaPhoneAlt />
             </span>
 
-            <span className="top-text">+91 70707 07261</span>
+            <span className="top-text">
+              <a href="tel:+917070707261">+91 7972823773</a>
+            </span>
           </div>
 
           {/* Email */}
@@ -75,7 +87,9 @@ const Navbar = () => {
               <FaEnvelope />
             </span>
 
-            <span className="top-text">info@sleepneat.com</span>
+            <span className="top-text">
+              <a href="mailto:sleepneat@hotel.com">sleepneat@hotel.com</a>
+            </span>
           </div>
 
           {/* Location */}
@@ -159,7 +173,11 @@ const Navbar = () => {
             {/* Search */}
 
             {/* Book Now */}
-            <NavLink to="/contact" className="book-now-btn" onClick={closeMenu}>
+            <NavLink
+              to="/contact"
+              className="book-now-btn"
+              onClick={handleBookNow}
+            >
               <span className="book-icon">
                 <FaCalendarAlt />
               </span>
@@ -238,6 +256,7 @@ const Navbar = () => {
             className="mobile-book-btn"
             onClick={closeMenu}
           >
+            <Availability room={null} onClose={() => setIsBookNowOpen(false)} />
             <FaCalendarAlt />
             <span>Book Now</span>
           </NavLink>
@@ -275,6 +294,12 @@ const Navbar = () => {
           </div>
         </aside>
       </div>
+      {isAvailabilityOpen && (
+  <Availability
+    room={null}
+    onClose={closeAvailability}
+  />
+)}
     </>
   );
 };
