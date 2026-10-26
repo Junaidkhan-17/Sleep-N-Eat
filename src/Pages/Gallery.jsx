@@ -2,7 +2,7 @@ import React from "react";
 
 import GalleryHero from "../components/Gallery/GalleryHero";
 import GalleryExplore from "../components/Gallery/GalleryExplore";
-import LatestNews from "../components/Gallery/LatestNews";
+import LatestNews from "../components/Home/LatestNews";
 
 
 

@@ -62,6 +62,20 @@ const formatPrice = (price) => {
   }).format(numericPrice);
 };
 
+const getRoomPricing = (roomId, roomType) => {
+  const isAC = String(roomType).toLowerCase() === "ac";
+
+  if (Number(roomId) === 12) {
+    return isAC
+      ? { perNight: 1500, twentyFourHours: 2000 }
+      : { perNight: 1200, twentyFourHours: 1500 };
+  }
+
+  return isAC
+    ? { perNight: 1800, twentyFourHours: 3000 }
+    : { perNight: 1500, twentyFourHours: 2500 };
+};
+
 const Availability = ({ room, onClose }) => {
   const modalRef = useRef(null);
   const closeButtonRef = useRef(null);
@@ -112,6 +126,11 @@ const Availability = ({ room, onClose }) => {
   });
 
   const checkInDate = watch("checkInDate");
+const selectedRoomType = watch("roomType");
+const selectedPricing = getRoomPricing(
+  room?.id,
+  selectedRoomType || roomTypeFromCard
+);
 
   useEffect(() => {
     reset({
@@ -198,7 +217,8 @@ const Availability = ({ room, onClose }) => {
     const bookingDetails = [
       ["Room", roomName],
       ["Room Type", values.roomType],
-      ["Room Price", formatPrice(roomPrice) || "Not specified"],
+      ["Price Per Night", formatPrice(selectedPricing.perNight)],
+["Price For 24 Hours", formatPrice(selectedPricing.twentyFourHours)],
       ["Room Size", room?.size || "Not specified"],
       ["Beds", room?.beds || "Not specified"],
       ["Guest Name", values.fullName.trim()],
@@ -316,13 +336,19 @@ const Availability = ({ room, onClose }) => {
                 </p>
               )}
 
-              {roomPrice !== null && roomPrice !== "" && (
-                <p className="availability-room-price">
-                  <IndianRupee size={15} aria-hidden="true" />
-                  <strong>{formatPrice(roomPrice)}</strong>
-                  <span>/ {room?.duration || "night"}</span>
-                </p>
-              )}
+
+<div className="availability-room-pricing">
+  <div className="availability-price-option">
+    <span>Per Night</span>
+    <strong>{formatPrice(selectedPricing.perNight)}</strong>
+  </div>
+
+  <div className="availability-price-option">
+    <span>24 Hours</span>
+    <strong>{formatPrice(selectedPricing.twentyFourHours)}</strong>
+  </div>
+</div>
+
 
               <span className="availability-room-badge">
                 {roomTypeFromCard || room?.roomType || "Selected Room"}

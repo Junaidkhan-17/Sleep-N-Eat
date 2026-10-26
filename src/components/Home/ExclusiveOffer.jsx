@@ -154,7 +154,7 @@ const ExclusiveOffer = () => {
           <h2 className="exclusive-offer-title">
             Enjoy Your Dream Vacation
             <br />
-            In Pune
+            In Nagpur.
           </h2>
 
           {/* =================================================

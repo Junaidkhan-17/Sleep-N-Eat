@@ -7,8 +7,8 @@ import "./HotelFacilities.css";
 
 import food1 from "../../assets/food1.png";
 import food2 from "../../assets/food2.png";
-import food3 from "../../assets/food3.png";
-import food4 from "../../assets/food4.png";
+import P1413046 from "../../assets/image/P1413046.JPG";
+import P1413034 from "../../assets/image/P1413034.JPG";
 
 const HotelFacilities = () => {
   const facilities = [
@@ -25,12 +25,12 @@ const HotelFacilities = () => {
     {
       id: 3,
       title: "Parking Area",
-      image: food3,
+      image: P1413046,
     },
     {
       id: 4,
-      title: "Swimming Pool",
-      image: food4,
+      title: "Dining Area",
+      image: P1413034,
     },
   ];
 

@@ -255,6 +255,30 @@
   font-weight: 400;
 }
 
+.availability-room-pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 10px;
+}
+
+.availability-price-option {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.availability-price-option span {
+  color: #777d88;
+  font-size: 11px;
+}
+
+.availability-price-option strong {
+  color: #343746;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .availability-room-badge {
   display: inline-flex;
   align-items: center;

@@ -8,6 +8,7 @@ import "./LatestNews.css";
 import P1413046 from "../../assets/image/P1413046.JPG";
 import P1413034 from "../../assets/image/P1413034.JPG";
 import P1412865 from "../../assets/image/P1412865.JPG";
+import P1412833 from "../../assets/image/P1412833.JPG";
 
 /* =========================================================
    LATEST NEWS DATA
@@ -16,26 +17,26 @@ import P1412865 from "../../assets/image/P1412865.JPG";
 const latestNews = [
   {
     id: "news-001",
-    title: "Things You Must Need to See While You’re In Dubai",
+    title: "Where Every Stay Feels Special",
     image: P1413046,
   },
 
   {
     id: "news-002",
-    title: "Mistakes Every Couple Makes When They Travel Together",
+    title: "An Experience Beyond Expectations",
     image: P1413034,
   },
 
   {
     id: "news-003",
-    title: "Remember This 10 Things Before Booking Hotel.",
+    title: "Service Begins With a Smile.",
     image: P1412865,
   },
 
   {
     id: "news-004",
-    title: "How to Make Your Hotel Stay More Comfortable",
-    image: P1413034,
+    title: "A Place to Rest, A Reason to Return",
+    image: P1412833,
   },
 ];
 

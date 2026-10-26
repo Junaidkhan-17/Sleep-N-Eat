@@ -99,7 +99,8 @@ const Navbar = () => {
             </span>
 
             <span className="top-text">
-              Sleep N Eat, Vhirgaon, Nagpur, Maharashtra 440034
+              Plot no 34, Vihirgaon umred road, near villa 24 Outer Ring Road,
+              Nagpur 441204.
             </span>
           </div>
 
@@ -114,19 +115,21 @@ const Navbar = () => {
 
           {/* Social Links */}
           <div className="social-links">
-            <a href="#" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-
-            <a href="#" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/profile.php?id=61594595604411"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebookF />
             </a>
 
-            <a href="#" aria-label="Pinterest">
-              <FaPinterestP />
-            </a>
-
-            <a href="#" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
           </div>
@@ -276,30 +279,30 @@ const Navbar = () => {
 
           {/* Mobile Socials */}
           <div className="mobile-social-links">
-            <a href="#">
-              <FaTwitter />
-            </a>
 
-            <a href="#">
+            <a
+              href="https://www.facebook.com/profile.php?id=61594595604411"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebookF />
             </a>
 
-            <a href="#">
-              <FaPinterestP />
-            </a>
-
-            <a href="#">
+            <a
+              href="https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
           </div>
         </aside>
       </div>
       {isAvailabilityOpen && (
-  <Availability
-    room={null}
-    onClose={closeAvailability}
-  />
-)}
+        <Availability room={null} onClose={closeAvailability} />
+      )}
     </>
   );
 };

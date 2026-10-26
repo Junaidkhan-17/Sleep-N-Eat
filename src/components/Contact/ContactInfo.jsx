@@ -30,7 +30,7 @@ const contactConfig = {
   email: "sleepneathotel@gmail.com",
 
   address:
-    "Sleep N Eat, Vhirgaon, Nagpur, Maharashtra 440034",
+    "Plot no 34, Vihirgaon umred road near villa 24 Outer Ring Road Nagpur 441204.",
 
   whatsappNumber: "917972823773",
 };

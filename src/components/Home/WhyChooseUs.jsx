@@ -5,7 +5,7 @@ import wave2 from "../../assets/wave2.jpg";
 import P1412673 from "../../assets/image/P1412673.JPG";
 import P1412689 from "../../assets/image/P1412689.JPG";
 import P1412700 from "../../assets/image/P1412700.JPG";
-import P1412720 from "../../assets/image/P1412720.JPG";
+import P1412835 from "../../assets/image/P1412835.JPG";
 
 /* =========================================================
    WHY CHOOSE US DATA
@@ -19,7 +19,6 @@ const comfortFeatures = [
     description: [
       "Free High-Speed Wi-Fi",
       "LED / Smart TV",
-      "In-Room Safe Locker",
       "Power Backup",
       "Daily Housekeeping",
     ],
@@ -65,7 +64,7 @@ const comfortFeatures = [
       "Flexible Dining",
       "Guest Assistance",
     ],
-    image: P1412720,
+    image: P1412835,
     theme: wave2,
   },
 ];

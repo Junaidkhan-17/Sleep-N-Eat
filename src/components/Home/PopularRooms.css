@@ -250,6 +250,33 @@
   white-space: nowrap;
 }
 
+.room-price {
+  width: calc(100% - 43px);
+  margin-left: 43px;
+  white-space: normal;
+}
+
+.room-price-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  width: 100%;
+}
+
+.room-price-option {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.room-price-option .price-value {
+  font-size: 22px;
+}
+
+.room-price-option .price-details {
+  font-size: 13px;
+}
+
 .price-value {
   color: #ff555b;
 

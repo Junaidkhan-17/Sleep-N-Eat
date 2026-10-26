@@ -56,7 +56,7 @@ const footerSocialLinks = [
     id: "facebook",
     label: "Facebook",
     icon: <FaFacebookF />,
-    url: "https://www.facebook.com/",
+    url: "https://www.facebook.com/profile.php?id=61594595604411",
   },
   {
     id: "whatsapp",
@@ -68,7 +68,7 @@ const footerSocialLinks = [
     id: "instagram",
     label: "Instagram",
     icon: <FaInstagram />,
-    url: "https://www.instagram.com/",
+    url: "https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr",
   },
 ];
 
@@ -270,9 +270,9 @@ const Footer = () => {
               <div className="footer-contact-content">
 
                 <address>
-                  Sleep N Eat, Vhirgaon, Nagpur,
+                  Plot no 34, Vihirgaon umred road, near villa 24,
                   <br />
-                  Maharashtra 440034
+                  Outer Ring Road, Nagpur 441204.
                 </address>
 
               </div>

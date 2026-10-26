@@ -13,11 +13,32 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "./Hero.css";
 
-import heroImage1 from "../../assets/image/P1412708.JPG";
-import heroImage2 from "../../assets/image/P1412719.JPG";
-import heroImage3 from "../../assets/image/P1412723.JPG";
-import Availability  from "../../Pages/Availability";
-const heroImages = [heroImage1, heroImage2, heroImage3];
+import P1412673 from "../../assets/image/P1412673.JPG";
+import P1412687 from "../../assets/image/P1412687.JPG";
+import P1412708 from "../../assets/image/P1412708.JPG";
+import P1412721 from "../../assets/image/P1412721.JPG";
+import P1412727 from "../../assets/image/P1412727.JPG";
+import P1412740 from "../../assets/image/P1412740.JPG";
+import P1412761 from "../../assets/image/P1412761.JPG";
+import P1412771 from "../../assets/image/P1412771.JPG";
+import P1412783 from "../../assets/image/P1412783.JPG";
+import P1412842 from "../../assets/image/P1412842.JPG";
+import P1412809 from "../../assets/image/P1412809.JPG";
+import P1412815 from "../../assets/image/P1412815.JPG";
+const heroImages = [
+    P1412673,
+    P1412687,
+    P1412708,
+    P1412721,
+    P1412727,
+    P1412740,
+    P1412761,
+    P1412771,
+    P1412783,
+    P1412842,
+    P1412809,
+    P1412815,
+];
 
 const initialBookingData = {
   checkIn: "Anytime",
