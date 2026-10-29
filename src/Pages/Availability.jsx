@@ -7,7 +7,6 @@ import {
   CalendarDays,
   ChevronDown,
   BedDouble,
-  IndianRupee,
   X,
   MessageCircle,
 } from "lucide-react";
@@ -27,9 +26,7 @@ const getToday = () => {
 const normalizeRoomType = (value = "") => {
   const normalized = String(value).trim().toLowerCase();
 
-  if (
-    ["ac", "a/c", "ac room", "air conditioned"].includes(normalized)
-  ) {
+  if (["ac", "a/c", "ac room", "air conditioned"].includes(normalized)) {
     return "AC";
   }
 
@@ -62,8 +59,9 @@ const formatPrice = (price) => {
   }).format(numericPrice);
 };
 
+// Room pricing according to room number and AC / Non-AC type.
 const getRoomPricing = (roomId, roomType) => {
-  const isAC = String(roomType).toLowerCase() === "ac";
+  const isAC = String(roomType).trim().toLowerCase() === "ac";
 
   if (Number(roomId) === 12) {
     return isAC
@@ -79,6 +77,7 @@ const getRoomPricing = (roomId, roomType) => {
 const Availability = ({ room, onClose }) => {
   const modalRef = useRef(null);
   const closeButtonRef = useRef(null);
+
   const [submission, setSubmission] = useState({
     status: "idle",
     message: "",
@@ -91,14 +90,8 @@ const Availability = ({ room, onClose }) => {
     room?.roomType || room?.type || room?.category || ""
   );
 
-  const roomPrice =
-    room?.price ??
-    room?.roomPrice ??
-    room?.pricePerNight ??
-    room?.pricePerNightINR ??
-    null;
-
-  const roomImage = room?.image || room?.imageUrl || room?.images?.[0] || "";
+  const roomImage =
+    room?.image || room?.imageUrl || room?.images?.[0] || "";
 
   const roomDescription =
     room?.description ||
@@ -121,16 +114,24 @@ const Availability = ({ room, onClose }) => {
       emailAddress: "",
       checkInDate: "",
       checkOutDate: "",
+      bookingDuration: "night",
       roomType: roomTypeFromCard,
     },
   });
 
   const checkInDate = watch("checkInDate");
-const selectedRoomType = watch("roomType");
-const selectedPricing = getRoomPricing(
-  room?.id,
-  selectedRoomType || roomTypeFromCard
-);
+  const selectedRoomType = watch("roomType");
+  const bookingDuration = watch("bookingDuration");
+
+  const selectedPricing = getRoomPricing(
+    room?.id,
+    selectedRoomType || roomTypeFromCard
+  );
+
+  const selectedPrice =
+    bookingDuration === "24hours"
+      ? selectedPricing.twentyFourHours
+      : selectedPricing.perNight;
 
   useEffect(() => {
     reset({
@@ -139,12 +140,14 @@ const selectedPricing = getRoomPricing(
       emailAddress: "",
       checkInDate: "",
       checkOutDate: "",
+      bookingDuration: "night",
       roomType: roomTypeFromCard,
     });
 
     setSubmission({ status: "idle", message: "" });
   }, [room?.id, roomTypeFromCard, reset]);
 
+  // Keep the modal accessible and prevent background scrolling.
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
 
@@ -170,10 +173,7 @@ const selectedPricing = getRoomPricing(
         const firstElement = elements[0];
         const lastElement = elements[elements.length - 1];
 
-        if (
-          event.shiftKey &&
-          document.activeElement === firstElement
-        ) {
+        if (event.shiftKey && document.activeElement === firstElement) {
           event.preventDefault();
           lastElement.focus();
         } else if (
@@ -214,11 +214,24 @@ const selectedPricing = getRoomPricing(
       return;
     }
 
+    // Calculate the price again from submitted values before sending.
+    const submittedPricing = getRoomPricing(room?.id, values.roomType);
+
+    const submittedPrice =
+      values.bookingDuration === "24hours"
+        ? submittedPricing.twentyFourHours
+        : submittedPricing.perNight;
+
+    const durationLabel =
+      values.bookingDuration === "24hours" ? "24 Hours" : "Per Night";
+
     const bookingDetails = [
       ["Room", roomName],
       ["Room Type", values.roomType],
-      ["Price Per Night", formatPrice(selectedPricing.perNight)],
-["Price For 24 Hours", formatPrice(selectedPricing.twentyFourHours)],
+      ["Booking Duration", durationLabel],
+      ["Selected Price", formatPrice(submittedPrice)],
+      ["Price Per Night", formatPrice(submittedPricing.perNight)],
+      ["Price For 24 Hours", formatPrice(submittedPricing.twentyFourHours)],
       ["Room Size", room?.size || "Not specified"],
       ["Beds", room?.beds || "Not specified"],
       ["Guest Name", values.fullName.trim()],
@@ -236,7 +249,9 @@ const selectedPricing = getRoomPricing(
       "Please confirm room availability and booking details.",
     ].join("\n");
 
-    const whatsappUrl = `https://wa.me/${cleanWhatsAppNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${cleanWhatsAppNumber}?text=${encodeURIComponent(
+      message
+    )}`;
 
     const newWindow = window.open(
       whatsappUrl,
@@ -286,14 +301,9 @@ const selectedPricing = getRoomPricing(
 
         <div className="availability-panel">
           <div className="availability-intro">
-            <span className="availability-eyebrow">
-              SLEEP N EAT
-            </span>
+            <span className="availability-eyebrow">SLEEP N EAT</span>
 
-            <h1
-              id="availability-heading"
-              className="availability-heading"
-            >
+            <h1 id="availability-heading" className="availability-heading">
               Check Availability
             </h1>
 
@@ -336,22 +346,22 @@ const selectedPricing = getRoomPricing(
                 </p>
               )}
 
+              <div className="availability-room-pricing">
+                <div className="availability-price-option">
+                  <span>Per Night</span>
+                  <strong>{formatPrice(selectedPricing.perNight)}</strong>
+                </div>
 
-<div className="availability-room-pricing">
-  <div className="availability-price-option">
-    <span>Per Night</span>
-    <strong>{formatPrice(selectedPricing.perNight)}</strong>
-  </div>
-
-  <div className="availability-price-option">
-    <span>24 Hours</span>
-    <strong>{formatPrice(selectedPricing.twentyFourHours)}</strong>
-  </div>
-</div>
-
+                <div className="availability-price-option">
+                  <span>24 Hours</span>
+                  <strong>
+                    {formatPrice(selectedPricing.twentyFourHours)}
+                  </strong>
+                </div>
+              </div>
 
               <span className="availability-room-badge">
-                {roomTypeFromCard || room?.roomType || "Selected Room"}
+                {selectedRoomType || roomTypeFromCard || "Select Room Type"}
               </span>
             </div>
           </article>
@@ -377,9 +387,7 @@ const selectedPricing = getRoomPricing(
             </div>
 
             <div className="availability-field">
-              <label htmlFor="availability-full-name">
-                Full Name
-              </label>
+              <label htmlFor="availability-full-name">Full Name</label>
 
               <div className="availability-input-wrap">
                 <input
@@ -405,7 +413,6 @@ const selectedPricing = getRoomPricing(
                     },
                   })}
                 />
-
                 <UserRound aria-hidden="true" />
               </div>
 
@@ -420,9 +427,7 @@ const selectedPricing = getRoomPricing(
             </div>
 
             <div className="availability-field">
-              <label htmlFor="availability-mobile">
-                Mobile Number
-              </label>
+              <label htmlFor="availability-mobile">Mobile Number</label>
 
               <div className="availability-input-wrap">
                 <input
@@ -444,7 +449,6 @@ const selectedPricing = getRoomPricing(
                       "Enter a valid mobile number.",
                   })}
                 />
-
                 <Phone aria-hidden="true" />
               </div>
 
@@ -459,9 +463,7 @@ const selectedPricing = getRoomPricing(
             </div>
 
             <div className="availability-field">
-              <label htmlFor="availability-email">
-                Email Address
-              </label>
+              <label htmlFor="availability-email">Email Address</label>
 
               <div className="availability-input-wrap">
                 <input
@@ -483,7 +485,6 @@ const selectedPricing = getRoomPricing(
                     },
                   })}
                 />
-
                 <Mail aria-hidden="true" />
               </div>
 
@@ -503,9 +504,7 @@ const selectedPricing = getRoomPricing(
             </div>
 
             <div className="availability-field">
-              <label htmlFor="availability-check-in">
-                Check-In Date
-              </label>
+              <label htmlFor="availability-check-in">Check-In Date</label>
 
               <div className="availability-input-wrap availability-date-wrap">
                 <input
@@ -525,7 +524,6 @@ const selectedPricing = getRoomPricing(
                       "Check-in date cannot be in the past.",
                   })}
                 />
-
                 <CalendarDays aria-hidden="true" />
               </div>
 
@@ -540,9 +538,7 @@ const selectedPricing = getRoomPricing(
             </div>
 
             <div className="availability-field">
-              <label htmlFor="availability-check-out">
-                Check-Out Date
-              </label>
+              <label htmlFor="availability-check-out">Check-Out Date</label>
 
               <div className="availability-input-wrap availability-date-wrap">
                 <input
@@ -569,7 +565,6 @@ const selectedPricing = getRoomPricing(
                     },
                   })}
                 />
-
                 <CalendarDays aria-hidden="true" />
               </div>
 
@@ -581,6 +576,67 @@ const selectedPricing = getRoomPricing(
                   {errors.checkOutDate.message}
                 </p>
               )}
+            </div>
+
+            {/* Booking duration selection */}
+            <div className="availability-field">
+              <label>Choose Booking Duration</label>
+
+              <div
+                className="availability-duration-options"
+                role="radiogroup"
+                aria-label="Booking duration"
+              >
+                <label
+                  className={`availability-duration-option ${
+                    bookingDuration === "night" ? "is-selected" : ""
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    value="night"
+                    aria-label="Per Night"
+                    {...register("bookingDuration", {
+                      required: "Please select a booking duration.",
+                    })}
+                  />
+                  <span className="availability-duration-copy">
+                    <strong>Per Night</strong>
+                    <small>{formatPrice(selectedPricing.perNight)}</small>
+                  </span>
+                </label>
+
+                <label
+                  className={`availability-duration-option ${
+                    bookingDuration === "24hours" ? "is-selected" : ""
+                  }`}
+                >
+                  <input
+                    type="radio"
+                    value="24hours"
+                    aria-label="24 Hours"
+                    {...register("bookingDuration", {
+                      required: "Please select a booking duration.",
+                    })}
+                  />
+                  <span className="availability-duration-copy">
+                    <strong>24 Hours</strong>
+                    <small>
+                      {formatPrice(selectedPricing.twentyFourHours)}
+                    </small>
+                  </span>
+                </label>
+              </div>
+
+              {errors.bookingDuration && (
+                <p className="availability-error">
+                  {errors.bookingDuration.message}
+                </p>
+              )}
+
+              <p className="availability-selected-price">
+                Selected rate: <strong>{formatPrice(selectedPrice)}</strong>
+              </p>
             </div>
 
             <div className="availability-field">
@@ -634,8 +690,8 @@ const selectedPricing = getRoomPricing(
             </button>
 
             <p className="availability-form-note">
-              Your request will be sent to the hotel through WhatsApp.
-              Wait untill Hotel confirm your booking through Call.
+              Your request will be sent to the hotel through WhatsApp. Wait
+              until the hotel confirms your booking by call.
             </p>
           </form>
         </div>

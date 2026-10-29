@@ -25,33 +25,71 @@ import P1412783 from "../../assets/image/P1412783.JPG";
 import P1412842 from "../../assets/image/P1412842.JPG";
 import P1412809 from "../../assets/image/P1412809.JPG";
 import P1412815 from "../../assets/image/P1412815.JPG";
+
+// Existing room booking form
+import Availability from "../../Pages/Availability";
+
 const heroImages = [
-    P1412673,
-    P1412687,
-    P1412708,
-    P1412721,
-    P1412727,
-    P1412740,
-    P1412761,
-    P1412771,
-    P1412783,
-    P1412842,
-    P1412809,
-    P1412815,
+  P1412673,
+  P1412687,
+  P1412708,
+  P1412721,
+  P1412727,
+  P1412740,
+  P1412761,
+  P1412771,
+  P1412783,
+  P1412842,
+  P1412809,
+  P1412815,
 ];
 
 const initialBookingData = {
-  checkIn: "Anytime",
-  checkOut: "Anytime",
   adults: "0",
   children: "0",
   rooms: "0",
 };
 
+const pricingRules = [
+  {
+    room: "1–11",
+    roomType: "Non-AC",
+    perNight: 1500,
+    twentyFourHours: 2500,
+  },
+  {
+    room: "1–11",
+    roomType: "AC",
+    perNight: 1800,
+    twentyFourHours: 3000,
+  },
+  {
+    room: "12",
+    roomType: "Non-AC",
+    perNight: 1200,
+    twentyFourHours: 1500,
+  },
+  {
+    room: "12",
+    roomType: "AC",
+    perNight: 1500,
+    twentyFourHours: 2000,
+  },
+];
+
+const formatPrice = (price) =>
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    maximumFractionDigits: 0,
+  }).format(price);
+
+const ADMIN_WHATSAPP_NUMBER = "917972823773";
+
 const Hero = () => {
   const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
-  const [bookingData, setBookingData] = useState(initialBookingData);
   const [isBookNowOpen, setIsBookNowOpen] = useState(false);
+  const [bookingData, setBookingData] = useState(initialBookingData);
 
   const openAvailability = () => {
     setIsAvailabilityOpen(true);
@@ -61,9 +99,15 @@ const Hero = () => {
     setIsAvailabilityOpen(false);
   };
 
+  // Book Now opens the existing Availability booking form.
   const openBookNow = () => {
-  setIsBookNowOpen(true);
-};
+    setIsAvailabilityOpen(false);
+    setIsBookNowOpen(true);
+  };
+
+  const closeBookNow = () => {
+    setIsBookNowOpen(false);
+  };
 
   const handleBookingChange = (event) => {
     const { name, value } = event.target;
@@ -74,43 +118,68 @@ const Hero = () => {
     }));
   };
 
-
-  const ADMIN_WHATSAPP_NUMBER = "917972823773";
-
   const handleAvailabilitySubmit = (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const enquiryMessage = [
-    "🏨 SLEEP N EAT — AVAILABILITY ENQUIRY",
-    "",
-    "Hello Sleep N Eat Team,",
-    "I would like to enquire about room availability.",
-    "",
-    "📅 Check-In Time: Anytime",
-    "📅 Check-Out Time: Anytime",
-    `👨‍👩‍👧 Adults: ${bookingData.adults}`,
-    `🧒 Children: ${bookingData.children}`,
-    `🛏️ Rooms: ${bookingData.rooms}`,
-    "",
-    "Please confirm room availability and share the booking details.",
-    "",
-    "Thank you!",
-  ].join("\n");
+    const cleanWhatsAppNumber = ADMIN_WHATSAPP_NUMBER.replace(/\D/g, "");
 
-  const whatsappUrl =
-    `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=` +
-    encodeURIComponent(enquiryMessage);
+    if (!/^\d{8,15}$/.test(cleanWhatsAppNumber)) {
+      window.alert("Please configure a valid hotel WhatsApp number.");
+      return;
+    }
 
-  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    const pricingMessage = pricingRules.map(
+      (rule) =>
+        `Room ${rule.room} | ${rule.roomType} | Per Night: ${formatPrice(
+          rule.perNight
+        )} | 24 Hours: ${formatPrice(rule.twentyFourHours)}`
+    );
 
-  closeAvailability();
-};
+    const enquiryMessage = [
+      "SLEEP N EAT — AVAILABILITY ENQUIRY",
+      "",
+      "Hello Sleep N Eat Team,",
+      "I would like to enquire about room availability.",
+      "",
+      "Check-In Time: Anytime",
+      "Check-Out Time: Anytime",
+      `Adults: ${bookingData.adults}`,
+      `Children: ${bookingData.children}`,
+      `Rooms Required: ${bookingData.rooms}`,
+      "",
+      "ROOM PRICING",
+      ...pricingMessage,
+      "",
+      "Please confirm room availability and share the booking details.",
+      "",
+      "Thank you!",
+    ].join("\n");
 
+    const whatsappUrl = `https://wa.me/${cleanWhatsAppNumber}?text=${encodeURIComponent(
+      enquiryMessage
+    )}`;
+
+    const newWindow = window.open(
+      whatsappUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    if (!newWindow) {
+      window.alert(
+        "WhatsApp could not be opened. Please allow pop-ups and try again."
+      );
+      return;
+    }
+
+    closeAvailability();
+  };
+
+  // Close the Check Availability modal with Escape.
   useEffect(() => {
     if (!isAvailabilityOpen) return undefined;
 
     const previousOverflow = document.body.style.overflow;
-
     document.body.style.overflow = "hidden";
 
     const handleEscape = (event) => {
@@ -126,6 +195,27 @@ const Hero = () => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [isAvailabilityOpen]);
+
+  // Prevent background scrolling while the Book Now form is open.
+  useEffect(() => {
+    if (!isBookNowOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        closeBookNow();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isBookNowOpen]);
 
   const handleOverlayMouseDown = (event) => {
     if (event.target === event.currentTarget) {
@@ -200,6 +290,7 @@ const Hero = () => {
         </Swiper>
       </section>
 
+      {/* CHECK AVAILABILITY MODAL */}
       {isAvailabilityOpen && (
         <div
           className="hero-availability-overlay"
@@ -211,6 +302,7 @@ const Hero = () => {
             role="dialog"
             aria-modal="true"
             aria-labelledby="hero-availability-title"
+            onMouseDown={(event) => event.stopPropagation()}
           >
             <button
               type="button"
@@ -224,12 +316,60 @@ const Hero = () => {
             <div className="hero-availability-header">
               <span className="hero-modal-eyebrow">PLAN YOUR STAY</span>
 
-              <h2 id="hero-availability-title">
-                Check Availability
-              </h2>
+              <h2 id="hero-availability-title">Check Availability</h2>
 
               <p>
-                Choose your guests and rooms to start planning your stay.
+                Explore our room rates and choose the accommodation that
+                suits your stay.
+              </p>
+            </div>
+
+            {/* ROOM PRICING TABLE */}
+            <div className="hero-pricing-section">
+              <h3 className="hero-pricing-title">Room Pricing</h3>
+
+              <div className="hero-pricing-table-wrap">
+                <table className="hero-pricing-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Room</th>
+                      <th scope="col">Room Type</th>
+                      <th scope="col">Per Night</th>
+                      <th scope="col">24 Hours</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {pricingRules.map((rule) => (
+                      <tr key={`${rule.room}-${rule.roomType}`}>
+                        <td>{rule.room}</td>
+                        <td>
+                          <span
+                            className={`hero-room-type-badge ${
+                              rule.roomType === "AC"
+                                ? "hero-room-type-badge--ac"
+                                : "hero-room-type-badge--non-ac"
+                            }`}
+                          >
+                            {rule.roomType}
+                          </span>
+                        </td>
+                        <td className="hero-pricing-amount">
+                          {formatPrice(rule.perNight)}
+                        </td>
+                        <td className="hero-pricing-amount">
+                          {formatPrice(rule.twentyFourHours)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <p className="hero-pricing-note">
+                Prices are shown in Indian Rupees (INR). Final room
+                availability and applicable charges must be confirmed by the
+                hotel.
               </p>
             </div>
 
@@ -238,24 +378,21 @@ const Hero = () => {
               onSubmit={handleAvailabilitySubmit}
             >
               <div className="hero-modal-field">
-                <label htmlFor="hero-check-in">Check In Time</label>
+                <label htmlFor="hero-check-in">Check-In Time</label>
 
                 <div className="hero-modal-input hero-anytime-input">
                   <FaCalendarAlt aria-hidden="true" />
-
                   <span id="hero-check-in">Anytime</span>
                 </div>
               </div>
 
               <div className="hero-modal-field">
-                <label htmlFor="hero-check-out">Check Out Time</label>
+                <label htmlFor="hero-check-out">Check-Out Time</label>
 
                 <div className="hero-modal-input hero-anytime-input">
                   <FaCalendarAlt aria-hidden="true" />
-
                   <span id="hero-check-out">Anytime</span>
                 </div>
-
               </div>
 
               <div className="hero-modal-field">
@@ -274,6 +411,7 @@ const Hero = () => {
                     <option value="0" disabled>
                       Select adults
                     </option>
+
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((count) => (
                       <option key={count} value={String(count)}>
                         {count} {count === 1 ? "Adult" : "Adults"}
@@ -316,7 +454,7 @@ const Hero = () => {
               </div>
 
               <div className="hero-modal-field">
-                <label htmlFor="hero-rooms">Rooms</label>
+                <label htmlFor="hero-rooms">Rooms Required</label>
 
                 <div className="hero-modal-input">
                   <FaCalendarAlt aria-hidden="true" />
@@ -332,11 +470,13 @@ const Hero = () => {
                       Select rooms
                     </option>
 
-                    {[1, 2, 3, 4, 5, 6].map((count) => (
-                      <option key={count} value={String(count)}>
-                        {count} {count === 1 ? "Room" : "Rooms"}
-                      </option>
-                    ))}
+                    {Array.from({ length: 12 }, (_, index) => index + 1).map(
+                      (count) => (
+                        <option key={count} value={String(count)}>
+                          {count} {count === 1 ? "Room" : "Rooms"}
+                        </option>
+                      )
+                    )}
                   </select>
 
                   <FaChevronDown
@@ -346,27 +486,23 @@ const Hero = () => {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className="hero-modal-submit"
-              >
-                Search Availability
+              <button type="submit" className="hero-modal-submit">
+                Search Availability on WhatsApp
               </button>
 
               <p className="hero-modal-note">
-                Your stay details can be confirmed with our hotel team.
+                Your enquiry and the room pricing table will be sent to the
+                hotel through WhatsApp.
               </p>
             </form>
           </section>
         </div>
       )}
-      {/* Book Now - Existing Availability Component */}
-    {isBookNowOpen && (
-      <Availability
-        room={null}
-        onClose={() => setIsBookNowOpen(false)}
-      />
-    )}
+
+      {/* BOOK NOW OPENS THE EXISTING AVAILABILITY FORM */}
+      {isBookNowOpen && (
+        <Availability room={null} onClose={closeBookNow} />
+      )}
     </>
   );
 };
