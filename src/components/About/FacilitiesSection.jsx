@@ -40,26 +40,6 @@ const facilitiesData = [
   },
 
   {
-    _id: "facility-003",
-    name: "Swimming Pool",
-    slug: "swimming-pool",
-    description: "Relax and enjoy a refreshing swimming experience.",
-    icon: Waves,
-    status: "active",
-    sortOrder: 3,
-  },
-
-  {
-    _id: "facility-004",
-    name: "Exercise Space",
-    slug: "exercise-space",
-    description: "Stay active during your stay with our exercise area.",
-    icon: Dumbbell,
-    status: "active",
-    sortOrder: 4,
-  },
-
-  {
     _id: "facility-005",
     name: "Free Wifi",
     slug: "free-wifi",

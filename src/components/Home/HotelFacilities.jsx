@@ -24,7 +24,7 @@ const HotelFacilities = () => {
     },
     {
       id: 3,
-      title: "Parking Area",
+      title: "Secure Parking Faciility",
       image: P1413046,
     },
     {

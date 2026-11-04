@@ -29,7 +29,7 @@ const latestNews = [
 
   {
     id: "news-003",
-    title: "Service Begins With a Smile.",
+    title: "Long Meeting Start with a Smile.",
     image: P1412865,
   },
 
@@ -66,7 +66,7 @@ const LatestNews = () => {
         <div className="latest-news-header">
 
           <h2 className="latest-news-title">
-            Latest News
+            Latest Facilities
           </h2>
 
           <p className="latest-news-description">
