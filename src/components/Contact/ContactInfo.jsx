@@ -24,15 +24,15 @@ import "./ContactInfo.css";
 // =========================================================
 
 const contactConfig = {
-  phone: "+91 7972823773",
-  phoneRaw: "+917972823773",
+  phone: "+91 7070707261",
+  phoneRaw: "+917070707261",
 
   email: "sleepneathotel@gmail.com",
 
   address:
     "Plot no 34, Vihirgaon umred road near villa 24 Outer Ring Road Nagpur 441204.",
 
-  whatsappNumber: "917972823773",
+  whatsappNumber: "917070707261",
 };
 
 

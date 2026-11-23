@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Minus, Plus, Trash2, X, MessageCircle } from "lucide-react";
 import "./OrderFood.css";
 
-const OWNER_WHATSAPP_NUMBER = "7972823773";
+const OWNER_WHATSAPP_NUMBER = "+917070707261";
 
 const getNumericPrice = (price) => {
   if (typeof price === "number" && Number.isFinite(price)) {

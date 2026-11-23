@@ -4,307 +4,300 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 
 import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaRegClock,
-  FaSearch,
-  FaFacebookF,
-  FaInstagram,
-  FaPinterestP,
-  FaTwitter,
-  FaBars,
-  FaTimes,
-  FaCalendarAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaRegClock,
+  FaSearch,
+  FaFacebookF,
+  FaInstagram,
+  FaPinterestP,
+  FaTwitter,
+  FaBars,
+  FaTimes,
+  FaCalendarAlt,
 } from "react-icons/fa";
 
 import logo from "../../assets/logo.png";
 import Availability from "../../Pages/Availability";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenu, setMobileMenu] = useState(false);
-  const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);
 
-  const handleBookNow = () => {
-    setIsAvailabilityOpen(true);
-  };
+  const handleBookNow = () => {
+    setIsAvailabilityOpen(true);
+  };
 
-  const closeAvailability = () => {
-    setIsAvailabilityOpen(false);
-  };
+  const closeAvailability = () => {
+    setIsAvailabilityOpen(false);
+  };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
-    };
+  const handleMobileBookNow = () => {
+    setMobileMenu(false);
+    setIsAvailabilityOpen(true);
+  };
 
-    window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    window.addEventListener("scroll", handleScroll);
 
-  useEffect(() => {
-    if (mobileMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [mobileMenu]);
+  useEffect(() => {
+    if (mobileMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-  const closeMenu = () => {
-    setMobileMenu(false);
-  };
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [mobileMenu]);
 
-  return (
-    <>
-      {/* =========================================================
-          TOP CONTACT BAR
-      ========================================================= */}
+  const closeMenu = () => {
+    setMobileMenu(false);
+  };
 
-      <div className="top-header">
-        <div className="top-header-container">
-          {/* Phone */}
-          <div className="top-item">
-            <span className="top-icon">
-              <FaPhoneAlt />
-            </span>
+  return (
+    <>
+      {/* =========================================================
+          TOP CONTACT BAR
+      ========================================================= */}
 
-            <span className="top-text">
-              <a href="tel:+917070707261">+91 7972823773</a>
-            </span>
-          </div>
+      <div className="top-header">
+        <div className="top-header-container">
+          {/* Phone */}
+          <div className="top-item">
+            <span className="top-icon">
+              <FaPhoneAlt />
+            </span>
 
-          {/* Email */}
-          <div className="top-item">
-            <span className="top-icon">
-              <FaEnvelope />
-            </span>
+            <span className="top-text">
+              <a href="tel:+917070707261">+91 7070707261</a>
+            </span>
+          </div>
 
-            <span className="top-text">
-              <a href="mailto:sleepneat@hotel.com">sleepneat@hotel.com</a>
-            </span>
-          </div>
+          {/* Email */}
+          <div className="top-item">
+            <span className="top-icon">
+              <FaEnvelope />
+            </span>
 
-          {/* Location */}
-          <div className="top-item location-item">
-            <span className="top-icon">
-              <FaMapMarkerAlt />
-            </span>
+            <span className="top-text">
+              <a href="mailto:sleepneat@hotel.com">sleepneat@hotel.com</a>
+            </span>
+          </div>
 
-            <span className="top-text">
-              Plot no 34, Vihirgaon umred road, near villa 24 Outer Ring Road,
-              Nagpur 441204.
-            </span>
-          </div>
+          {/* Location */}
+          <div className="top-item location-item">
+            <span className="top-icon">
+              <FaMapMarkerAlt />
+            </span>
 
-          {/* Working Time */}
-          <div className="top-item working-time">
-            <span className="top-icon">
-              <FaRegClock />
-            </span>
+            <span className="top-text">
+              Plot no 34, Vihirgaon umred road, near villa 24 Outer Ring Road,
+              Nagpur 441204.
+            </span>
+          </div>
 
-            <span className="top-text">Mon - Fri: 09:00 - 05:00</span>
-          </div>
+          {/* Working Time */}
+          <div className="top-item working-time">
+            <span className="top-icon">
+              <FaRegClock />
+            </span>
 
-          {/* Social Links */}
-          <div className="social-links">
-            <a
-              href="https://www.facebook.com/profile.php?id=61594595604411"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF />
-            </a>
+            <span className="top-text">Mon - Fri: 09:00 - 05:00</span>
+          </div>
 
-            <a
-              href="https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-          </div>
-        </div>
-      </div>
+          {/* Social Links */}
+          <div className="social-links">
+            <a
+              href="https://www.facebook.com/profile.php?id=61594595604411"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
 
-      {/* =========================================================
-          MAIN NAVBAR
-      ========================================================= */}
+            <a
+              href="https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
+      </div>
 
-      <header className={`hotel-navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
-        <div className="navbar-container">
-          {/* =====================================================
-              LOGO
-          ===================================================== */}
+      {/* =========================================================
+          MAIN NAVBAR
+      ========================================================= */}
 
-          <div className="navbar-logo">
-            <NavLink to="/" onClick={closeMenu}>
-              <img src={logo} alt="Sleep N Eat Hotel" />
-            </NavLink>
-          </div>
+      <header className={`hotel-navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
+        <div className="navbar-container">
+          {/* LOGO */}
+          <div className="navbar-logo">
+            <NavLink to="/" onClick={closeMenu}>
+              <img src={logo} alt="Sleep N Eat Hotel" />
+            </NavLink>
+          </div>
 
-          {/* =====================================================
-              DESKTOP NAVIGATION
-          ===================================================== */}
+          {/* DESKTOP NAVIGATION */}
+          <nav className="navbar-menu">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/rooms">Room</NavLink>
+            <NavLink to="/gallery">Gallery</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
+          </nav>
 
-          <nav className="navbar-menu">
-            <NavLink to="/">Home</NavLink>
+          {/* RIGHT SIDE ACTIONS */}
+          <div className="navbar-actions">
+            {/* Mobile Book Now Button */}
+            <button
+              type="button"
+              className="mobile-book-btn"
+              onClick={handleMobileBookNow}
+            >
+              <FaCalendarAlt />
+              <span>Book Now</span>
+            </button>
+          </div>
 
-            <NavLink to="/about">About</NavLink>
+          {/* MOBILE MENU BUTTON */}
+          <button
+            type="button"
+            className="mobile-toggle"
+            onClick={() => setMobileMenu(true)}
+            aria-label="Open menu"
+            aria-expanded={mobileMenu}
+            aria-controls="mobile-sidebar"
+          >
+            <FaBars />
+          </button>
+        </div>
+      </header>
 
-            <NavLink to="/rooms">Room</NavLink>
+      {/* =========================================================
+          MOBILE MENU OVERLAY
+      ========================================================= */}
 
-            <NavLink to="/gallery">Gallery</NavLink>
+      <div
+        className={`mobile-overlay ${mobileMenu ? "show-mobile-menu" : ""}`}
+        onClick={closeMenu}
+        aria-hidden={!mobileMenu}
+      >
+        <aside
+          id="mobile-sidebar"
+          className="mobile-sidebar"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* MOBILE HEADER */}
+          <div className="mobile-header">
+            <NavLink to="/" onClick={closeMenu}>
+              <img src={logo} alt="Sleep N Eat Hotel" />
+            </NavLink>
 
-            <NavLink to="/contact">Contact</NavLink>
-          </nav>
+            <button type="button" onClick={closeMenu} aria-label="Close menu">
+              <FaTimes />
+            </button>
+          </div>
 
-          {/* =====================================================
-              RIGHT SIDE ACTIONS
-          ===================================================== */}
+          {/* GOLD DIVIDER */}
+          <div className="mobile-gold-line"></div>
 
-          <div className="navbar-actions">
-            {/* Search */}
+          {/* MOBILE NAVIGATION */}
+          <nav className="mobile-nav">
+            <NavLink to="/" onClick={closeMenu}>
+              <span>Home</span>
+              <span className="mobile-arrow">→</span>
+            </NavLink>
 
-            {/* Book Now */}
-            <NavLink
-              to="/contact"
-              className="book-now-btn"
-              onClick={handleBookNow}
-            >
-              <span className="book-icon">
-                <FaCalendarAlt />
-              </span>
-              <span>Book Now</span>
-            </NavLink>
-          </div>
+            <NavLink to="/about" onClick={closeMenu}>
+              <span>About</span>
+              <span className="mobile-arrow">→</span>
+            </NavLink>
 
-          {/* =====================================================
-              MOBILE MENU BUTTON
-          ===================================================== */}
+            <NavLink to="/rooms" onClick={closeMenu}>
+              <span>Room</span>
+              <span className="mobile-arrow">→</span>
+            </NavLink>
 
-          <button
-            className="mobile-toggle"
-            onClick={() => setMobileMenu(true)}
-            aria-label="Open menu"
-          >
-            <FaBars />
-          </button>
-        </div>
-      </header>
+            <NavLink to="/gallery" onClick={closeMenu}>
+              <span>Gallery</span>
+              <span className="mobile-arrow">→</span>
+            </NavLink>
 
-      {/* =========================================================
-          MOBILE MENU OVERLAY
-      ========================================================= */}
+            <NavLink to="/contact" onClick={closeMenu}>
+              <span>Contact</span>
+              <span className="mobile-arrow">→</span>
+            </NavLink>
+          </nav>
 
-      <div
-        className={`mobile-overlay ${mobileMenu ? "show-mobile-menu" : ""}`}
-        onClick={closeMenu}
-      >
-        <aside className="mobile-sidebar" onClick={(e) => e.stopPropagation()}>
-          {/* Mobile Header */}
-          <div className="mobile-header">
-            <NavLink to="/" onClick={closeMenu}>
-              <img src={logo} alt="Sleep N Eat Hotel" />
-            </NavLink>
+          {/* MOBILE BOOK NOW BUTTON */}
+          <button
+            type="button"
+            className="mobile-book-btn"
+            onClick={handleMobileBookNow}
+          >
+            <FaCalendarAlt />
+            <span>Book Now</span>
+          </button>
 
-            <button onClick={closeMenu} aria-label="Close menu">
-              <FaTimes />
-            </button>
-          </div>
+          {/* MOBILE CONTACT */}
+          <div className="mobile-contact">
+            <div className="mobile-contact-item">
+              <FaPhoneAlt />
+              <a href="tel:+917070707261">+91 7070707261</a>
+            </div>
 
-          {/* Gold Divider */}
-          <div className="mobile-gold-line"></div>
+            <div className="mobile-contact-item">
+              <FaEnvelope />
+              <a href="mailto:sleepneat@hotel.com">sleepneat@hotel.com</a>
+            </div>
+          </div>
 
-          {/* Mobile Navigation */}
-          <nav className="mobile-nav">
-            <NavLink to="/" onClick={closeMenu}>
-              <span>Home</span>
-              <span className="mobile-arrow">→</span>
-            </NavLink>
+          {/* MOBILE SOCIAL LINKS */}
+          <div className="mobile-social-links">
+            <a
+              href="https://www.facebook.com/profile.php?id=61594595604411"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
 
-            <NavLink to="/about" onClick={closeMenu}>
-              <span>About</span>
-              <span className="mobile-arrow">→</span>
-            </NavLink>
+            <a
+              href="https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+          </div>
+        </aside>
+      </div>
 
-            <NavLink to="/rooms" onClick={closeMenu}>
-              <span>Room</span>
-              <span className="mobile-arrow">→</span>
-            </NavLink>
-
-            <NavLink to="/gallery" onClick={closeMenu}>
-              <span>Gallery</span>
-              <span className="mobile-arrow">→</span>
-            </NavLink>
-
-            <NavLink to="/contact" onClick={closeMenu}>
-              <span>Contact</span>
-              <span className="mobile-arrow">→</span>
-            </NavLink>
-          </nav>
-
-          {/* Mobile Book Button */}
-          <NavLink
-            to="/contact"
-            className="mobile-book-btn"
-            onClick={closeMenu}
-          >
-            <Availability room={null} onClose={() => setIsBookNowOpen(false)} />
-            <FaCalendarAlt />
-            <span>Book Now</span>
-          </NavLink>
-
-          {/* Mobile Contact */}
-          <div className="mobile-contact">
-            <div className="mobile-contact-item">
-              <FaPhoneAlt />
-              <span>+91 70707 07261</span>
-            </div>
-
-            <div className="mobile-contact-item">
-              <FaEnvelope />
-              <span>info@sleepneat.com</span>
-            </div>
-          </div>
-
-          {/* Mobile Socials */}
-          <div className="mobile-social-links">
-
-            <a
-              href="https://www.facebook.com/profile.php?id=61594595604411"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebookF />
-            </a>
-
-            <a
-              href="https://www.instagram.com/hotel_sleep_n_eat?cplk=MTczZGZkZjB1dHd4eA%3D%3D&utm_source=qr"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram />
-            </a>
-          </div>
-        </aside>
-      </div>
-      {isAvailabilityOpen && (
-        <Availability room={null} onClose={closeAvailability} />
-      )}
-    </>
-  );
+      {/* AVAILABILITY MODAL */}
+      {isAvailabilityOpen && (
+        <Availability room={null} onClose={closeAvailability} />
+      )}
+    </>
+  );
 };
 
 export default Navbar;

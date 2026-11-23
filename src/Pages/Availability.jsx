@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import "./Availability.css";
 
-const HOTEL_WHATSAPP_NUMBER = "917972823773";
+const HOTEL_WHATSAPP_NUMBER = "+917070707261";
 
 const getToday = () => {
   const date = new Date();

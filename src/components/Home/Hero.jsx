@@ -84,7 +84,7 @@ const formatPrice = (price) =>
     maximumFractionDigits: 0,
   }).format(price);
 
-const ADMIN_WHATSAPP_NUMBER = "917972823773";
+const ADMIN_WHATSAPP_NUMBER = "917070707261";
 
 const Hero = () => {
   const [isAvailabilityOpen, setIsAvailabilityOpen] = useState(false);

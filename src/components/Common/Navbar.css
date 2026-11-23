@@ -1049,11 +1049,11 @@ body {
 ========================================================== */
 
 .mobile-book-btn {
-  width: 100%;
+  width: 30%;
 
-  height: 55px;
+  height: 45px;
 
-  margin-top: 30px;
+  margin-top: 10px;
 
   display: flex;
 
@@ -2043,4 +2043,194 @@ body {
 .mobile-contact-item span,
 .navbar-search input {
   overflow-wrap: anywhere;
+}
+
+
+
+/* ==========================================================
+   MOBILE SIDEBAR - SMOOTH SLIDE + STAGGERED MENU ANIMATION
+   Desktop styles remain unchanged.
+========================================================== */
+
+@media (max-width: 991px) {
+
+  /* Mobile overlay */
+  .mobile-overlay {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.55s ease,
+      visibility 0.55s ease;
+  }
+
+  .mobile-overlay.show-mobile-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Sidebar entrance from right */
+  .mobile-sidebar {
+    width: min(390px, 90vw);
+    max-width: 90vw;
+    height: 100%;
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    transform: translate3d(100%, 0, 0);
+
+    transition:
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: transform;
+  }
+
+  .show-mobile-menu .mobile-sidebar {
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Keep header and divider visible */
+  .mobile-header,
+  .mobile-gold-line {
+    flex-shrink: 0;
+  }
+
+  /* Navigation container */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  /* Initially hidden navigation links */
+  .mobile-nav a {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(24px, 0, 0);
+
+    will-change: opacity, transform;
+  }
+
+  /* Staggered navigation entrance */
+  .show-mobile-menu .mobile-nav a {
+    animation: mobileNavItemEntrance 0.55s ease forwards;
+    visibility: visible;
+  }
+
+  .show-mobile-menu .mobile-nav a:nth-child(1) {
+    animation-delay: 0.18s;
+  }
+
+  .show-mobile-menu .mobile-nav a:nth-child(2) {
+    animation-delay: 0.30s;
+  }
+
+  .show-mobile-menu .mobile-nav a:nth-child(3) {
+    animation-delay: 0.42s;
+  }
+
+  .show-mobile-menu .mobile-nav a:nth-child(4) {
+    animation-delay: 0.54s;
+  }
+
+  .show-mobile-menu .mobile-nav a:nth-child(5) {
+    animation-delay: 0.66s;
+  }
+
+  /* Book Now appears after all navigation links */
+  .mobile-book-btn {
+    flex-shrink: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 18px, 0);
+
+    will-change: opacity, transform;
+  }
+
+  .show-mobile-menu .mobile-book-btn {
+    animation: mobileBookButtonEntrance 0.6s ease forwards;
+    animation-delay: 0.82s;
+    visibility: visible;
+  }
+
+  /* Contact and social sections remain below the button */
+  .mobile-contact,
+  .mobile-social-links {
+    flex-shrink: 0;
+  }
+}
+
+/* Navigation link animation */
+@keyframes mobileNavItemEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(24px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Book Now animation */
+@keyframes mobileBookButtonEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 575px) {
+  .mobile-sidebar {
+    width: min(350px, 94vw);
+    max-width: 94vw;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 374px) {
+  .mobile-sidebar {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-sidebar,
+  .mobile-overlay,
+  .show-mobile-menu .mobile-nav a,
+  .show-mobile-menu .mobile-book-btn {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .show-mobile-menu .mobile-nav a,
+  .show-mobile-menu .mobile-book-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
 }

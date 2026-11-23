@@ -224,7 +224,7 @@ const Footer = () => {
               <div className="footer-contact-content">
 
                 <a href="tel:+917070707261">
-                  +91 7972823773
+                  +91 7070707261
                 </a>
 
               </div>
