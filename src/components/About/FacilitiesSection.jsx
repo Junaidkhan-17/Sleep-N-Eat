@@ -71,7 +71,7 @@ const facilitiesData = [
 
   {
     _id: "facility-006",
-    name: "Breakfast",
+    name: "Breakfast, Lunch & Dinner",
     slug: "breakfast",
     description: "Start your day with a fresh and satisfying breakfast.",
     icon: Coffee,
