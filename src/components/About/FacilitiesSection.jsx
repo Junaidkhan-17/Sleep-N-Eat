@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import {
   Utensils,
   ParkingCircle,
-  Waves,
-  Dumbbell,
   Wifi,
   Coffee,
+  Cctv,
+  BatteryCharging,
 } from "lucide-react";
 
 import "./FacilitiesSection.css";
@@ -40,8 +40,28 @@ const facilitiesData = [
   },
 
   {
+    _id: "facility-003",
+    name: "24/7 CCTV Surveillance",
+    slug: "24-7-cctv-surveillance",
+    description: "Enhanced security with round-the-clock CCTV surveillance.",
+    icon: Cctv,
+    status: "active",
+    sortOrder: 3,
+  },
+
+  {
+    _id: "facility-004",
+    name: "Power Backup",
+    slug: "power-backup",
+    description: "Uninterrupted power supply for a comfortable stay.",
+    icon: BatteryCharging,
+    status: "active",
+    sortOrder: 4,
+  },
+
+  {
     _id: "facility-005",
-    name: "Free Wifi",
+    name: "Free WiFi",
     slug: "free-wifi",
     description: "Enjoy reliable high-speed Wi-Fi throughout your stay.",
     icon: Wifi,

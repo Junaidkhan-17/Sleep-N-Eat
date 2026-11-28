@@ -6,6 +6,7 @@ import P1413044 from "../../assets/image/P1413044.JPG";
 import P1413049 from "../../assets/image/P1413049.JPG";
 import P1412865 from "../../assets/image/P1412865.JPG";
 import P1412848 from "../../assets/image/P1412848.JPG";
+import cctv from "../../assets/cctv.JPG";
 
 // =========================================================
 // ABOUT HERO COMPONENT
@@ -19,6 +20,8 @@ const AboutHero = () => {
     P1413049,
     P1412865,
     P1412848,
+    cctv,
+    hotellawn,
   ];
 
   const [activeImage, setActiveImage] = useState(0);
