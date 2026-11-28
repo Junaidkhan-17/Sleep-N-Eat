@@ -12,7 +12,6 @@ import {
 
 import "./FacilitiesSection.css";
 
-
 // =========================================================
 // FACILITIES DATA
 // Backend-ready structure
@@ -80,7 +79,6 @@ const facilitiesData = [
   },
 ];
 
-
 // =========================================================
 // FACILITIES SECTION
 // =========================================================
@@ -98,29 +96,20 @@ const FacilitiesSection = () => {
     .filter((facility) => facility.status === "active")
     .sort((a, b) => a.sortOrder - b.sortOrder);
 
-
   return (
     <section
       className="facilities-section"
       aria-labelledby="facilities-section-title"
     >
-
       <div className="facilities-container">
-
         {/* =================================================
             LEFT CONTENT
         ================================================= */}
 
         <div className="facilities-content">
+          <span className="facilities-label">HOTEL FACILITIES</span>
 
-          <span className="facilities-label">
-            HOTEL FACILITIES
-          </span>
-
-          <h2
-            id="facilities-section-title"
-            className="facilities-title"
-          >
+          <h2 id="facilities-section-title" className="facilities-title">
             We are Providing
             <br />
             You Our Best
@@ -129,9 +118,8 @@ const FacilitiesSection = () => {
           </h2>
 
           <p className="facilities-description">
-            Enjoy a comfortable and memorable stay with
-            thoughtfully designed facilities and services
-            created to make every moment at Sleep N Eat
+            Enjoy a comfortable and memorable stay with thoughtfully designed
+            facilities and services created to make every moment at Sleep N Eat
             convenient and relaxing.
           </p>
 
@@ -146,21 +134,14 @@ const FacilitiesSection = () => {
           >
             Discover More
           </Link>
-
         </div>
-
 
         {/* =================================================
             RIGHT FACILITIES GRID
         ================================================= */}
 
-        <div
-          className="facilities-grid"
-          aria-label="Hotel facilities"
-        >
-
+        <div className="facilities-grid" aria-label="Hotel facilities">
           {activeFacilities.map((facility) => {
-
             const FacilityIcon = facility.icon;
 
             return (
@@ -170,38 +151,28 @@ const FacilitiesSection = () => {
                 className="facility-card"
                 aria-label={`Learn more about ${facility.name}`}
               >
-
                 {/* =================================================
                     ICON
                 ================================================= */}
 
                 <div className="facility-icon-wrapper">
-
                   <FacilityIcon
                     className="facility-icon"
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
-
                 </div>
-
 
                 {/* =================================================
                     FACILITY NAME
                 ================================================= */}
 
-                <h3 className="facility-name">
-                  {facility.name}
-                </h3>
-
+                <h3 className="facility-name">{facility.name}</h3>
               </Link>
             );
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 };

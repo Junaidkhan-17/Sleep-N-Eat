@@ -7,6 +7,7 @@ import P1413049 from "../../assets/image/P1413049.JPG";
 import P1412865 from "../../assets/image/P1412865.JPG";
 import P1412848 from "../../assets/image/P1412848.JPG";
 import cctv from "../../assets/cctv.JPG";
+import hotellawn from "../../assets/hotellawn.JPG";
 
 // =========================================================
 // ABOUT HERO COMPONENT
